@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/alpha-studio/',
   server: {
     host: "::",
     port: 8080,
