@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Import images
-import bossHeistImage from '../../public/Novels/Boss Heist .png';
-import novelsImage from '../../public/Home/Novels.png';
-import shortStoriesImage from '../../public/Home/Short Stories .png';
-import comicBooksImage from '../../public/Home/Comic Books.png';
-import kingSamagarImage from '../../public/Novels/The Curse of King Samagar .png';
-import midnightCircusImage from '../../public/osos/Dropped Image (10).png';
-import guardianImage from '../../public/assets/guardian.png';
+const bossHeistImage = '/Novels/Boss Heist .png';
+const novelsImage = '/Home/Novels.png';
+const shortStoriesImage = '/Home/Short Stories .png';
+const comicBooksImage = '/Home/Comic Books.png';
+const kingSamagarImage = '/Novels/The Curse of King Samagar .png';
+const midnightCircusImage = '/osos/Dropped Image (10).png';
+const guardianImage = '/assets/guardian.png';
 
 const works = [
   {
