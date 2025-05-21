@@ -5,6 +5,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
+// Import images
+import novelsImage from '/Home/Novels.png';
+import shortStoriesImage from '/Home/Short Stories .png';
+import comicBooksImage from '/Home/Comic Books.png';
+import playsImage from '/Home/Plays.png';
+import cinematicsImage from '/Home/Cinematics.png';
+
 const works = [
   {
     id: 1,
@@ -12,7 +19,7 @@ const works = [
     titleAr: 'روايات',
     description: 'Immerse yourself in our captivating novels that transport you to new worlds and dimensions.',
     descriptionAr: 'انغمس في رواياتنا الساحرة التي تنقلك إلى عوالم وأبعاد جديدة.',
-    image: '/osos/Novels.png',
+    image: novelsImage,
     link: '/novels'
   },
   {
@@ -21,7 +28,7 @@ const works = [
     titleAr: 'قصص قصيرة',
     description: 'Discover our collection of short stories that pack powerful narratives into concise tales.',
     descriptionAr: 'اكتشف مجموعتنا من القصص القصيرة التي تحمل سردًا قويًا في حكايات موجزة.',
-    image: '/osos/Short Stories .png',
+    image: shortStoriesImage,
     link: '/short-stories'
   },
   {
@@ -30,7 +37,7 @@ const works = [
     titleAr: 'كتب مصورة',
     description: 'Experience our stories through stunning visual narratives in our comic book series.',
     descriptionAr: 'عيش قصصنا من خلال السرد البصري المذهل في سلسلة الكتب المصورة.',
-    image: '/osos/Comic Books.png',
+    image: comicBooksImage,
     link: '/comics'
   },
   {
@@ -39,7 +46,7 @@ const works = [
     titleAr: 'مسرحيات',
     description: 'Witness our stories come to life on stage through our theatrical productions.',
     descriptionAr: 'شاهد قصصنا تنبض بالحياة على المسرح من خلال أعمالنا المسرحية.',
-    image: '/osos/Plays.png',
+    image: playsImage,
     link: '/plays'
   },
   {
@@ -48,7 +55,7 @@ const works = [
     titleAr: 'سينمائيات',
     description: 'Watch our stories unfold through cinematic experiences that blend art and technology.',
     descriptionAr: 'شاهد قصصنا تتكشف من خلال تجارب سينمائية تدمج الفن والتكنولوجيا.',
-    image: '/osos/Cinematics.png',
+    image: cinematicsImage,
     link: '/cinematics'
   }
 ];
@@ -64,7 +71,7 @@ const OurWorks = () => {
         {/* Hero Section */}
         <section className="relative h-80 overflow-hidden">
           <img 
-            src="/osos/Comic Books.png" 
+            src={comicBooksImage} 
             alt="Alpha Studio Works" 
             className="w-full h-full object-cover object-center"
           />
@@ -85,7 +92,7 @@ const OurWorks = () => {
         <section className="py-16 bg-alpha-darker relative">
           <div className="absolute inset-0">
             <img 
-              src="/osos/Short Stories .png" 
+              src={shortStoriesImage} 
               alt="Background" 
               className="w-full h-full object-cover object-center opacity-10"
             />
@@ -128,7 +135,7 @@ const OurWorks = () => {
         <section className="py-16 relative overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/osos/Short Stories .png" 
+              src="/Home/Short Stories .png" 
               alt="Background" 
               className="w-full h-full object-cover object-center opacity-20"
             />
