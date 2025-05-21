@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // Import images
-import novelsImage from '/Home/Novels.png';
-import shortStoriesImage from '/Home/Short Stories .png';
-import comicBooksImage from '/Home/Comic Books.png';
-import playsImage from '/Home/Plays.png';
-import cinematicsImage from '/Home/Cinematics.png';
+import bossHeistImage from '../../public/Novels/Boss Heist .png';
+import novelsImage from '../../public/Home/Novels.png';
+import shortStoriesImage from '../../public/Home/Short Stories .png';
+import comicBooksImage from '../../public/Home/Comic Books.png';
+import kingSamagarImage from '../../public/Novels/The Curse of King Samagar .png';
+import midnightCircusImage from '../../public/osos/Dropped Image (10).png';
+import guardianImage from '../../public/assets/guardian.png';
 
 const works = [
   {
@@ -46,7 +49,7 @@ const works = [
     titleAr: 'مسرحيات',
     description: 'Witness our stories come to life on stage through our theatrical productions.',
     descriptionAr: 'شاهد قصصنا تنبض بالحياة على المسرح من خلال أعمالنا المسرحية.',
-    image: playsImage,
+    image: shortStoriesImage,
     link: '/plays'
   },
   {
@@ -55,103 +58,205 @@ const works = [
     titleAr: 'سينمائيات',
     description: 'Watch our stories unfold through cinematic experiences that blend art and technology.',
     descriptionAr: 'شاهد قصصنا تتكشف من خلال تجارب سينمائية تدمج الفن والتكنولوجيا.',
-    image: cinematicsImage,
+    image: shortStoriesImage,
     link: '/cinematics'
   }
 ];
 
 const OurWorks = () => {
   const { language } = useLanguage();
+
+  useEffect(() => {
+    // Smooth scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   
+  const categories = [
+    {
+      title: language === 'en' ? 'Novels' : 'روايات',
+      image: novelsImage,
+      description: language === 'en' 
+        ? 'Explore our collection of captivating novels' 
+        : 'اكتشف مجموعتنا من الروايات الجذابة'
+    },
+    {
+      title: language === 'en' ? 'Short Stories' : 'قصص قصيرة',
+      image: shortStoriesImage,
+      description: language === 'en'
+        ? 'Discover our anthology of short stories'
+        : 'اكتشف مجموعتنا من القصص القصيرة'
+    },
+    {
+      title: language === 'en' ? 'Comic Books' : 'قصص مصورة',
+      image: comicBooksImage,
+      description: language === 'en'
+        ? 'Immerse yourself in our visual storytelling'
+        : 'انغمس في قصصنا المرئية'
+    }
+  ];
+
+  const featuredWorks = [
+    {
+      title: language === 'en' ? 'Boss Heist' : 'سرقة البوس',
+      image: bossHeistImage,
+      description: language === 'en'
+        ? 'An epic tale of power and redemption'
+        : 'قصة ملحمية عن القوة والخلاص'
+    },
+    {
+      title: language === 'en' ? 'Curse of King Samagar' : 'لعنة الملك ساماغار',
+      image: kingSamagarImage,
+      description: language === 'en'
+        ? 'A mystical journey through ancient realms'
+        : 'رحلة غامضة عبر العوالم القديمة'
+    },
+    {
+      title: language === 'en' ? 'A Midnight Circus' : 'سيرك منتصف الليل',
+      image: midnightCircusImage,
+      description: language === 'en'
+        ? 'Where reality meets fantasy under the stars'
+        : 'حيث يلتقي الواقع بالخيال تحت النجوم'
+    },
+    {
+      title: language === 'en' ? 'The Last Guardian' : 'الحارس الأخير',
+      image: guardianImage,
+      description: language === 'en'
+        ? 'A tale of courage and sacrifice'
+        : 'قصة عن الشجاعة والتضحية'
+    }
+  ];
+
   return (
-    <div className={cn("min-h-screen flex flex-col", language === 'ar' && "lang-ar")} lang={language}>
+    <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
       <Navbar />
       
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="relative h-80 overflow-hidden">
-          <img 
-            src={comicBooksImage} 
-            alt="Alpha Studio Works" 
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="alpha-title mb-4">{language === 'en' ? 'Our Works' : 'أعمالنا'}</h1>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto px-4">
-                {language === 'en' 
-                  ? 'Explore our diverse collection of creative works' 
-                  : 'اكتشف مجموعتنا المتنوعة من الأعمال الإبداعية'}
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* Works Grid */}
-        <section className="py-16 bg-alpha-darker relative">
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative h-screen flex items-center justify-center overflow-hidden"
+        >
           <div className="absolute inset-0">
             <img 
-              src={shortStoriesImage} 
-              alt="Background" 
-              className="w-full h-full object-cover object-center opacity-10"
+              src={bossHeistImage} 
+              alt="Boss Heist" 
+              className="w-full h-full object-cover object-center"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
           </div>
-          <div className="container mx-auto px-4 relative z-10">
-            <h2 className="alpha-title mb-12 text-center">
-              {language === 'en' ? 'Explore Our Works' : 'اكتشف أعمالنا'}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {works.map(work => (
-                <Link 
-                  key={work.id} 
-                  to={work.link}
-                  className="group"
+          
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="relative z-10 text-center px-4"
+          >
+            <h1 className="alpha-title text-6xl md:text-8xl mb-6 font-bold tracking-tight">
+              {language === 'en' ? 'Our Works' : 'أعمالنا'}
+            </h1>
+            <p className="text-3xl md:text-5xl font-display mb-8 text-alpha-gold">
+              {language === 'en' ? 'Where Stories Come Alive' : 'حيث تنبض القصص بالحياة'}
+            </p>
+          </motion.div>
+        </motion.section>
+
+        {/* Featured Works Section */}
+        <section className="py-24 bg-alpha-darker relative">
+          <div className="container mx-auto px-4">
+            <motion.h2 
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-center mb-16"
+            >
+              {language === 'en' ? 'Featured Works' : 'أعمال مميزة'}
+            </motion.h2>
+
+            {/* Trailer Video */}
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-16"
+            >
+              <video 
+                className="w-full rounded-xl shadow-2xl"
+                controls
+                poster={bossHeistImage}
+              >
+                <source src="/assets/hero-video.mp4" type="video/mp4" />
+                {language === 'en' ? 'Your browser does not support the video tag.' : 'متصفحك لا يدعم تشغيل الفيديو.'}
+              </video>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {featuredWorks.map((work, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative h-[400px] rounded-xl overflow-hidden"
                 >
-                  <div className="relative h-96 rounded-lg overflow-hidden shadow-xl transition-transform duration-300 group-hover:scale-105">
-                    <img 
-                      src={work.image} 
-                      alt={language === 'en' ? work.title : work.titleAr} 
-                      className="w-full h-full object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-2xl font-display font-bold text-white mb-2">
-                          {language === 'en' ? work.title : work.titleAr}
-                        </h3>
-                        <p className="text-gray-300">
-                          {language === 'en' ? work.description : work.descriptionAr}
-                        </p>
-                      </div>
+                  <img 
+                    src={work.image} 
+                    alt={work.title} 
+                    className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-2xl font-bold text-white mb-2">{work.title}</h3>
+                      <p className="text-gray-300">{work.description}</p>
                     </div>
                   </div>
-                </Link>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
-        
-        {/* Quote Section */}
-        <section className="py-16 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <img 
-              src="/Home/Short Stories .png" 
-              alt="Background" 
-              className="w-full h-full object-cover object-center opacity-20"
-            />
-            <div className="absolute inset-0 bg-alpha-darker/80"></div>
-          </div>
-          <div className="container mx-auto px-4 relative z-10">
-            <blockquote className="max-w-4xl mx-auto text-center">
-              <p className="text-2xl md:text-4xl font-display text-white mb-6 leading-relaxed">
-                {language === 'en' 
-                  ? '"Steps into darkness… Lots of sacrifices for one goal…"' 
-                  : '"خطوات في الظلام... تضحيات كثيرة من أجل هدف واحد..."'}
-              </p>
-              <footer className="text-alpha-gold">
-                <cite>— Alpha Studio</cite>
-              </footer>
-            </blockquote>
+
+        {/* Categories Section */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.h2 
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-center mb-16"
+            >
+              {language === 'en' ? 'Explore Our Categories' : 'استكشف تصنيفاتنا'}
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {categories.map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative h-[400px] rounded-xl overflow-hidden"
+                >
+                  <img 
+                    src={category.image} 
+                    alt={category.title} 
+                    className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-2xl font-bold text-white mb-2">{category.title}</h3>
+                      <p className="text-gray-300">{category.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
