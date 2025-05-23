@@ -94,6 +94,51 @@ const Home = () => {
           </motion.div>
         </motion.section>
 
+        {/* Blue Wolf Featured Novel */}
+        <section className="py-20 bg-alpha-dark/80 relative">
+          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+            <motion.div 
+              initial={{ x: -50, opacity: 0 }} 
+              whileInView={{ x: 0, opacity: 1 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.7 }}
+              className="w-full md:w-1/3 flex-shrink-0"
+            >
+              <img 
+                src={'/alpha-studio/Novels/The Blue Wolf .jpg'} 
+                alt={language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'} 
+                className="rounded-xl shadow-2xl w-full object-cover aspect-[3/4] border border-alpha-gold/30"
+              />
+            </motion.div>
+            <motion.div 
+              initial={{ x: 50, opacity: 0 }} 
+              whileInView={{ x: 0, opacity: 1 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="w-full md:w-2/3"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-alpha-gold mb-4">
+                {language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'}
+              </h2>
+              <p className="text-lg text-gray-300 mb-4">
+                {language === 'ar' 
+                  ? 'رواية خيال علمي مشوقة بقلم عمر دحيم. رحلة تتحدى الواقع في عالم من الفوضى والأسرار. متاحة الآن مجاناً رقمياً أو بنسخة مطبوعة.'
+                  : 'A thrilling sci-fi novel by Omar Duhaim. A reality-defying journey in a world of chaos and secrets. Available now for free (digital) or as a premium print.'}
+              </p>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-green-500 font-bold text-lg">{language === 'ar' ? 'متاح الآن' : 'Available Now'}</span>
+                <span className="text-blue-400 font-bold text-lg">{language === 'ar' ? 'مجاناً' : 'FREE'}</span>
+              </div>
+              <Link 
+                to="/blue-wolf"
+                className="btn-primary px-8 py-3 rounded-lg text-lg font-bold hover:scale-105 transition-transform duration-300 inline-block mt-2"
+              >
+                {language === 'ar' ? 'اقرأ المزيد' : 'Read More'}
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-24 bg-alpha-darker relative">
           <div className="container mx-auto px-4">
@@ -178,4 +223,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
