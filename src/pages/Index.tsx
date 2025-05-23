@@ -3,9 +3,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
-import NovelsSection from '../components/NovelsSection';
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   const { language } = useLanguage();
@@ -22,7 +21,13 @@ const Index = () => {
         {/* Short Introduction Section */}
         <section className="py-16 bg-alpha-charcoal/80 rounded-3xl shadow-xl backdrop-blur-md mx-2 my-8">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl mx-auto text-center"
+            >
               <h2 className="alpha-subtitle text-2xl md:text-3xl font-bold mb-2 text-alpha-blue drop-shadow-lg">
                 {language === 'en' ? 'Welcome to Alpha Studio' : 'مرحباً بكم في ألفا ستوديو'}
               </h2>
@@ -38,20 +43,16 @@ const Index = () => {
                 <Link to="/works" className="btn-primary rounded-xl shadow-lg text-lg px-8 py-3 transition-all duration-300 hover:scale-105">
                   {language === 'en' ? 'Explore Our Worlds' : 'استكشف عوالمنا'}
                 </Link>
-                <Link to="/join" className="btn-secondary rounded-xl shadow-lg text-lg px-8 py-3 transition-all duration-300 hover:scale-105">
+                <Link to="/about" className="btn-secondary rounded-xl shadow-lg text-lg px-8 py-3 transition-all duration-300 hover:scale-105">
                   {language === 'en' ? 'Join the Family' : 'انضم إلى العائلة'}
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
-        
+
         <div className="section-divider"></div>
-        
-        <NovelsSection />
       </main>
-      
-      <Footer />
     </div>
   );
 };

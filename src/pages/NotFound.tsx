@@ -1,9 +1,7 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const NotFound = () => {
   const location = useLocation();
@@ -29,8 +27,6 @@ const NotFound = () => {
           </Link>
         </div>
       </div>
-      
-      <Footer />
     </div>
   );
 };

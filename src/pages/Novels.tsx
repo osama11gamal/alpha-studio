@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const featuredNovels = [
   {
@@ -16,7 +16,7 @@ const featuredNovels = [
     sagaAr: 'مستقبل غامض',
     description: 'Follow the journey of a hero seeking justice in a world of chaos and deception.',
     descriptionAr: 'تابع رحلة بطل يبحث عن العدالة في عالم من الفوضى والخداع.',
-    image: '/Novels/The Blue Wolf .jpg',
+    image: '/alpha-studio/Novels/The Blue Wolf .jpg',
     releaseDate: 'Coming June 2025',
     releaseDateAr: 'قادم في يونيو 2025',
   },
@@ -30,7 +30,7 @@ const featuredNovels = [
     sagaAr: 'مرايا الحضارات',
     description: 'How does the war between Adam and Satan unfold when a cursed king battles against the devil?',
     descriptionAr: 'كيف تتكشف الحرب بين آدم وإبليس عندما يحارب ملك ملعون ضد الشيطان؟',
-    image: '/Novels/The Curse of King Samagar .png',
+    image: '/alpha-studio/Novels/The Curse of King Samagar .png',
     releaseDate: 'Coming October 2025',
     releaseDateAr: 'قادم في أكتوبر 2025',
   },
@@ -44,13 +44,13 @@ const featuredNovels = [
     sagaAr: 'الخناجر والأقدار',
     description: 'Out of the fog emerges a man determined to unveil his destiny and reveal his hidden truth.',
     descriptionAr: 'من الضباب يظهر رجل مصمم على كشف مصيره وإظهار حقيقته المخفية.',
-    image: '/Novels/Boss Heist .png',
+    image: '/alpha-studio/Novels/Boss Heist .png',
     releaseDate: 'Coming 2026',
     releaseDateAr: 'قادم في 2026',
   },
   {
     id: 4,
-    title: 'غابة الإنسان',
+    title: 'The Forest of Humans',
     titleAr: 'غابة الإنسان',
     author: 'Omar Duhaim',
     authorAr: 'عمر دهيم',
@@ -58,23 +58,9 @@ const featuredNovels = [
     sagaAr: 'مستقبل غامض',
     description: 'A mysterious forest where humans face their deepest fears and darkest desires.',
     descriptionAr: 'غابة غامضة حيث يواجه البشر أعمق مخاوفهم وأحلك رغباتهم.',
-    image: '/Novels/The Forest of Humans .png',
+    image: '/alpha-studio/Novels/The Forest of Humans .png',
     releaseDate: 'Coming Soon',
     releaseDateAr: 'قادم قريباً',
-  },
-  {
-    id: 5,
-    title: 'Alpha Studio',
-    titleAr: 'ألفا ستوديو',
-    author: 'Omar Duhaim',
-    authorAr: 'عمر دهيم',
-    saga: 'A Vague Future',
-    sagaAr: 'مستقبل غامض',
-    description: 'The story of Alpha Studio itself, revealing the secrets behind its creation and the vision that drives it forward.',
-    descriptionAr: 'قصة ألفا ستوديو نفسها، تكشف الأسرار وراء إنشائها والرؤية التي تدفعها للأمام.',
-    image: '/osos/Novels.png',
-    releaseDate: 'Coming 2026',
-    releaseDateAr: 'قادم في 2026',
   },
   {
     id: 6,
@@ -86,7 +72,7 @@ const featuredNovels = [
     sagaAr: 'أرماند دوفال',
     description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon, whose greed and cruelty plague the realm. Armand\'s legend grows with every battle won and every village saved—a rogue hero who defies empires and inspires hope wherever his black sails rise on the horizon.',
     descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة. تنمو أسطورة أرماند مع كل معركة يفوز بها وكل قرية ينقذها - بطل متمرد يتحدى الإمبراطوريات ويبعث الأمل أينما تظهر أشرعته السوداء في الأفق.',
-    image: '/osos/Dropped Image (15).png',
+    image: '/alpha-studio/placeholder.png',
     releaseDate: 'Coming Soon',
     releaseDateAr: 'قادم قريباً',
   }
@@ -103,7 +89,7 @@ const characters = [
     sagaAr: 'مستقبل غامض',
     description: 'Raven was raised by a major gang leader. He didn\'t give her the opportunity to learn and go to school like any other girl, only working on hacking and digital theft. She always said there was something she had to stop and leave behind... but her past always haunted her. After her father\'s death, she took over the leadership of the gang, carrying with her the pain of the past and the desire to live the life that had been stolen from her by the ancient past.',
     descriptionAr: 'نشأت رافن على يد زعيم عصابة كبير. لم يمنحها الفرصة للتعلم والذهاب إلى المدرسة مثل أي فتاة أخرى، وإنما كانت تعمل فقط على القرصنة والسرقة الرقمية. كانت تقول دائمًا إن هناك شيئًا يجب عليها أن توقفه وتتركه وراءها... لكن ماضيها كان يطاردها دائمًا. بعد وفاة والدها، تولت قيادة العصابة، حاملة معها ألم الماضي والرغبة في عيش الحياة التي سرقت منها من قبل الماضي القديم.',
-    image: '/Characters/Raven.png',
+    image: '/alpha-studio/Characters/Raven.png',
   },
   {
     id: 2,
@@ -115,7 +101,7 @@ const characters = [
     sagaAr: 'مستقبل غامض',
     description: 'Steve Borden, known as the Lynx, was a sheriff fighting crime. He was suddenly transferred to a city where crime is rife. He wanted to act like an honest cop, but the rampant crime was enough to frame him for a case that didn\'t suit him and land him in prison. And when he got out... he decided to take revenge. Borden was buried... The Lynx was born!',
     descriptionAr: 'كان ستيف بوردن، المعروف بـ لينكس، شريفًا يحارب الجريمة. تم نقله فجأة إلى مدينة تنتشر فيها الجريمة. أراد أن يتصرف كشرطي نزيه، لكن الجريمة المستشرية كانت كافية لتأطيره في قضية لا تناسبه وتودعه السجن. وعندما خرج... قرر أن ينتقم. دُفن بوردن... وُلِد لينكس!',
-    image: '/Characters/The Lynx.png',
+    image: '/alpha-studio/Characters/The Lynx.png',
   },
   {
     id: 3,
@@ -127,7 +113,7 @@ const characters = [
     sagaAr: 'مستقبل غامض',
     description: 'Dr. Amir was a famous doctor and scientist who traveled to complete his research. He wasn\'t given the opportunity; he wasn\'t appreciated in his home country, and instead of being honored, he was fired after his experiment failed and the lab was destroyed. So Professor Dave wanted to exploit him for his own purposes of controlling the world, and he didn\'t know that this duo would be the end of the human race.',
     descriptionAr: 'كان الدكتور أمير طبيبًا وعالمًا مشهورًا سافر لإكمال أبحاثه. لم يُمنح الفرصة؛ لم يُقدَّر في وطنه، وبدلاً من تكريمه، تم طرده بعد فشل تجربته وتدمير المختبر. لذا أراد البروفيسور ديف استغلاله لأغراضه الخاصة في السيطرة على العالم، ولم يكن يعلم أن هذا الثنائي سيكون نهاية الجنس البشري.',
-    image: '/Characters/Amir.jpg',
+    image: '/alpha-studio/Characters/Amir.jpg',
   },
   {
     id: 4,
@@ -139,7 +125,7 @@ const characters = [
     sagaAr: 'مستقبل غامض',
     description: 'Professor Reynard Daveson, known as Professor Dave. He is the person who used the abundant knowledge he gained in his life to sufficiently destroy humanity. He believed that the person who does not serve his machines is a burden on this planet. So he wanted to enslave humans and use the enormous technological power to operate his invention, which he kept secret throughout his life.',
     descriptionAr: 'البروفيسور رينارد ديفسون، المعروف باسم البروفيسور ديف. هو الشخص الذي استخدم المعرفة الوفيرة التي اكتسبها في حياته لتدمير البشرية بشكل كافٍ. كان يعتقد أن الشخص الذي لا يخدم آلاته هو عبء على هذا الكوكب. لذا أراد استعباد البشر واستخدام القوة التكنولوجية الهائلة لتشغيل اختراعه، الذي أبقاه سراً طوال حياته.',
-    image: '/osos/Dropped Image (19).png',
+    image: '/alpha-studio/Characters/Reynard .png',
   },
   {
     id: 5,
@@ -151,7 +137,7 @@ const characters = [
     sagaAr: 'مرايا الحضارات',
     description: 'King Samagar, a once noble ruler who fell victim to a dark curse. His kingdom, once prosperous and peaceful, now faces the consequences of his transformation. As he battles against the forces of evil that have taken hold of him, his story becomes a tale of redemption and the eternal struggle between good and evil.',
     descriptionAr: 'الملك ساماغار، حاكم نبيل سقط ضحية لعنة مظلمة. مملكته، التي كانت مزدهرة وسلمية، تواجه الآن عواقب تحوله. بينما يحارب ضد قوى الشر التي سيطرت عليه، تصبح قصته حكاية عن الخلاص والصراع الأبدي بين الخير والشر.',
-    image: '/Characters/Samagar.png',
+    image: '/alpha-studio/Characters/Samagar.png',
   },
   {
     id: 6,
@@ -163,7 +149,7 @@ const characters = [
     sagaAr: 'أرماند دوفال',
     description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon.',
     descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد.',
-    image: '/Characters/Armand Duval.png',
+    image: '/alpha-studio/Characters/Armand Duval.png',
   },
   {
     id: 7,
@@ -175,7 +161,7 @@ const characters = [
     sagaAr: 'مستقبل غامض',
     description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
     descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
-    image: '/osos/Dropped Image (22).png',
+    image: '/alpha-studio/Characters/Shihab .png',
   },
   {
     id: 8,
@@ -187,7 +173,7 @@ const characters = [
     sagaAr: 'الخناجر والأقدار',
     description: 'A master thief with a code of honor, Diego Delgado operates in the shadows of the criminal underworld. His skills in deception and strategy make him a formidable opponent, but his mysterious past and hidden motives add layers of complexity to his character.',
     descriptionAr: 'لص محترف له ميثاق شرف، يعمل دييغو ديلجادو في ظلال عالم الجريمة. مهاراته في الخداع والاستراتيجية تجعله خصماً هائلاً، لكن ماضيه الغامض ودوافعه المخفية تضيف طبقات من التعقيد لشخصيته.',
-    image: '/Characters/Diego Delgado.png',
+    image: '/alpha-studio/Characters/Diego Delgado.png',
   }
 ];
 
@@ -198,7 +184,7 @@ const sagas = [
     titleAr: 'مستقبل غامض',
     description: 'A series of novels exploring the intersection of technology, humanity, and the unknown future that awaits us.',
     descriptionAr: 'سلسلة من الروايات تستكشف تقاطع التكنولوجيا والإنسانية والمستقبل المجهول الذي ينتظرنا.',
-    image: '/osos/Novels.png',
+    image: '/alpha-studio/osos/Novels.png',
     novels: ['The Blue Wolf', 'The Forest of Humans', 'Alpha Studio'],
     novelsAr: ['الذئب الأزرق', 'غابة البشر', 'ألفا ستوديو'],
   },
@@ -208,7 +194,7 @@ const sagas = [
     titleAr: 'مرايا الحضارات',
     description: 'A collection of stories that reflect the timeless struggles and triumphs of human civilization through different eras and cultures.',
     descriptionAr: 'مجموعة من القصص تعكس الصراعات والانتصارات الخالدة للحضارة الإنسانية عبر عصور وثقافات مختلفة.',
-    image: '/osos/Short Stories .png',
+    image: '/alpha-studio/osos/Short Stories .png',
     novels: ['The Curse of King Samagar'],
     novelsAr: ['لعنة الملك ساماغار'],
   },
@@ -218,7 +204,7 @@ const sagas = [
     titleAr: 'الخناجر والأقدار',
     description: 'Tales of intrigue, betrayal, and the complex web of fate that binds characters together in unexpected ways.',
     descriptionAr: 'حكايات عن المؤامرات والخيانة وشبكة القدر المعقدة التي تربط الشخصيات بطرق غير متوقعة.',
-    image: '/osos/Comic Books.png',
+    image: '/alpha-studio/osos/Comic Books.png',
     novels: ['Boss Heist'],
     novelsAr: ['سرقة البوس'],
   },
@@ -228,7 +214,7 @@ const sagas = [
     titleAr: 'أرماند دوفال',
     description: 'The epic saga of Armand Duval, a nobleman turned pirate, and his quest for justice and redemption on the high seas.',
     descriptionAr: 'ملحمة أرماند دوفال، النبيل الذي تحول إلى قرصان، وسعيه للعدالة والخلاص في أعالي البحار.',
-    image: '/osos/Plays.png',
+    image: '/alpha-studio/placeholder.png',
     novels: ['Throne of the Seas'],
     novelsAr: ['عرش البحار'],
   }
@@ -243,7 +229,7 @@ const Novels = () => {
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.src = '/placeholder.png';
-    e.currentTarget.onerror = null; // Prevent infinite loop
+    e.currentTarget.onerror = null;
   };
 
   useEffect(() => {
@@ -252,7 +238,6 @@ const Novels = () => {
         setIsLoading(true);
         setError(null);
         
-        // Preload all images
         const imagePromises = [
           ...featuredNovels.map(novel => {
             const img = new Image();
@@ -261,7 +246,7 @@ const Novels = () => {
               img.onload = resolve;
               img.onerror = () => {
                 console.warn(`Failed to load image: ${novel.image}`);
-                resolve(null); // Resolve anyway to continue loading other images
+                resolve(null);
               };
             });
           }),
@@ -272,7 +257,7 @@ const Novels = () => {
               img.onload = resolve;
               img.onerror = () => {
                 console.warn(`Failed to load image: ${character.image}`);
-                resolve(null); // Resolve anyway to continue loading other images
+                resolve(null);
               };
             });
           }),
@@ -283,7 +268,7 @@ const Novels = () => {
               img.onload = resolve;
               img.onerror = () => {
                 console.warn(`Failed to load image: ${saga.image}`);
-                resolve(null); // Resolve anyway to continue loading other images
+                resolve(null);
               };
             });
           })
@@ -302,44 +287,79 @@ const Novels = () => {
   }, []);
 
   return (
-    <div className={cn("min-h-screen flex flex-col", language === 'ar' && "lang-ar")} lang={language}>
+    <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
       <Navbar />
       
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="relative h-80 overflow-hidden">
-          <img 
-            src="/osos/ab726374-8444-461e-82bf-ce7b109f2a78.png" 
-            alt="Alpha Studio Novels" 
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
+        <section className="relative h-[90vh] overflow-hidden">
+          <motion.div 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0"
+          >
+            <img 
+              src="/alpha-studio/osos/ab726374-8444-461e-82bf-ce7b109f2a78.png" 
+              alt="Alpha Studio Novels" 
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
             <div className="text-center">
-              <h1 className="alpha-title mb-4">{language === 'en' ? 'Alpha Studio Novels' : 'روايات ألفا ستوديو'}</h1>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto px-4">
+              <h1 className="alpha-title text-5xl md:text-7xl mb-6 font-bold tracking-tight drop-shadow-lg">
+                {language === 'en' ? 'Alpha Studio Novels' : 'روايات ألفا ستوديو'}
+              </h1>
+              <p className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto px-4 leading-relaxed">
                 {language === 'en' 
                   ? 'Immersive stories that transport you to new worlds and dimensions' 
                   : 'قصص غامرة تنقلك إلى عوالم وأبعاد جديدة'}
               </p>
             </div>
-          </div>
+          </motion.div>
         </section>
         
         {/* Featured Novels */}
-        <section className="py-16 bg-alpha-darker">
-          <div className="container mx-auto px-4">
-            <h2 className="alpha-title mb-12 text-center">{language === 'en' ? 'Featured Novels' : 'الروايات المميزة'}</h2>
+        <section className="py-24 bg-alpha-darker relative">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-alpha-gold/5 via-transparent to-transparent animate-pulse"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="alpha-title mb-16 text-center text-4xl md:text-5xl"
+            >
+              {language === 'en' ? 'Featured Novels' : 'الروايات المميزة'}
+            </motion.h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {featuredNovels.map(novel => (
-                <div key={novel.id} className="flex flex-col md:flex-row bg-alpha-charcoal rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                  <div className="md:w-1/2 h-80 relative">
+              {featuredNovels.map((novel, index) => (
+                <motion.div 
+                  key={novel.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="flex flex-col md:flex-row bg-alpha-charcoal/50 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm border border-alpha-gold/20 hover:border-alpha-gold/40"
+                >
+                  <div className="md:w-1/2 h-80 relative group">
                     {novel.image ? (
-                      <img 
+                      <motion.img 
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                         src={novel.image} 
                         alt={language === 'en' ? novel.title : novel.titleAr} 
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-center transition-transform duration-300"
                         onError={handleImageError}
                       />
                     ) : (
@@ -349,14 +369,15 @@ const Novels = () => {
                         </span>
                       </div>
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="md:w-1/2 p-6 flex flex-col justify-between">
+                  <div className="md:w-1/2 p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-2xl font-display font-bold mb-1">
+                      <h3 className="text-2xl font-display font-bold mb-2 text-white group-hover:text-alpha-gold transition-colors duration-300">
                         {language === 'en' ? novel.title : novel.titleAr}
                       </h3>
                       {novel.saga && (
-                        <p className="text-alpha-gold text-sm mb-2">
+                        <p className="text-alpha-gold text-sm mb-3">
                           {language === 'en' ? novel.saga : novel.sagaAr}
                         </p>
                       )}
@@ -371,52 +392,94 @@ const Novels = () => {
                         </p>
                       )}
                     </div>
-                    <div className="mt-auto">
-                      {novel.releaseDate && (
-                        <p className="text-alpha-gold mb-4">
-                          {language === 'en' ? novel.releaseDate : novel.releaseDateAr}
-                        </p>
+                    <div className="mt-6">
+                      {novel.title === 'The Blue Wolf' ? (
+                        <>
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="text-green-500 font-bold text-lg">
+                              {language === 'en' ? 'Available Now' : 'متاح الآن'}
+                            </span>
+                            <span className="text-blue-500 font-bold text-lg">
+                              {language === 'en' ? 'FREE' : 'مجاناً'}
+                            </span>
+                          </div>
+                          <Link 
+                            to="/blue-wolf"
+                            className="btn-primary text-sm px-6 py-2 rounded-lg hover:scale-105 transition-transform duration-300 w-full text-center"
+                          >
+                            {language === 'en' ? 'Buy Now' : 'اشتري الآن'}
+                          </Link>
+                        </>
+                      ) : (
+                        <>
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="text-red-500 font-bold text-lg">
+                              {language === 'en' ? 'Coming Soon' : 'قريباً'}
+                            </span>
+                            {novel.releaseDate && (
+                              <p className="text-alpha-gold">
+                                {language === 'en' ? novel.releaseDate : novel.releaseDateAr}
+                              </p>
+                            )}
+                          </div>
+                          <div className="flex space-x-4">
+                            <button className="btn-secondary text-sm px-6 py-2 rounded-lg hover:scale-105 transition-transform duration-300 w-full">
+                              {language === 'en' ? 'Preview' : 'معاينة'}
+                            </button>
+                          </div>
+                        </>
                       )}
-                      <div className="flex space-x-4">
-                        <button className="btn-primary text-sm px-4 py-2">
-                          {language === 'en' ? 'Learn More' : 'اقرأ المزيد'}
-                        </button>
-                        <button className="btn-secondary text-sm px-4 py-2">
-                          {language === 'en' ? 'Preview' : 'معاينة'}
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
         
         {/* Characters Section */}
-        <section className="py-16 bg-alpha-dark">
-          <div className="container mx-auto px-4">
-            <h2 className="alpha-title mb-12 text-center">
+        <section className="py-24 bg-alpha-dark relative">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-alpha-blue/5 via-transparent to-transparent animate-pulse"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="alpha-title mb-16 text-center text-4xl md:text-5xl"
+            >
               {language === 'en' ? 'Meet Our Characters' : 'تعرف على شخصياتنا'}
-            </h2>
+            </motion.h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {characters.map(character => (
-                <div key={character.id} className="character-card bg-alpha-charcoal rounded-lg overflow-hidden shadow-xl">
+              {characters.map((character, index) => (
+                <motion.div 
+                  key={character.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="character-card bg-alpha-charcoal/50 rounded-xl overflow-hidden shadow-xl backdrop-blur-sm border border-alpha-gold/20 hover:border-alpha-gold/40 transition-all duration-300"
+                >
                   <div className="md:flex">
-                    <div className="md:w-1/2 h-80">
-                      <img 
+                    <div className="md:w-1/2 h-80 relative group">
+                      <motion.img 
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                         src={character.image} 
                         alt={language === 'en' ? character.name : character.nameAr} 
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-center transition-transform duration-300"
                         onError={handleImageError}
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="p-6 md:w-1/2">
-                      <h3 className="text-2xl font-display font-bold mb-1">
+                    <div className="p-8 md:w-1/2">
+                      <h3 className="text-2xl font-display font-bold mb-2 text-white group-hover:text-alpha-gold transition-colors duration-300">
                         {language === 'en' ? character.name : character.nameAr}
                       </h3>
-                      <p className="text-alpha-gold text-sm mb-1">
+                      <p className="text-alpha-gold text-sm mb-2">
                         {language === 'en' ? character.novel : character.novelAr}
                       </p>
                       <p className="text-gray-400 text-sm mb-4">
@@ -429,44 +492,60 @@ const Novels = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
             
-            <div className="text-center mt-12">
-              <Link to="/works" className="btn-secondary">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mt-16"
+            >
+              <Link 
+                to="/works" 
+                className="btn-secondary text-lg px-8 py-3 rounded-xl hover:scale-105 transition-transform duration-300"
+              >
                 {language === 'en' ? 'Explore All Works' : 'استكشف جميع الأعمال'}
               </Link>
-            </div>
+            </motion.div>
           </div>
         </section>
         
         {/* Quote Section */}
-        <section className="py-16 relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0">
-            <img 
-              src="/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png" 
+            <motion.img 
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 2 }}
+              src="/alpha-studio/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png" 
               alt="Background" 
               className="w-full h-full object-cover object-center opacity-20"
             />
             <div className="absolute inset-0 bg-alpha-darker/80"></div>
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <blockquote className="max-w-4xl mx-auto text-center">
+            <motion.blockquote 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center"
+            >
               <p className="text-2xl md:text-4xl font-display text-white mb-6 leading-relaxed">
                 {language === 'en' 
                   ? '"Steps into darkness… Lots of sacrifices for one goal…"' 
                   : '"خطوات في الظلام... تضحيات كثيرة من أجل هدف واحد..."'}
               </p>
-              <footer className="text-alpha-gold">
+              <footer className="text-alpha-gold text-xl">
                 <cite>— Alpha Studio</cite>
               </footer>
-            </blockquote>
+            </motion.blockquote>
           </div>
         </section>
       </main>
-      
-      <Footer />
     </div>
   );
 };

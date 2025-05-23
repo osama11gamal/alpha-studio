@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -140,8 +139,6 @@ const About = () => {
           </div>
         </section>
       </main>
-      
-      <Footer />
     </div>
   );
 };

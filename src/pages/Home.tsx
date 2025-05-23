@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 // Import images
-import heroImage from '/Home/hero-bg.jpg';
-import novelsImage from '/Home/Novels.png';
-import shortStoriesImage from '/Home/Short Stories .png';
-import comicBooksImage from '/Home/Comic Books.png';
+import heroImage from '/alpha-studio/Home/hero-bg.jpg';
+import novelsImage from '/alpha-studio/Home/Novels.png';
+import shortStoriesImage from '/alpha-studio/Home/Short Stories .png';
+import comicBooksImage from '/alpha-studio/Home/Comic Books.png';
 
 const Home = () => {
   const { language } = useLanguage();

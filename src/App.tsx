@@ -11,11 +11,13 @@ import Novels from './pages/Novels';
 import NotFound from './pages/NotFound';
 import Success from './pages/Success';
 import { LanguageProvider } from './contexts/LanguageContext';
+import BlueWolf from './pages/BlueWolf';
+import Purchase from './pages/Purchase';
 
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/alpha-studio">
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
@@ -27,6 +29,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/success" element={<Success />} />
               <Route path="/join" element={<Join />} />
+              <Route path="/blue-wolf" element={<BlueWolf />} />
+              <Route path="/purchase/:type" element={<Purchase />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -10,7 +10,7 @@ const slides = [
   {
     id: 0,
     type: 'video',
-    video: '/assets/hero-video.mp4',
+    video: '/alpha-studio/assets/hero-video.mp4',
     title: 'Alpha Studio',
     titleAr: 'ألفا ستوديو',
     subtitle: 'Where stories come to life',
@@ -20,46 +20,7 @@ const slides = [
     releaseDate: '',
     releaseDateAr: '',
     link: '/works',
-  },
-  {
-    id: 1,
-    title: 'The Bluewolf',
-    titleAr: 'الذئب الأزرق',
-    subtitle: 'A tale of revenge and redemption',
-    subtitleAr: 'قصة انتقام وخلاص',
-    description: 'Follow the journey of a warrior seeking justice in a world of chaos and deception.',
-    descriptionAr: 'تابع رحلة محارب يبحث عن العدالة في عالم من الفوضى والخداع.',
-    image: '/assets/bluewolf.png',
-    releaseDate: 'Coming June 2025',
-    releaseDateAr: 'قادم في يونيو 2025',
-    link: '/works/bluewolf'
-  },
-  {
-    id: 2,
-    title: 'Curse of King Samagar',
-    titleAr: 'لعنة الملك ساماغار',
-    subtitle: 'The legend awakens',
-    subtitleAr: 'الأسطورة تستيقظ',
-    description: 'An ancient power stirs in the shadows, threatening to consume all in its path.',
-    descriptionAr: 'قوة قديمة تتحرك في الظلال، مهددة بابتلاع كل شيء في طريقها.',
-    image: '/assets/samagar.png',
-    releaseDate: 'Coming August 2025',
-    releaseDateAr: 'قادم في أغسطس 2025',
-    link: '/works/samagar'
-  },
-  {
-    id: 3,
-    title: 'A Midnight Circus',
-    titleAr: 'سيرك منتصف الليل',
-    subtitle: 'Where dreams and nightmares collide',
-    subtitleAr: 'حيث تلتقي الأحلام والكوابيس',
-    description: 'Step into a world where reality bends and magic lives in the shadows.',
-    descriptionAr: 'ادخل إلى عالم حيث ينحني الواقع والسحر يعيش في الظلال.',
-    image: '/assets/circus.png',
-    releaseDate: 'Coming October 2025',
-    releaseDateAr: 'قادم في أكتوبر 2025',
-    link: '/works/circus'
-  },
+  }
 ];
 
 const HeroSlider = () => {
@@ -81,18 +42,6 @@ const HeroSlider = () => {
       setCurrentSlide(api.selectedScrollSnap());
     });
   }, [api]);
-
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (api && !isHovering) {
-        const nextSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
-        api.scrollTo(nextSlide);
-      }
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [api, currentSlide, isHovering]);
 
   const handleVideoLoaded = () => {
     setIsVideoLoaded(true);
@@ -132,7 +81,6 @@ const HeroSlider = () => {
                         className="w-full h-full object-cover object-center rounded-none sm:rounded-3xl border-0 sm:border-2 sm:border-alpha-charcoal/60 shadow-none sm:shadow-2xl aspect-[9/16] sm:aspect-[16/9]"
                         loop
                         playsInline
-                        poster="/assets/bluewolf.png"
                         muted={videoMuted}
                         style={{ 
                           zIndex: 1,
@@ -157,7 +105,7 @@ const HeroSlider = () => {
                           {videoMuted ? (
                             <span role="img" aria-label="Muted">🔇</span>
                           ) : (
-                            <span role="img" aria-label="Unmuted">🔊</span>
+                            <span role="img" aria-label="Unmuted">🕩</span>
                           )}
                         </button>
                         <button
@@ -179,7 +127,6 @@ const HeroSlider = () => {
                               autoPlay
                               loop
                               playsInline
-                              poster="/assets/bluewolf.png"
                               muted={videoMuted}
                               controls
                               style={{ background: 'black' }}
@@ -201,23 +148,14 @@ const HeroSlider = () => {
                               {videoMuted ? (
                                 <span role="img" aria-label="Muted">🔇</span>
                               ) : (
-                                <span role="img" aria-label="Unmuted">🔊</span>
+                                <span role="img" aria-label="Unmuted">🕩</span>
                               )}
                             </button>
                           </div>
                         </div>
                       )}
                     </>
-                  ) : (
-                    <img 
-                      src={slide.image} 
-                      alt={language === 'en' ? slide.title : slide.titleAr} 
-                      className={cn(
-                        "w-full h-full object-cover object-center rounded-none sm:rounded-3xl border-0 sm:border-2 sm:border-alpha-charcoal/60 shadow-none sm:shadow-2xl transition-all duration-700",
-                        currentSlide === index && "animate-slow-zoom"
-                      )}
-                    />
-                  )}
+                  ) : null}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10 pointer-events-none sm:rounded-3xl rounded-none" />
                   <div className="soft-bloom scale-125"></div>
                   <div className="hero-overlay"></div>
@@ -259,29 +197,6 @@ const HeroSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              className={cn(
-                "w-4 h-4 rounded-full border-2 border-alpha-blue bg-white/80 shadow transition-all duration-300",
-                index === currentSlide 
-                  ? "bg-alpha-blue w-10 shadow-glow" 
-                  : "bg-gray-500 hover:bg-gray-400"
-              )}
-              onClick={() => api?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-        
-        <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 hover:bg-alpha-blue/80 border-none text-white z-30 hover:scale-110 transition-transform shadow-lg rounded-full p-2" aria-label="Previous slide">
-          <ChevronLeft className="h-6 w-6" />
-        </CarouselPrevious>
-        <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 hover:bg-alpha-blue/80 border-none text-white z-30 hover:scale-110 transition-transform shadow-lg rounded-full p-2" aria-label="Next slide">
-          <ChevronRight className="h-6 w-6" />
-        </CarouselNext>
       </Carousel>
     </div>
   );
