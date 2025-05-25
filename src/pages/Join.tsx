@@ -58,7 +58,6 @@ const Join = () => {
   return (
     <div className={cn("min-h-screen flex flex-col", language === 'ar' && "lang-ar")} lang={language}>
       <Navbar />
-      
       <main className="flex-grow pt-20">
         <section className="relative h-80 overflow-hidden">
           <img 
@@ -178,8 +177,6 @@ const Join = () => {
           </div>
         </section>
       </main>
-      
-      <Footer />
     </div>
   );
 };

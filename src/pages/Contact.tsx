@@ -65,7 +65,6 @@ const Contact = () => {
   return (
     <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
       <Navbar />
-      
       <main className="flex-grow pt-20">
         <motion.section 
           initial={{ opacity: 0 }}
@@ -74,7 +73,7 @@ const Contact = () => {
           className="relative h-[90vh] overflow-hidden"
         >
           <img 
-            src="/osos/a8c965b5-cf48-4089-b1e4-49654271521c.png" 
+            src="/alpha-studio/osos/911f1d9f-f81b-4704-a4c4-e8b355d68276.png" 
             alt="Contact Alpha Studio" 
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
           />
@@ -91,8 +90,8 @@ const Contact = () => {
               </h1>
               <p className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto px-4 leading-relaxed">
                 {language === 'en' 
-                  ? 'We\'d love to hear from you' 
-                  : 'يسعدنا سماع رأيك'}
+                  ? 'We\'d love to hear from you ❤️' 
+                  : 'يسعدنا سماع رأيك❤️'}
               </p>
             </div>
           </motion.div>
@@ -130,10 +129,10 @@ const Contact = () => {
                           {language === 'en' ? 'Email' : 'البريد الإلكتروني'}
                         </h3>
                         <a 
-                          href="mailto:osama.gamal.elfakhrany@gmail.com" 
+                          href="mailto:alphaduhaim@gmail.com" 
                           className="text-alpha-blue hover:text-alpha-blue-light transition-colors"
                         >
-                          osama.gamal.elfakhrany@gmail.com
+                          alphaduhaim@gmail.com
                         </a>
                       </div>
                     </motion.div>
@@ -297,8 +296,6 @@ const Contact = () => {
           </div>
         </section>
       </main>
-      
-      <Footer />
     </div>
   );
 };
