@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,7 +37,7 @@
     /* Fonts */
     --font-display: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
-    --font-arabic: 'Noto Sans Arabic', sans-serif;
+    --font-arabic: 'Noto Kufi Arabic', 'Noto Sans Arabic', sans-serif;
   }
 
   * {
@@ -46,6 +46,7 @@
 
   body {
     @apply bg-alpha-darker text-white font-sans overflow-x-hidden;
+    font-family: 'Noto Kufi Arabic', 'Noto Sans Arabic', 'Inter', sans-serif;
     background-image: 
       radial-gradient(circle at 20% 30%, rgba(26, 26, 53, 0.4) 0%, rgba(18, 24, 32, 0) 70%),
       radial-gradient(circle at 80% 60%, rgba(0, 163, 255, 0.1) 0%, rgba(18, 24, 32, 0) 60%);
@@ -57,6 +58,7 @@
 
   :lang(ar) {
     @apply font-arabic;
+    font-family: 'Noto Kufi Arabic', 'Noto Sans Arabic', sans-serif;
     direction: rtl;
   }
 }
