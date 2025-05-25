@@ -101,34 +101,51 @@ const Home = () => {
               {language === 'ar' ? 'الروايات المتاحة' : 'Available Novels'}
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-              <div className="w-full md:w-1/4 flex-shrink-0">
-                <img 
-                  src={require('../../public/Novels/The Blue Wolf .jpg')} 
-                  alt={language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'} 
-                  className="rounded-xl shadow-xl w-full object-cover aspect-[3/4] border border-alpha-gold/30"
-                  loading="lazy"
-                  onError={e => e.currentTarget.src = '/placeholder.png'}
-                />
-              </div>
-              <div className="w-full md:w-3/4">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  {language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'}
-                </h3>
-                <p className="text-gray-300 mb-3">
-                  {language === 'ar' 
-                    ? 'رواية خيال علمي مشوقة بقلم عمر دحيم. متاحة الآن مجاناً رقمياً أو بنسخة مطبوعة.'
-                    : 'A thrilling sci-fi novel by Omar Duhaim. Available now for free (digital) or as a premium print.'}
-                </p>
-                <div className="flex items-center gap-4 mb-3">
-                  <span className="text-green-500 font-bold text-lg">{language === 'ar' ? 'متاح الآن' : 'Available Now'}</span>
-                  <span className="text-blue-400 font-bold text-lg">{language === 'ar' ? 'مجاناً' : 'FREE'}</span>
+              {/* Product Card */}
+              <div className="w-full md:w-1/3 flex-shrink-0">
+                <div className="bg-white rounded-2xl shadow-2xl border border-alpha-gold/30 p-4 md:p-6 flex flex-col items-center hover:shadow-yellow-200/40 transition-shadow duration-300">
+                  <img 
+                    src={require('../../public/Novels/The Blue Wolf .jpg')} 
+                    alt={language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'} 
+                    className="rounded-xl shadow-xl w-full object-cover aspect-[3/4] border border-alpha-gold/30 mb-4"
+                    loading="lazy"
+                    onError={e => e.currentTarget.src = '/placeholder.png'}
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-alpha-darker mb-1 text-center">
+                    {language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'}
+                  </h3>
+                  <div className="italic text-alpha-gold mb-2 text-center text-base md:text-lg">
+                    {language === 'ar' ? 'مستقبل غامض' : 'A Vague Future'}
+                  </div>
+                  {/* Star Rating */}
+                  <div className="flex items-center justify-center mb-2">
+                    <span className="text-yellow-400 text-xl mr-2 font-bold">4.8</span>
+                    <span className="flex text-yellow-400 text-lg">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className={`w-5 h-5 ${i < 4 ? 'fill-yellow-400' : 'fill-yellow-200'}`} viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.9,17.8 9.9,14.8 14.9,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
+                      ))}
+                    </span>
+                    <span className="text-gray-400 text-sm ml-2">{language === 'ar' ? '(١٬٢٠٠ تقييم)' : '(1,200 ratings)'}</span>
+                  </div>
+                  <p className="text-gray-700 text-base md:text-lg mb-3 text-center">
+                    {language === 'ar' 
+                      ? 'تابع رحلة بطل يبحث عن العدالة في عالم من الفوضى والخداع.'
+                      : 'Follow the journey of a hero seeking justice in a world of chaos and deception.'}
+                  </p>
+                  <div className="text-gray-500 text-sm mb-2 text-center">
+                    {language === 'ar' ? 'بقلم عمر دحيم' : 'By Omar Duhaim'}
+                  </div>
+                  <div className="flex items-center gap-3 mb-4 justify-center">
+                    <span className="text-green-500 font-bold text-base md:text-lg">{language === 'ar' ? 'متاح الآن' : 'Available Now'}</span>
+                    <span className="text-blue-500 font-bold text-base md:text-lg">{language === 'ar' ? 'مجاناً' : 'FREE'}</span>
+                  </div>
+                  <Link 
+                    to="/blue-wolf"
+                    className="btn-primary px-8 py-3 rounded-lg text-base font-bold hover:scale-105 transition-transform duration-300 inline-block w-full text-center"
+                  >
+                    {language === 'ar' ? 'تفاصيل الرواية / شراء' : 'View Details / Buy Now'}
+                  </Link>
                 </div>
-                <Link 
-                  to="/blue-wolf"
-                  className="btn-primary px-6 py-2 rounded-lg text-base font-bold hover:scale-105 transition-transform duration-300 inline-block mt-1"
-                >
-                  {language === 'ar' ? 'تفاصيل الرواية' : 'View Details'}
-                </Link>
               </div>
             </div>
           </div>
