@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "postinstall": "chmod +x node_modules/.bin/vite"
+    "postinstall": "chmod +x node_modules/.bin/vite && chmod +x node_modules/@esbuild/linux-x64/bin/esbuild || true"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
