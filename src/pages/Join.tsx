@@ -61,7 +61,7 @@ const Join = () => {
       <main className="flex-grow pt-20">
         <section className="relative h-80 overflow-hidden">
           <img 
-            src="/alpha-studio/osos/covv.png" 
+            src="/alpha-studio/osos/Untitled design.png" 
             alt="Join Alpha Studio" 
             className="w-full h-full object-cover object-center"
           />

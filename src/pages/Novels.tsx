@@ -300,7 +300,7 @@ const Novels = () => {
             className="absolute inset-0"
           >
             <img 
-              src="/alpha-studio/osos/ab726374-8444-461e-82bf-ce7b109f2a78.png" 
+              src="/alpha-studio/Home/Novels.png" 
               alt="Alpha Studio Novels" 
               className="w-full h-full object-cover object-center"
             />

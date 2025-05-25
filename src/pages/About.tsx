@@ -23,7 +23,7 @@ const About = () => {
           className="relative h-[90vh] overflow-hidden"
         >
           <img 
-            src="/osos/911f1d9f-f81b-4704-a4c4-e8b355d68276.png" 
+            src="/alpha-studio/osos/vocc.png" 
             alt="Alpha Studio" 
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
           />
@@ -36,7 +36,7 @@ const About = () => {
           >
             <div className="text-center">
               <h1 className="alpha-title text-5xl md:text-7xl mb-6 font-bold tracking-tight">
-                {language === 'en' ? 'About Alpha Studio' : 'عن ألفا ستوديو'}
+                {language === 'en' ? 'About Alpha Studio' : ' عن ألـفا سـتوديو'}
               </h1>
               <p className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto px-4 leading-relaxed">
                 {language === 'en' 

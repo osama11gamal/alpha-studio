@@ -73,7 +73,7 @@ const Contact = () => {
           className="relative h-[90vh] overflow-hidden"
         >
           <img 
-            src="/alpha-studio/osos/covv.png" 
+            src="/alpha-studio/osos/vocc.png" 
             alt="Contact Alpha Studio" 
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
           />
@@ -152,7 +152,7 @@ const Contact = () => {
                           href="tel:+201016785566" 
                           className="text-alpha-blue hover:text-alpha-blue-light transition-colors"
                         >
-                          +20 10 1678 5566
+                          🇪🇬 +20 10 1678 5566
                         </a>
                       </div>
                     </motion.div>
