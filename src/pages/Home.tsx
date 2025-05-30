@@ -67,24 +67,24 @@ const Home = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8, type: 'spring', bounce: 0.4 }}
-            className="absolute bottom-12 left-12 z-10 max-w-xl w-full"
+            className="absolute left-2 bottom-20 sm:left-12 sm:bottom-12 z-10 w-[95vw] max-w-xl px-2 sm:w-full sm:px-0"
             whileHover={{ scale: 1.03, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)' }}
           >
-            <div className="bg-white/10 backdrop-blur-2xl border border-alpha-gold/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-2xl p-10 text-right md:text-left animate__animated animate__fadeInLeft glassmorphism-glow">
-              <h1 className="alpha-title text-5xl md:text-7xl mb-4 font-bold tracking-tight animate__animated animate__fadeInDown">
+            <div className="bg-white/10 backdrop-blur-2xl border border-alpha-gold/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-2xl p-4 sm:p-10 text-right md:text-left animate__animated animate__fadeInLeft glassmorphism-glow">
+              <h1 className="alpha-title text-3xl sm:text-5xl md:text-7xl mb-2 sm:mb-4 font-bold tracking-tight animate__animated animate__fadeInDown">
                 {language === 'en' ? 'Alpha Studio' : 'ألفا ستوديو'}
               </h1>
-              <h2 className="text-2xl md:text-4xl font-display mb-4 text-alpha-gold animate__animated animate__fadeInUp animate__delay-1s">
+              <h2 className="text-lg sm:text-2xl md:text-4xl font-display mb-2 sm:mb-4 text-alpha-gold animate__animated animate__fadeInUp animate__delay-1s">
                 {language === 'en' ? 'Where History Meets Fiction' : 'حيث يلتقي التاريخ بالخيال'}
               </h2>
-              <p className="text-lg md:text-2xl text-gray-200 mb-8 max-w-2xl animate__animated animate__fadeIn animate__delay-2s">
+              <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-4 sm:mb-8 max-w-2xl animate__animated animate__fadeIn animate__delay-2s">
                 {language === 'en' 
                   ? 'Discover our world of creative storytelling and immersive experiences'
                   : 'اكتشف عالمنا من القصص الإبداعية والتجارب الغامرة'}
               </p>
               <a 
                 href="#novels" 
-                className="inline-block bg-alpha-gold text-alpha-darker px-8 py-4 rounded-full text-xl font-bold hover:bg-alpha-gold/90 transition-colors duration-300 shadow-lg animate__animated animate__pulse animate__delay-3s hover:scale-105 active:scale-95 focus:ring-4 focus:ring-alpha-gold/40"
+                className="inline-block bg-alpha-gold text-alpha-darker px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-xl font-bold hover:bg-alpha-gold/90 transition-colors duration-300 shadow-lg animate__animated animate__pulse animate__delay-3s hover:scale-105 active:scale-95 focus:ring-4 focus:ring-alpha-gold/40"
               >
                 {language === 'en' ? 'Explore Our Works' : 'استكشف أعمالنا'}
               </a>
@@ -106,72 +106,6 @@ const Home = () => {
             <span className="block w-1 h-6 mx-auto mt-1 bg-alpha-gold/60 rounded-full animate-pulse"></span>
           </motion.button>
         </motion.section>
-
-        {/* Available Novels Section */}
-        <section className="py-20 bg-alpha-darker/90 relative z-20 scroll-section" id="novels" style={{marginTop: 0}}>
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-alpha-gold mb-10 text-center animate__animated animate__fadeInDown animate__delay-1s">
-              {language === 'ar' ? 'الروايات المتاحة' : 'Available Novels'}
-            </h2>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-              {/* Product Card */}
-              <motion.div
-                initial={{ x: -60, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}
-                className="w-full md:w-1/3 flex-shrink-0 animate__animated animate__fadeInUp animate__delay-2s"
-                whileHover={{ scale: 1.04, rotate: -2, boxShadow: '0 8px 32px 0 rgba(255, 215, 0, 0.15)' }}
-              >
-                <div className="bg-white/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-alpha-gold/30 p-4 md:p-6 flex flex-col items-center hover:shadow-yellow-200/40 transition-shadow duration-300 glassmorphism-glow relative overflow-hidden">
-                  <img 
-                    src="/alpha-studio/Novels/The Blue Wolf .jpg" 
-                    alt={language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'} 
-                    className="rounded-xl shadow-xl w-full object-cover aspect-[3/4] border border-alpha-gold/30 mb-4 animate__animated animate__zoomIn hover:scale-105 transition-transform duration-500 will-change-transform"
-                    loading="lazy"
-                    onError={e => e.currentTarget.src = '/placeholder.png'}
-                    style={{ boxShadow: '0 4px 32px 0 rgba(31,38,135,0.18)', filter: 'brightness(0.98) contrast(1.05)' }}
-                  />
-                  <div className="absolute top-0 left-0 w-full h-1/3 pointer-events-none" style={{background: 'linear-gradient(120deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0.04) 100%)', mixBlendMode: 'screen'}}></div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-alpha-darker mb-1 text-center">
-                    {language === 'ar' ? 'الذئب الأزرق' : 'The Blue Wolf'}
-                  </h3>
-                  <div className="italic text-alpha-gold mb-2 text-center text-base md:text-lg">
-                    {language === 'ar' ? 'مستقبل غامض' : 'A Vague Future'}
-                  </div>
-                  {/* Star Rating */}
-                  <div className="flex items-center justify-center mb-2">
-                    <span className="text-yellow-400 text-xl mr-2 font-bold">4.8</span>
-                    <span className="flex text-yellow-400 text-lg">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className={`w-5 h-5 ${i < 4 ? 'fill-yellow-400' : 'fill-yellow-200'}`} viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.9,17.8 9.9,14.8 14.9,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-                      ))}
-                    </span>
-                    <span className="text-gray-400 text-sm ml-2">{language === 'ar' ? '(١٬٢٠٠ تقييم)' : '(1,200 ratings)'}</span>
-                  </div>
-                  <p className="text-gray-700 text-base md:text-lg mb-3 text-center">
-                    {language === 'ar' 
-                      ? 'تابع رحلة بطل يبحث عن العدالة في عالم من الفوضى والخداع.'
-                      : 'Follow the journey of a hero seeking justice in a world of chaos and deception.'}
-                  </p>
-                  <div className="text-gray-500 text-sm mb-2 text-center">
-                    {language === 'ar' ? 'بقلم عمر دهيم' : 'By Omar Duhaim'}
-                  </div>
-                  <div className="flex items-center gap-3 mb-4 justify-center">
-                    <span className="text-green-500 font-bold text-base md:text-lg">{language === 'ar' ? 'متاح الآن' : 'Available Now'}</span>
-                    <span className="text-blue-500 font-bold text-lg md:text-2xl animate__animated animate__heartBeat animate__infinite">{language === 'ar' ? 'مجاناً' : 'FREE'}</span>
-                  </div>
-                  <Link 
-                    to="/blue-wolf"
-                    className="btn-primary px-8 py-3 rounded-lg text-base font-bold hover:scale-105 transition-transform duration-300 inline-block w-full text-center animate__animated animate__pulse animate__delay-3s"
-                  >
-                    {language === 'ar' ? 'تفاصيل الرواية / شراء' : 'View Details / Buy Now'}
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
         {/* Features Section */}
         <section className="py-24 bg-alpha-darker relative">
