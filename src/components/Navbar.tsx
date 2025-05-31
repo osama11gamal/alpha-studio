@@ -9,133 +9,99 @@ const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-4 bg-alpha-darker/80 backdrop-blur-md rounded-b-2xl shadow-lg">
-      <div className="container mx-auto px-4 flex justify-between items-center relative">
-        <div className="alpha-logo font-bold text-2xl text-white drop-shadow-lg">
-          <Link to="/">
-            <span className="text-alpha-blue transition-colors duration-300">ALPHA</span> STUDIO
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-alpha-darker/90 backdrop-blur-xl border-b border-alpha-gold/10 shadow-[0_2px_16px_0_rgba(0,0,0,0.12)]">
+      <div className="container mx-auto px-4 flex justify-between items-center h-20">
+        {/* Logo - Modern, Clean, No Harsh Glow */}
+        <div className="alpha-logo font-extrabold text-2xl md:text-3xl tracking-widest select-none">
+          <Link to="/" className="flex items-center gap-2 group">
+            <span className="text-white group-hover:text-alpha-gold transition-colors duration-300" style={{letterSpacing: '0.13em', fontFamily: 'var(--font-sans, Inter, sans-serif)', textShadow: '0 1px 8px rgba(255,255,255,0.07)'}}>
+              ALPHA
+            </span>
+            <span className="text-alpha-gold group-hover:text-white transition-colors duration-300" style={{letterSpacing: '0.08em', fontFamily: 'var(--font-sans, Inter, sans-serif)'}}>
+              STUDIO
+            </span>
           </Link>
         </div>
-
-        {/* Desktop Menu */}
-        <div className={`hidden md:flex items-center space-x-6 ${language === 'ar' ? 'rtl-space-x-6' : ''}`}>
-          <Link to="/" className="text-white hover:text-alpha-blue transition-colors" onClick={(e) => {
-            e.preventDefault();
-            window.location.href = '/alpha-studio/';
-          }}>
-            {language === 'en' ? 'Home' : 'الصفحة الرئيسية'}
-          </Link>
-          <Link to="/works" className={`text-white hover:text-alpha-blue transition-colors ${language === 'ar' ? 'mr-6' : ''}`}>
-            {language === 'en' ? 'Our Works' : 'أعمالنا'}
-          </Link>
-          <Link to="/novels" className={`text-white hover:text-alpha-blue transition-colors ${language === 'ar' ? 'mr-6' : ''}`}>
-            {language === 'en' ? 'Novels' : 'الروايات'}
-          </Link>
-          <Link to="/about" className={`text-white hover:text-alpha-blue transition-colors ${language === 'ar' ? 'mr-6' : ''}`}>
-            {language === 'en' ? 'About Us' : 'من نحن'}
-          </Link>
-          <Link to="/join" className={`text-white hover:text-alpha-blue transition-colors ${language === 'ar' ? 'mr-6' : ''}`}>
-            {language === 'en' ? 'Join the Family' : 'انضم إلينا'}
-          </Link>
-          <Link to="/contact" className={`text-white hover:text-alpha-blue transition-colors ${language === 'ar' ? 'mr-6' : ''}`}>
-            {language === 'en' ? 'Contact' : 'تواصل معنا'}
-          </Link>
-          <button 
+        {/* Desktop Navigation */}
+        <div className={cn(
+          'hidden md:flex items-center gap-2 lg:gap-6',
+          language === 'ar' && 'rtl-space-x-6'
+        )}>
+          <NavLink to="/" label={language === 'en' ? 'Home' : 'الصفحة الرئيسية'} />
+          <NavLink to="/works" label={language === 'en' ? 'Our Works' : 'أعمالنا'} />
+          <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} />
+          <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} />
+          <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} />
+          <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'تواصل معنا'} />
+          <button
             onClick={toggleLanguage}
-            className="bg-alpha-charcoal text-alpha-gold px-3 py-1 rounded-lg shadow-md hover:bg-alpha-indigo transition-all duration-300 flex items-center border border-alpha-gold/30 hover:scale-105"
+            className="ml-4 flex items-center gap-1 px-3 py-1.5 rounded-full border border-alpha-gold/30 bg-alpha-charcoal/80 text-alpha-gold font-semibold shadow-sm hover:bg-alpha-gold/90 hover:text-alpha-darker transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
+            aria-label={language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
+            style={{fontFamily: 'var(--font-sans, Inter, sans-serif)', fontWeight: 700, letterSpacing: '0.04em'}}
           >
-            <Globe className="w-4 h-4 mr-1" />
-            {language === 'en' ? 'العربية' : 'English'}
+            <Globe className="w-4 h-4 mr-1 opacity-80" />
+            <span className="text-sm font-bold tracking-wide">
+              {language === 'en' ? 'العربية' : 'English'}
+            </span>
           </button>
         </div>
-
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-white hover:text-alpha-blue transition-colors"
+          className="md:hidden text-alpha-gold hover:text-white transition-colors p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
+          aria-label="Toggle menu"
         >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMenuOpen ? (
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M6 18L18 6M6 6l12 12" 
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M4 6h16M4 12h16M4 18h16" 
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
-
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-alpha-darker/95 backdrop-blur-md p-6 rounded-b-2xl shadow-lg md:hidden">
+          <div className="absolute top-full left-0 right-0 bg-alpha-darker/98 backdrop-blur-xl p-6 rounded-b-2xl shadow-2xl md:hidden border-b border-alpha-gold/10 animate-fade-in">
             <div className="flex flex-col items-center space-y-6 w-full">
-              <Link 
-                to="/" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              <NavLink to="/" label={language === 'en' ? 'Home' : 'الصفحة الرئيسية'} onClick={() => setIsMenuOpen(false)} />
+              <NavLink to="/works" label={language === 'en' ? 'Our Works' : 'أعمالنا'} onClick={() => setIsMenuOpen(false)} />
+              <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} onClick={() => setIsMenuOpen(false)} />
+              <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} onClick={() => setIsMenuOpen(false)} />
+              <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} onClick={() => setIsMenuOpen(false)} />
+              <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'تواصل معنا'} onClick={() => setIsMenuOpen(false)} />
+              <button
+                onClick={() => { toggleLanguage(); setIsMenuOpen(false); }}
+                className="flex items-center gap-1 px-4 py-2 rounded-full border border-alpha-gold/30 bg-alpha-charcoal/80 text-alpha-gold font-semibold shadow-sm hover:bg-alpha-gold/90 hover:text-alpha-darker transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
+                aria-label={language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
+                style={{fontFamily: 'var(--font-sans, Inter, sans-serif)', fontWeight: 700, letterSpacing: '0.04em'}}
               >
-                {language === 'en' ? 'Home' : 'الصفحة الرئيسية'}
-              </Link>
-              <Link 
-                to="/works" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {language === 'en' ? 'Our Works' : 'أعمالنا'}
-              </Link>
-              <Link 
-                to="/novels" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {language === 'en' ? 'Novels' : 'الروايات'}
-              </Link>
-              <Link 
-                to="/about" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {language === 'en' ? 'About Us' : 'من نحن'}
-              </Link>
-              <Link 
-                to="/join" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {language === 'en' ? 'Join the Family' : 'انضم إلينا'}
-              </Link>
-              <Link 
-                to="/contact" 
-                className="text-xl text-white hover:text-alpha-blue transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {language === 'en' ? 'Contact' : 'تواصل معنا'}
-              </Link>
-              <button 
-                onClick={toggleLanguage}
-                className="bg-alpha-charcoal text-alpha-gold px-4 py-2 rounded-lg shadow-md hover:bg-alpha-indigo transition-all duration-300 flex items-center border border-alpha-gold/30"
-              >
-                <Globe className="w-4 h-4 mr-2" />
-                {language === 'en' ? 'العربية' : 'English'}
+                <Globe className="w-4 h-4 mr-2 opacity-80" />
+                <span className="text-sm font-bold tracking-wide">
+                  {language === 'en' ? 'العربية' : 'English'}
+                </span>
               </button>
             </div>
           </div>
         )}
       </div>
+      {/* Subtle Divider */}
+      <div className="w-full h-[1.5px] bg-gradient-to-r from-transparent via-alpha-gold/30 to-transparent mt-2 opacity-80" />
     </nav>
+  );
+};
+
+// Custom NavLink for consistent style and active/hover effects
+const NavLink = ({ to, label, onClick }: { to: string; label: string; onClick?: () => void }) => {
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className="relative px-3 py-1.5 text-base font-semibold tracking-wide text-white transition-all duration-200 hover:text-alpha-gold focus:text-alpha-gold focus:outline-none group"
+      style={{fontFamily: 'var(--font-sans, Inter, sans-serif)', fontWeight: 600, letterSpacing: '0.04em'}}
+    >
+      <span className="z-10 relative">{label}</span>
+      <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 group-hover:w-4/5 group-focus:w-4/5 h-[2px] bg-alpha-gold transition-all duration-300 rounded-full" />
+    </Link>
   );
 };
 

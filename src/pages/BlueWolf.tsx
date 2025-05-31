@@ -31,7 +31,7 @@ const BlueWolf = () => {
     <>
       <Helmet>
         <title>{language === 'ar' ? 'الذئب الأزرق | روايات ألفا ستوديو' : 'The Blue Wolf | Alpha Studio Novels'}</title>
-        <meta name="description" content={language === 'ar' ? 'اطلب رواية الذئب الأزرق – رواية خيال علمي قوية بقلم عمر دحيم. متوفرة رقمياً مجاناً أو بنسخة مطبوعة فاخرة.' : 'Order The Blue Wolf – a powerful sci-fi novel by Omar Duhaim. Available digitally for free or in a premium printed edition.'} />
+        <meta name="description" content={language === 'ar' ? 'اطلب رواية الذئب الأزرق – رواية خيال علمي قوية بقلم عمر دهيم. متوفرة رقمياً مجاناً أو بنسخة مطبوعة فاخرة.' : 'Order The Blue Wolf – a powerful sci-fi novel by Omar Duhaim. Available digitally for free or in a premium printed edition.'} />
       </Helmet>
       <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
         <Navbar />
@@ -108,7 +108,7 @@ const BlueWolf = () => {
                     <span className="text-2xl font-bold text-alpha-gold">{language === 'ar' ? '١٤٩ جنيه' : '149 EGP'}</span>
                   </div>
                   <Link to="/purchase/printed" className="btn-primary w-full text-center py-3 rounded-lg block mb-2">{language === 'ar' ? 'احجز النسخة المطبوعة' : '📦 Pre-order Printed Edition'}</Link>
-                  <div className="text-xs text-gray-400 mt-1">{language === 'ar' ? 'التوصيل خلال ٢-٤ أسابيع. نسخ موقعة محدودة!' : 'Estimated delivery in 2-4 weeks. Limited signed copies available!'}</div>
+                  <div className="text-xs text-gray-400 mt-1">{language === 'ar' ? 'التوصيل خلال ٢-٤ أيام عمل. نسخ موقعة محدودة!' : 'Estimated delivery in 2-4 weeks. Limited signed copies available!'}</div>
                 </div>
               )}
             </div>

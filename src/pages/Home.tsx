@@ -107,6 +107,112 @@ const Home = () => {
           </motion.button>
         </motion.section>
 
+        {/* Novels Preview Section */}
+        <section id="novels" className="py-24 bg-alpha-darker/80 relative overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.h2
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-center mb-16 text-alpha-gold"
+            >
+              {language === 'en' ? 'Alpha Studio Novels' : 'روايات ألفا ستوديو'}
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+              {/* The Blue Wolf (Available) */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="bg-alpha-charcoal/80 rounded-2xl shadow-xl flex flex-col overflow-hidden border border-alpha-gold/20 hover:border-alpha-gold/40 hover:scale-105 transition-all duration-300"
+              >
+                <img
+                  src="/alpha-studio/Novels/The Blue Wolf .jpg"
+                  alt={language === 'en' ? 'The Blue Wolf' : 'الذئب الأزرق'}
+                  className="w-full h-64 object-cover object-center"
+                />
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 text-white">{language === 'en' ? 'The Blue Wolf' : 'الذئب الأزرق'}</h3>
+                    <p className="text-alpha-gold text-sm mb-1">{language === 'en' ? 'Omar Duhaim' : 'عمر دهيم'}</p>
+                    <p className="text-gray-300 text-base mb-3">{language === 'en' ? 'A hero seeking justice in a world of chaos.' : 'بطل يبحث عن العدالة في عالم من الفوضى.'}</p>
+                  </div>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <span className="inline-block text-green-500 font-bold text-lg">{language === 'en' ? 'Available Now' : 'متوفرة الآن'}</span>
+                    <span className="inline-block text-blue-500 font-bold text-md">{language === 'en' ? 'FREE' : 'مجاناً'}</span>
+                    <Link
+                      to="/blue-wolf"
+                      className="btn-primary text-sm px-6 py-2 rounded-lg bg-alpha-gold text-alpha-darker font-bold hover:bg-alpha-gold/90 transition-colors duration-300 w-full text-center mt-2"
+                    >
+                      {language === 'en' ? 'Buy Now' : 'اشتري الآن'}
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+              {/* The Curse of King Samagar (Coming Soon) */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="bg-alpha-charcoal/80 rounded-2xl shadow-xl flex flex-col overflow-hidden border border-alpha-gold/20 hover:border-alpha-gold/40 hover:scale-105 transition-all duration-300"
+              >
+                <img
+                  src="/alpha-studio/Novels/The Curse of King Samagar .png"
+                  alt={language === 'en' ? 'The Curse of King Samagar' : 'لعنة الملك ساماغار'}
+                  className="w-full h-64 object-cover object-center"
+                />
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 text-white">{language === 'en' ? 'The Curse of King Samagar' : 'لعنة الملك ساماغار'}</h3>
+                    <p className="text-alpha-gold text-sm mb-1">{language === 'en' ? 'Omar Duhaim' : 'عمر دهيم'}</p>
+                    <p className="text-gray-300 text-base mb-3">{language === 'en' ? 'A cursed king battles the devil.' : 'ملك ملعون يحارب الشيطان.'}</p>
+                  </div>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <span className="inline-block text-red-500 font-bold text-lg">{language === 'en' ? 'Coming Soon' : 'قريبًا'}</span>
+                    <span className="inline-block text-alpha-gold font-semibold text-md">{language === 'en' ? 'October 2025' : 'أكتوبر 2025'}</span>
+                  </div>
+                </div>
+              </motion.div>
+              {/* Boss Heist (Coming Soon) */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="bg-alpha-charcoal/80 rounded-2xl shadow-xl flex flex-col overflow-hidden border border-alpha-gold/20 hover:border-alpha-gold/40 hover:scale-105 transition-all duration-300"
+              >
+                <img
+                  src="/alpha-studio/Novels/Boss Heist .png"
+                  alt={language === 'en' ? 'Boss Heist' : 'سرقة البوس'}
+                  className="w-full h-64 object-cover object-center"
+                />
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 text-white">{language === 'en' ? 'Boss Heist' : 'سرقة البوس'}</h3>
+                    <p className="text-alpha-gold text-sm mb-1">{language === 'en' ? 'Omar Duhaim' : 'عمر دهيم'}</p>
+                    <p className="text-gray-300 text-base mb-3">{language === 'en' ? 'A man emerges from the fog to unveil his destiny.' : 'رجل يخرج من الضباب ليكشف مصيره.'}</p>
+                  </div>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <span className="inline-block text-red-500 font-bold text-lg">{language === 'en' ? 'Coming Soon' : 'قريبًا'}</span>
+                    <span className="inline-block text-alpha-gold font-semibold text-md">{language === 'en' ? '2026' : '2026'}</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            <div className="flex justify-center mt-8">
+              <Link
+                to="/novels"
+                className="inline-block bg-alpha-gold text-alpha-darker px-8 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-alpha-gold/90 transition-colors duration-300 hover:scale-105 active:scale-95 focus:ring-4 focus:ring-alpha-gold/40"
+              >
+                {language === 'en' ? 'Browse All Novels' : 'استعراض كل الروايات'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-24 bg-alpha-darker relative">
           <div className="container mx-auto px-4">

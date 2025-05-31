@@ -16,18 +16,21 @@ const About = () => {
       <Navbar />
       
       <main className="flex-grow pt-20">
-        <motion.section 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative h-[90vh] overflow-hidden"
-        >
-          <img 
-            src="/alpha-studio/osos/vocc.png" 
-            alt="Alpha Studio" 
-            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
+        {/* Hero Section */}
+        <section className="relative h-[90vh] overflow-hidden">
+          <motion.div 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0"
+          >
+            <img 
+              src="/alpha-studio/osos/vocc.png" 
+              alt="Alpha Studio" 
+              className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-alpha-darker via-alpha-darker/60 to-transparent"></div>
+          </motion.div>
           <motion.div 
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -45,7 +48,7 @@ const About = () => {
               </p>
             </div>
           </motion.div>
-        </motion.section>
+        </section>
         
         <section className="py-24 bg-alpha-darker relative">
           <div className="absolute inset-0">
