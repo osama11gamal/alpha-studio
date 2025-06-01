@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 type LanguageContextType = {
@@ -9,12 +8,13 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<'en' | 'ar'>('en');
+  // اللغة الافتراضية: العربية
+  const [language, setLanguage] = useState<'en' | 'ar'>('ar');
 
   // Initialize document direction on component mount
   useEffect(() => {
     updateDocumentDirection(language);
-  }, []);
+  }, [language]);
 
   const updateDocumentDirection = (lang: 'en' | 'ar') => {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
