@@ -218,14 +218,14 @@
 
   /* --- مكونات الطابع العربي/الإسلامي (بدون صور خارجية) --- */
   .subtle-geometric-overlay {
-    @apply absolute inset-0 w-full h-full z-0 opacity-5 pointer-events-none; /* الشفافية الافتراضية */
+    @apply absolute inset-0 w-full h-full z-0 opacity-5 pointer-events-none;
     background-image: 
       repeating-linear-gradient(
         45deg,
-        rgba(var(--alpha-gold-rgb), 0.1), /* استخدام اللون الذهبي للنقش */
+        rgba(var(--alpha-gold-rgb), 0.1),
         rgba(var(--alpha-gold-rgb), 0.1) 1px,
         transparent 1px,
-        transparent 10px /* تعديل حجم الخطوط وتباعدها */
+        transparent 10px
       ),
       repeating-linear-gradient(
         -45deg,
@@ -234,23 +234,8 @@
         transparent 1px,
         transparent 10px
       );
-    background-size: 7px 7px; /* تعديل كثافة الشبكة */
+    background-size: 7px 7px;
     mix-blend-mode: overlay; 
-  }
-
-  .arabic-chars-overlay {
-    /* تم تغيير opacity-3 إلى opacity-5 وهو كلاس صالح في Tailwind */
-    @apply absolute inset-0 w-full h-full z-0 opacity-5 pointer-events-none overflow-hidden;
-  }
-  .arabic-chars-overlay::before {
-    content: "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩";
-    @apply absolute inset-0 text-alpha-gold text-[180px] leading-none whitespace-nowrap opacity-10;
-    animation: scroll-chars 150s linear infinite;
-  }
-
-  @keyframes scroll-chars {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); } 
   }
 
   .btn-arabic-primary {
