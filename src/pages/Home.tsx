@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 // import Footer from '../components/Footer';
 
 // --- مكون زخرفة عربية عصرية: حروف ذهبية + أيقونات هندسية متداخلة متحركة ---
-const ModernHeritageBackground = () => {
+const ModernHeritageBackground = ({ density = 'normal' }: { density?: 'normal' | 'dense-bottom' }) => {
   // حروف عربية مختارة للزخرفة
   const chars = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن هـ و ي".replace(/ /g, "");
   // أيقونات هندسية (نجمة، دائرة، مربع، إلخ)
@@ -19,11 +19,22 @@ const ModernHeritageBackground = () => {
   // توزيع الحروف والأيقونات بشكل عصري متداخل
   const elements = useMemo(() => {
     const arr = [];
-    for (let i = 0; i < 18; i++) {
-      const angle = (i / 18) * 2 * Math.PI;
-      const radius = 32 + Math.random() * 22;
-      const centerX = 50 + Math.cos(angle) * radius + (Math.random() - 0.5) * 8;
-      const centerY = 50 + Math.sin(angle) * radius + (Math.random() - 0.5) * 8;
+    // توزيع مكثف للحروف في الأسفل إذا كان density = 'dense-bottom'
+    const count = density === 'dense-bottom' ? 36 : 18;
+    for (let i = 0; i < count; i++) {
+      let angle, radius, centerX, centerY;
+      if (density === 'dense-bottom') {
+        // توزيع الحروف في النصف السفلي مع عشوائية طفيفة
+        angle = Math.PI + (i / count) * Math.PI + (Math.random() - 0.5) * 0.18;
+        radius = 38 + Math.random() * 22;
+        centerX = 50 + Math.cos(angle) * radius + (Math.random() - 0.5) * 10;
+        centerY = 70 + Math.abs(Math.sin(angle)) * 25 + (Math.random() - 0.2) * 8;
+      } else {
+        angle = (i / 18) * 2 * Math.PI;
+        radius = 32 + Math.random() * 22;
+        centerX = 50 + Math.cos(angle) * radius + (Math.random() - 0.5) * 8;
+        centerY = 50 + Math.sin(angle) * radius + (Math.random() - 0.5) * 8;
+      }
       arr.push({
         type: 'char',
         id: 'c' + i,
@@ -87,7 +98,7 @@ const ModernHeritageBackground = () => {
       });
     }
     return arr;
-  }, [chars]);
+  }, [chars, density]);
   return (
     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden select-none" aria-hidden="true">
       {elements.map(item =>
@@ -196,8 +207,12 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-alpha-darker relative overflow-x-hidden">
-      {/* --- زخرفة عربية عصرية: حروف ذهبية وأيقونات هندسية متداخلة متحركة --- */}
+      {/* زخرفة علوية عادية */}
       <ModernHeritageBackground />
+      {/* زخرفة مكثفة في الأسفل */}
+      <div className="pointer-events-none select-none" style={{position:'fixed',left:0,right:0,bottom:0,zIndex:1,height:'38vh',width:'100vw',pointerEvents:'none'}}>
+        <ModernHeritageBackground density="dense-bottom" />
+      </div>
 
       <Navbar />
       
