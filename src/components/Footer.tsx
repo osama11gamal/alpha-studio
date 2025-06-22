@@ -48,12 +48,12 @@ const Footer = () => {
               <svg className="w-5 h-5 text-alpha-gold" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,2 18,10 10,18 2,10"/></svg>
               {language === 'en' ? 'Navigation' : 'التنقل'}
             </h3>
-            <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Home' : 'الصفحة الرئيسية'}</Link></li>
-              <li><Link to="/works" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Our Works' : 'أعمالنا'}</Link></li>
+            <ul className="space-y-4">
+              <li><Link to="/" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Home' : 'الرئيسية'}</Link></li>
+              <li><Link to="/novels" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Novels' : 'الروايات'}</Link></li>
               <li><Link to="/about" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'About Us' : 'من نحن'}</Link></li>
               <li><Link to="/join-our-family" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Careers' : 'انضم إلينا'}</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Contact' : 'تواصل معنا'}</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-alpha-gold transition-colors font-sans border-b-2 border-transparent hover:border-alpha-gold pb-1 focus:outline-none focus:text-alpha-gold focus:border-alpha-gold">{language === 'en' ? 'Contact' : 'اتصل بنا'}</Link></li>
             </ul>
           </div>
 

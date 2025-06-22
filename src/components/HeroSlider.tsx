@@ -19,7 +19,7 @@ const slides = [
     descriptionAr: 'شاهد رؤيتنا السينمائية في الحركة.',
     releaseDate: '',
     releaseDateAr: '',
-    link: '/works',
+    link: '/alpha-studio/works',
   }
 ];
 

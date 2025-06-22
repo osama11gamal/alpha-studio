@@ -30,15 +30,13 @@ const Navbar = () => {
         {/* ... Desktop Navigation ... */}
         <div className={cn(
           'hidden md:flex items-center gap-2 lg:gap-6',
-          language === 'ar' && 'rtl-space-x-6' // See note below about this
+          language === 'ar' && 'rtl-space-x-6'
         )}>
-          {/* ... NavLinks and Language Button ... */}
-          <NavLink to="/" label={language === 'en' ? 'Home' : 'الصفحة الرئيسية'} />
-          <NavLink to="/works" label={language === 'en' ? 'Our Works' : 'أعمالنا'} />
+          <NavLink to="/" label={language === 'en' ? 'Home' : 'الرئيسية'} />
           <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} />
           <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} />
           <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} />
-          <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'تواصل معنا'} />
+          <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'اتصل بنا'} />
           <button
             onClick={toggleLanguage}
             className="ml-4 flex items-center gap-1 px-3 py-1.5 rounded-full border border-alpha-gold/30 bg-alpha-charcoal/80 text-alpha-gold font-semibold shadow-sm hover:bg-alpha-gold/90 hover:text-alpha-darker transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
@@ -70,24 +68,23 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
-            id={mobileMenuId} // <-- ADDED
-            className="absolute top-full left-0 right-0 bg-alpha-darker/98 backdrop-blur-xl p-6 rounded-b-2xl shadow-2xl md:hidden border-b border-alpha-gold/10 animate-fade-in"
-            role="menu" // <-- Optional: Enhances semantics
+            id={mobileMenuId}
+            className="absolute top-full left-0 right-0 z-50 bg-alpha-darker/95 backdrop-blur-md border-t border-alpha-gold/20 rounded-b-2xl shadow-[0_8px_30px_rgba(255,215,0,0.15)] drop-shadow-lg ring-1 ring-alpha-gold/10 animate-fade-in md:hidden"
+            role="menu"
           >
-            <div className="flex flex-col items-center space-y-6 w-full">
-              {/* Add role="menuitem" to NavLinks if role="menu" is on parent */}
-              <NavLink to="/" label={language === 'en' ? 'Home' : 'الصفحة الرئيسية'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
-              <NavLink to="/works" label={language === 'en' ? 'Our Works' : 'أعمالنا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
+            <div className="flex flex-col items-center space-y-6 w-full p-6">
+              <NavLink to="/" label={language === 'en' ? 'Home' : 'الرئيسية'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
-              <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'تواصل معنا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
-              <div role="menuitem"> {/* Wrap button for correct role if menu has roles */}
+              <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'اتصل بنا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
+
+              <div role="menuitem">
                 <button
                   onClick={() => { toggleLanguage(); setIsMenuOpen(false); }}
-                  className="flex items-center gap-1 px-4 py-2 rounded-full border border-alpha-gold/30 bg-alpha-charcoal/80 text-alpha-gold font-semibold shadow-sm hover:bg-alpha-gold/90 hover:text-alpha-darker transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
+                  className="flex items-center gap-1 px-4 py-2 rounded-full border border-alpha-gold/30 bg-alpha-charcoal/80 text-alpha-gold font-semibold shadow-md hover:bg-alpha-gold/90 hover:text-alpha-darker transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-alpha-gold/40"
                   aria-label={language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
-                  style={{fontFamily: 'var(--font-sans, Inter, sans-serif)', fontWeight: 700, letterSpacing: '0.04em'}}
+                  style={{ fontFamily: 'var(--font-sans, Inter, sans-serif)', fontWeight: 700, letterSpacing: '0.04em' }}
                 >
                   <Globe className="w-4 h-4 mr-2 opacity-80" />
                   <span className="text-sm font-bold tracking-wide">

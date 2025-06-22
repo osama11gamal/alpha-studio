@@ -81,6 +81,18 @@ const featuredNovels = [
 const characters = [
 	{
 		id: 1,
+		name: 'Shihab',
+		nameAr: 'شهاب',
+		novel: 'The Forest of Humans',
+		novelAr: 'غابة البشر',
+		saga: 'A Vague Future',
+		sagaAr: 'مستقبل غامض',
+		description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
+		descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
+		image: '/alpha-studio/Characters/Shihab .png',
+	},
+	{
+		id: 7,
 		name: 'Raven',
 		nameAr: 'رافن',
 		novel: 'Raven: A Killer Angel',
@@ -148,21 +160,10 @@ const characters = [
 		saga: 'Armand Duval',
 		sagaAr: 'أرماند دوفال',
 		description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon.',
-		descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد.',
+		descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة.',
 		image: '/alpha-studio/Characters/Armand Duval.png',
 	},
-	{
-		id: 7,
-		name: 'Shihab',
-		nameAr: 'شهاب',
-		novel: 'The Forest of Humans',
-		novelAr: 'غابة البشر',
-		saga: 'A Vague Future',
-		sagaAr: 'مستقبل غامض',
-		description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
-		descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
-		image: '/alpha-studio/Characters/Shihab .png',
-	},
+	
 	{
 		id: 8,
 		name: 'Diego Delgado',
@@ -178,46 +179,7 @@ const characters = [
 ];
 
 const sagas = [
-	{
-		id: 1,
-		title: 'A Vague Future',
-		titleAr: 'مستقبل غامض',
-		description: 'A series of novels exploring the intersection of technology, humanity, and the unknown future that awaits us.',
-		descriptionAr: 'سلسلة من الروايات تستكشف تقاطع التكنولوجيا والإنسانية والمستقبل المجهول الذي ينتظرنا.',
-		image: '/alpha-studio/osos/Novels.png',
-		novels: ['The Blue Wolf', 'The Forest of Humans', 'Alpha Studio'],
-		novelsAr: ['الذئب الأزرق', 'غابة البشر', 'ألفا ستوديو'],
-	},
-	{
-		id: 2,
-		title: 'Mirrors of Civilizations',
-		titleAr: 'مرايا الحضارات',
-		description: 'A collection of stories that reflect the timeless struggles and triumphs of human civilization through different eras and cultures.',
-		descriptionAr: 'مجموعة من القصص تعكس الصراعات والانتصارات الخالدة للحضارة الإنسانية عبر عصور وثقافات مختلفة.',
-		image: '/alpha-studio/osos/Short Stories .png',
-		novels: ['The Curse of King Samagar'],
-		novelsAr: ['لعنة الملك ساماغار'],
-	},
-	{
-		id: 3,
-		title: 'Daggers and Destinies',
-		titleAr: 'الخناجر والأقدار',
-		description: 'Tales of intrigue, betrayal, and the complex web of fate that binds characters together in unexpected ways.',
-		descriptionAr: 'حكايات عن المؤامرات والخيانة وشبكة القدر المعقدة التي تربط الشخصيات بطرق غير متوقعة.',
-		image: '/alpha-studio/osos/Comic Books.png',
-		novels: ['Boss Heist'],
-		novelsAr: ['سرقة البوس'],
-	},
-	{
-		id: 4,
-		title: 'Armand Duval',
-		titleAr: 'أرماند دوفال',
-		description: 'The epic saga of Armand Duval, a nobleman turned pirate, and his quest for justice and redemption on the high seas.',
-		descriptionAr: 'ملحمة أرماند دوفال، النبيل الذي تحول إلى قرصان، وسعيه للعدالة والخلاص في أعالي البحار.',
-		image: '/alpha-studio/placeholder.png',
-		novels: ['Throne of the Seas'],
-		novelsAr: ['عرش البحار'],
-	},
+	
 ];
 
 const Novels = () => {
@@ -227,8 +189,12 @@ const Novels = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, []);
+
 	const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-		e.currentTarget.src = '/placeholder.png';
+		e.currentTarget.src = '/alpha-studio/placeholder.png';
 		e.currentTarget.onerror = null;
 	};
 
