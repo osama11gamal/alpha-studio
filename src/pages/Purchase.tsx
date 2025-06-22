@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { useLanguage } from '../contexts/LanguageContext';
-import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import Navbar from '../components/Navbar';
+import { Helmet } from 'react-helmet';
 
 const Purchase = () => {
-  const { type } = useParams();
-  const navigate = useNavigate();
   const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
@@ -15,42 +13,51 @@ const Purchase = () => {
     address: '',
     city: '',
     country: '',
-    notes: ''
+    quantity: '1'
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // هنا يمكنك إضافة منطق معالجة الطلب
-    const formEndpoint = type === 'digital' 
-      ? 'https://formspree.io/f/xpwdennp'
-      : 'https://formspree.io/f/xkgraeer';
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
-      const response = await fetch(formEndpoint, {
+      const response = await fetch('https://formspree.io/f/xkgraeer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
-          type: type === 'digital' ? 'Digital Edition' : 'Printed Edition',
-          product: 'The Blue Wolf'
+          product: 'The Blue Wolf - Printed Copy',
+          quantity: formData.quantity
         }),
       });
 
       if (response.ok) {
-        navigate('/success');
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          city: '',
+          country: '',
+          quantity: '1'
+        });
       } else {
-        throw new Error('Failed to submit form');
+        setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      // هنا يمكنك إضافة معالجة الأخطاء
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -59,147 +66,222 @@ const Purchase = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-alpha-darker to-black">
+    <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
+      <Helmet>
+        <title>{language === 'ar' ? 'طلب نسخة مطبوعة | روايات ألفا ستوديو' : 'Order Printed Copy | Alpha Studio Novels'}</title>
+        <meta name="description" content={language === 'ar' ? 'اطلب نسخة مطبوعة من رواية الذئب الأزرق' : 'Order a printed copy of The Blue Wolf'} />
+      </Helmet>
       <Navbar />
-      
-      <main className="pt-20 pb-12">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto"
-          >
-            <h1 className="alpha-title text-3xl md:text-4xl mb-8 text-center">
-              {language === 'en' 
-                ? `Purchase ${type === 'digital' ? 'Digital' : 'Printed'} Edition`
-                : `شراء النسخة ${type === 'digital' ? 'الرقمية' : 'المطبوعة'}`
-              }
+      <main className="flex-grow pt-20 bg-gradient-to-b from-alpha-darker to-black">
+        <section className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto bg-alpha-charcoal/60 rounded-xl p-8 shadow-2xl border border-alpha-gold/20 backdrop-blur-md">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+              {language === 'ar' ? 'طلب نسخة مطبوعة' : 'Order Printed Copy'}
             </h1>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  {language === 'en' ? 'Full Name' : 'الاسم الكامل'}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
-                />
+            {submitStatus === 'success' ? (
+              <div className="bg-green-500/20 border border-green-500 rounded-lg p-6 text-center">
+                <h2 className="text-2xl font-bold text-green-400 mb-2">
+                  {language === 'ar' ? 'تم استلام طلبك بنجاح!' : 'Order Received Successfully!'}
+                </h2>
+                <p className="text-gray-300">
+                  {language === 'ar' 
+                    ? 'سنقوم بالتواصل معك قريباً لتأكيد الطلب وتفاصيل الشحن.'
+                    : 'We will contact you soon to confirm your order and shipping details.'}
+                </p>
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  {language === 'en' ? 'Email' : 'البريد الإلكتروني'}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                  {language === 'en' ? 'Phone Number' : 'رقم الهاتف'}
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
-                />
-              </div>
-
-              {type === 'printed' && (
-                <>
-                  <div>
-                    <label htmlFor="address" className="block text-sm font-medium text-gray-300 mb-2">
-                      {language === 'en' ? 'Address' : 'العنوان'}
-                    </label>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      required
-                      value={formData.address}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
-                    />
+            ) : (
+              <div className="space-y-6">
+                <div className="flex flex-col items-center">
+                  <img 
+                    src="/alpha-studio/blue/first.png" 
+                    alt={language === 'ar' ? 'غلاف الذئب الأزرق' : 'The Blue Wolf Cover'} 
+                    className="w-48 h-auto rounded-lg shadow-xl mb-4"
+                  />
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-yellow-500 mb-2">
+                      {language === 'ar' ? '١٩٩ جنيه' : '199 EGP'}
+                    </h2>
+                    <p className="text-gray-400">
+                      {language === 'ar' ? 'شامل الشحن' : 'Including shipping'}
+                    </p>
                   </div>
+                </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gray-800/50 p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-white mb-4">
+                    {language === 'ar' ? 'مميزات النسخة المطبوعة' : 'Printed Edition Features'}
+                  </h3>
+                  <ul className="space-y-3 text-gray-300">
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-500">✓</span>
+                      {language === 'ar' ? 'نسخة موقعة من المؤلف' : 'Signed by the author'}
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-500">✓</span>
+                      {language === 'ar' ? 'غلاف فاخر' : 'Premium cover'}
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-500">✓</span>
+                      {language === 'ar' ? 'ورق عالي الجودة' : 'High-quality paper'}
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-500">✓</span>
+                      {language === 'ar' ? 'شحن سريع' : 'Fast shipping'}
+                    </li>
+                  </ul>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-gray-300 mb-2">
-                        {language === 'en' ? 'City' : 'المدينة'}
+                      <label className="block text-gray-300 mb-2" htmlFor="name">
+                        {language === 'ar' ? 'الاسم الكامل' : 'Full Name'}
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-300 mb-2" htmlFor="email">
+                        {language === 'ar' ? 'البريد الإلكتروني' : 'Email'}
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-300 mb-2" htmlFor="phone">
+                        {language === 'ar' ? 'رقم الهاتف' : 'Phone Number'}
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-300 mb-2" htmlFor="quantity">
+                        {language === 'ar' ? 'الكمية' : 'Quantity'}
+                      </label>
+                      <select
+                        id="quantity"
+                        name="quantity"
+                        value={formData.quantity}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
+                      >
+                        {[1, 2, 3, 4, 5].map(num => (
+                          <option key={num} value={num}>{num}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="md:col-span-2">
+                      <label className="block text-gray-300 mb-2" htmlFor="address">
+                        {language === 'ar' ? 'العنوان' : 'Address'}
+                      </label>
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-300 mb-2" htmlFor="city">
+                        {language === 'ar' ? 'المدينة' : 'City'}
                       </label>
                       <input
                         type="text"
                         id="city"
                         name="city"
-                        required
                         value={formData.city}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="country" className="block text-sm font-medium text-gray-300 mb-2">
-                        {language === 'en' ? 'Country' : 'الدولة'}
+                      <label className="block text-gray-300 mb-2" htmlFor="country">
+                        {language === 'ar' ? 'الدولة' : 'Country'}
                       </label>
                       <input
                         type="text"
                         id="country"
                         name="country"
-                        required
                         value={formData.country}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
+                        required
+                        className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-lg text-white focus:border-[#FFD700] focus:outline-none"
                       />
                     </div>
                   </div>
-                </>
-              )}
 
-              <div>
-                <label htmlFor="notes" className="block text-sm font-medium text-gray-300 mb-2">
-                  {language === 'en' ? 'Additional Notes' : 'ملاحظات إضافية'}
-                </label>
-                <textarea
-                  id="notes"
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 bg-alpha-charcoal/50 border border-alpha-gold/20 rounded-lg focus:outline-none focus:border-alpha-gold text-white"
-                />
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-500/20 border border-red-500 rounded-lg p-4 text-center text-red-400">
+                      {language === 'ar' 
+                        ? 'حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.'
+                        : 'An error occurred while submitting your order. Please try again.'}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full py-3 px-6 rounded-full font-bold text-lg transition-all duration-200 ${
+                      isSubmitting
+                        ? 'bg-gray-600 cursor-not-allowed'
+                        : 'bg-[#FFD700] hover:bg-[#e6c200] text-black'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        {language === 'ar' ? 'جاري الإرسال...' : 'Submitting...'}
+                      </span>
+                    ) : (
+                      language === 'ar' ? 'تأكيد الطلب' : 'Confirm Order'
+                    )}
+                  </button>
+                </form>
+
+                <p className="text-sm text-gray-400 text-center">
+                  {language === 'ar' 
+                    ? 'التوصيل خلال ٢-٤ أيام عمل. نسخ موقعة محدودة!'
+                    : 'Estimated delivery in 2-4 weeks. Limited signed copies available!'}
+                </p>
               </div>
-
-              <button
-                type="submit"
-                className="w-full btn-primary py-3 rounded-lg hover:scale-105 transition-transform duration-300"
-              >
-                {language === 'en' 
-                  ? `Complete ${type === 'digital' ? 'Digital' : 'Printed'} Purchase`
-                  : `إكمال شراء النسخة ${type === 'digital' ? 'الرقمية' : 'المطبوعة'}`
-                }
-              </button>
-            </form>
-          </motion.div>
-        </div>
+            )}
+          </div>
+        </section>
       </main>
     </div>
   );
