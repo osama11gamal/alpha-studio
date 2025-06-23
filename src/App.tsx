@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -12,26 +12,26 @@ const Join = React.lazy(() => import("./pages/Join"));
 const Purchase = React.lazy(() => import("./pages/Purchase"));
 const Success = React.lazy(() => import("./pages/Success"));
 
-
 function App() {
   return (
     <LanguageProvider>
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/novels" element={<Novels />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blue-wolf" element={<BlueWolf />} />
-          <Route path="/join" element={<Join />} />
-          <Route path="/purchase/blue-wolf" element={<Purchase />} />
-          <Route path="/success" element={<Success />} />
-
-
-        </Routes>
-      </React.Suspense>
+      <HashRouter>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/novels" element={<Novels />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blue-wolf" element={<BlueWolf />} />
+            <Route path="/join" element={<Join />} />
+            <Route path="/purchase/blue-wolf" element={<Purchase />} />
+            <Route path="/success" element={<Success />} />
+          </Routes>
+        </React.Suspense>
+      </HashRouter>
     </LanguageProvider>
   );
 }
 
 export default App;
+
