@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // دعم المسارات الفرعية مع basename
+      var l = window.location;
+      var path = l.pathname.replace(/^\/alpha-studio/, '');
+      window.location.replace('/alpha-studio/' + (path ? '#' + path + l.search + l.hash : ''));
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>
