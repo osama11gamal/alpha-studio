@@ -10,6 +10,7 @@ const Contact = React.lazy(() => import("./pages/Contact"));
 const BlueWolf = React.lazy(() => import("./pages/BlueWolf"));
 const Join = React.lazy(() => import("./pages/Join"));
 const Purchase = React.lazy(() => import("./pages/Purchase"));
+const Success = React.lazy(() => import("./pages/Success"));
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <Route path="/blue-wolf" element={<BlueWolf />} />
           <Route path="/join" element={<Join />} />
           <Route path="/purchase/blue-wolf" element={<Purchase />} />
+          <Route path="/success" element={<Success />} />
+
 
         </Routes>
       </React.Suspense>
