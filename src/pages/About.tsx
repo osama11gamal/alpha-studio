@@ -133,7 +133,7 @@ const About = () => {
                 className="flex justify-center mt-12"
               >
                 <img 
-                  src="/osos/63741b0b-e5a2-4932-94bc-89b85eb0d54f.png" 
+                  src="/alpha-studio/osos/Dropped Image (12).png" 
                   alt="Where History Meets Fiction" 
                   className="max-w-full h-auto rounded-xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
                 />
