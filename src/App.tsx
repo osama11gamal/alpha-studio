@@ -11,6 +11,7 @@ const BlueWolf = React.lazy(() => import("./pages/BlueWolf"));
 const Join = React.lazy(() => import("./pages/Join"));
 const Purchase = React.lazy(() => import("./pages/Purchase"));
 const Success = React.lazy(() => import("./pages/Success"));
+const SerkNosElLeil = React.lazy(() => import("./pages/SerkNosElLeil"));
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/novels" element={<Novels />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blue-wolf" element={<BlueWolf />} />
+            <Route path="/stories/serk-nos-el-leil" element={<SerkNosElLeil />} />
             <Route path="/join" element={<Join />} />
             <Route path="/purchase/blue-wolf" element={<Purchase />} />
             <Route path="/success" element={<Success />} />
@@ -34,4 +36,3 @@ function App() {
 }
 
 export default App;
-
