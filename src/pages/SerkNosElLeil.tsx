@@ -49,7 +49,7 @@ const SerkNosElLeil = () => {
                 href="https://online.fliphtml5.com/ynqhh/dqtk/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full shadow-lg transition-all duration-200 text-center"
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all duration-200 text-center"
                 style={{ pointerEvents: 'auto', opacity: 1 }}
               >
                 {language === 'ar' ? 'اقرأ الآن' : 'Read Now'}
