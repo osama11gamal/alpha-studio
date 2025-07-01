@@ -409,7 +409,7 @@ const Home = () => {
                 {
                   img: '/alpha-studio/Novels/Boss Heist .png',
                   titleEn: 'Boss Heist',
-                  titleAr: 'سرقة البوس',
+                  titleAr: 'سرقة الزعيم',
                   descEn: 'A man emerges from the fog to unveil his destiny.',
                   descAr: 'رجل يخرج من الضباب ليكشف مصيره.',
                   category: 'Novel',
