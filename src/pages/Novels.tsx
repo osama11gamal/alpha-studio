@@ -37,7 +37,7 @@ const featuredNovels = [
 	{
 		id: 3,
 		title: 'Boss Heist',
-		titleAr: 'سرقة البوس',
+		titleAr: 'سرقة الزعيم',
 		author: 'Omar Duhaim',
 		authorAr: 'عمر دهيم',
 		saga: 'Daggers and Destinies',
