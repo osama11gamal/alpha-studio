@@ -211,7 +211,7 @@ const Home = () => {
           {/* Video Background */}
           <div className="absolute inset-0">
             <video 
-              src="/alpha-studio/assets/hero-video.mp4"
+              src="/assets/hero-video.mp4"
               autoPlay 
               loop 
               muted 
@@ -302,11 +302,11 @@ const Home = () => {
                 <Link to="/stories/serk-nos-el-leil" className="block">
                   <div className="relative h-64 overflow-hidden cursor-pointer">
                     <motion.img 
-                      src="/alpha-studio/osos/serk.jpeg" 
+                      src="/osos/serk.jpeg" 
                       alt={language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'} 
                       className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
-                        e.currentTarget.src = '/alpha-studio/placeholder.png';
+                        e.currentTarget.src = '/placeholder.png';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -387,7 +387,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  img: '/alpha-studio/Novels/The Blue Wolf .jpg',
+                  img: '/Novels/The Blue Wolf .jpg',
                   titleEn: 'The Blue Wolf',
                   titleAr: 'الذئب الأزرق',
                   descEn: 'A hero seeking justice in a world of chaos.',
@@ -397,7 +397,7 @@ const Home = () => {
                   status: 'available'
                 },
                 {
-                  img: '/alpha-studio/Novels/The Curse of King Samagar .png',
+                  img: '/Novels/The Curse of King Samagar .png',
                   titleEn: 'The Curse of King Samagar',
                   titleAr: 'لعنة الملك ساماغار',
                   descEn: 'A cursed king battles the devil.',
@@ -407,7 +407,7 @@ const Home = () => {
                   date: 'October 2025'
                 },
                 {
-                  img: '/alpha-studio/Novels/Boss Heist .png',
+                  img: '/Novels/Boss Heist .png',
                   titleEn: 'Boss Heist',
                   titleAr: 'سرقة الزعيم',
                   descEn: 'A man emerges from the fog to unveil his destiny.',
@@ -436,7 +436,7 @@ const Home = () => {
                     alt={language === 'en' ? novel.titleEn : novel.titleAr} 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
-                      e.currentTarget.src = '/alpha-studio/placeholder.png';
+                      e.currentTarget.src = '/placeholder.png';
                     }}
                     />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -608,11 +608,11 @@ const Home = () => {
                   <Link to={category.link} className="block">
                     <div className="relative h-64 overflow-hidden">
                 <motion.img
-                        src={`/alpha-studio${category.image}`}
+                        src={`${category.image}`}
                         alt={language === 'en' ? category.name : category.nameAr}
                         className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
-                        e.currentTarget.src = '/alpha-studio/placeholder.png';
+                        e.currentTarget.src = '/placeholder.png';
                       }}
                       loading="lazy"
                       />
