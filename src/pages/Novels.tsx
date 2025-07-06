@@ -16,7 +16,7 @@ const featuredNovels = [
 		sagaAr: 'مستقبل غامض',
 		description: 'Follow the journey of a hero seeking justice in a world of chaos and deception.',
 		descriptionAr: 'تابع رحلة بطل يبحث عن العدالة في عالم من الفوضى والخداع.',
-		image: '/alpha-studio/Novels/The Blue Wolf .jpg',
+		image: '/Novels/The Blue Wolf .jpg',
 		releaseDate: 'Coming June 2025',
 		releaseDateAr: 'قادم في يونيو 2025',
 	},
@@ -30,7 +30,7 @@ const featuredNovels = [
 		sagaAr: 'مرايا الحضارات',
 		description: 'How does the war between Adam and Satan unfold when a cursed king battles against the devil?',
 		descriptionAr: 'كيف تتكشف الحرب بين آدم وإبليس عندما يحارب ملك ملعون ضد الشيطان؟',
-		image: '/alpha-studio/Novels/The Curse of King Samagar .png',
+		image: '/Novels/The Curse of King Samagar .png',
 		releaseDate: 'Coming October 2025',
 		releaseDateAr: 'قادم في أكتوبر 2025',
 	},
@@ -44,7 +44,7 @@ const featuredNovels = [
 		sagaAr: 'الخناجر والأقدار',
 		description: 'Out of the fog emerges a man determined to unveil his destiny and reveal his hidden truth.',
 		descriptionAr: 'من الضباب يظهر رجل مصمم على كشف مصيره وإظهار حقيقته المخفية.',
-		image: '/alpha-studio/Novels/Boss Heist .png',
+		image: '/Novels/Boss Heist .png',
 		releaseDate: 'Coming 2026',
 		releaseDateAr: 'قادم في 2026',
 	},
@@ -58,7 +58,7 @@ const featuredNovels = [
 		sagaAr: 'مستقبل غامض',
 		description: 'A mysterious forest where humans face their deepest fears and darkest desires.',
 		descriptionAr: 'غابة غامضة حيث يواجه البشر أعمق مخاوفهم وأحلك رغباتهم.',
-		image: '/alpha-studio/Novels/The Forest of Humans .png',
+		image: '/Novels/The Forest of Humans .png',
 		releaseDate: 'Coming Soon',
 		releaseDateAr: 'قادم قريباً',
 	},
@@ -72,7 +72,7 @@ const featuredNovels = [
 		sagaAr: 'أرماند دوفال',
 		description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon, whose greed and cruelty plague the realm. Armand\'s legend grows with every battle won and every village saved—a rogue hero who defies empires and inspires hope wherever his black sails rise on the horizon.',
 		descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة. تنمو أسطورة أرماند مع كل معركة يفوز بها وكل قرية ينقذها - بطل متمرد يتحدى الإمبراطوريات ويبعث الأمل أينما تظهر أشرعته السوداء في الأفق.',
-		image: '/alpha-studio/placeholder.png',
+		image: '/placeholder.png',
 		releaseDate: 'Coming Soon',
 		releaseDateAr: 'قادم قريباً',
 	},
@@ -89,7 +89,7 @@ const characters = [
 		sagaAr: 'مستقبل غامض',
 		description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
 		descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
-		image: '/alpha-studio/Characters/Shihab .png',
+		image: '/Characters/Shihab .png',
 	},
 	{
 		id: 7,
@@ -101,7 +101,7 @@ const characters = [
 		sagaAr: 'مستقبل غامض',
 		description: 'Raven was raised by a major gang leader. He didn\'t give her the opportunity to learn and go to school like any other girl, only working on hacking and digital theft. She always said there was something she had to stop and leave behind... but her past always haunted her. After her father\'s death, she took over the leadership of the gang, carrying with her the pain of the past and the desire to live the life that had been stolen from her by the ancient past.',
 		descriptionAr: 'نشأت رافن على يد زعيم عصابة كبير. لم يمنحها الفرصة للتعلم والذهاب إلى المدرسة مثل أي فتاة أخرى، وإنما كانت تعمل فقط على القرصنة والسرقة الرقمية. كانت تقول دائمًا إن هناك شيئًا يجب عليها أن توقفه وتتركه وراءها... لكن ماضيها كان يطاردها دائمًا. بعد وفاة والدها، تولت قيادة العصابة، حاملة معها ألم الماضي والرغبة في عيش الحياة التي سرقت منها من قبل الماضي القديم.',
-		image: '/alpha-studio/Characters/Raven.png',
+		image: '/Characters/Raven.png',
 	},
 	{
 		id: 2,
@@ -113,7 +113,7 @@ const characters = [
 		sagaAr: 'مستقبل غامض',
 		description: 'Steve Borden, known as the Lynx, was a sheriff fighting crime. He was suddenly transferred to a city where crime is rife. He wanted to act like an honest cop, but the rampant crime was enough to frame him for a case that didn\'t suit him and land him in prison. And when he got out... he decided to take revenge. Borden was buried... The Lynx was born!',
 		descriptionAr: 'كان ستيف بوردن، المعروف بـ لينكس، شريفًا يحارب الجريمة. تم نقله فجأة إلى مدينة تنتشر فيها الجريمة. أراد أن يتصرف كشرطي نزيه، لكن الجريمة المستشرية كانت كافية لتأطيره في قضية لا تناسبه وتودعه السجن. وعندما خرج... قرر أن ينتقم. دُفن بوردن... وُلِد لينكس!',
-		image: '/alpha-studio/Characters/The Lynx.png',
+		image: '/Characters/The Lynx.png',
 	},
 	{
 		id: 3,
@@ -125,7 +125,7 @@ const characters = [
 		sagaAr: 'مستقبل غامض',
 		description: 'Dr. Amir was a famous doctor and scientist who traveled to complete his research. He wasn\'t given the opportunity; he wasn\'t appreciated in his home country, and instead of being honored, he was fired after his experiment failed and the lab was destroyed. So Professor Dave wanted to exploit him for his own purposes of controlling the world, and he didn\'t know that this duo would be the end of the human race.',
 		descriptionAr: 'كان الدكتور أمير طبيبًا وعالمًا مشهورًا سافر لإكمال أبحاثه. لم يُمنح الفرصة؛ لم يُقدَّر في وطنه، وبدلاً من تكريمه، تم طرده بعد فشل تجربته وتدمير المختبر. لذا أراد البروفيسور ديف استغلاله لأغراضه الخاصة في السيطرة على العالم، ولم يكن يعلم أن هذا الثنائي سيكون نهاية الجنس البشري.',
-		image: '/alpha-studio/Characters/Amir.jpg',
+		image: '/Characters/Amir.jpg',
 	},
 	{
 		id: 4,
@@ -137,7 +137,7 @@ const characters = [
 		sagaAr: 'مستقبل غامض',
 		description: 'Professor Reynard Daveson, known as Professor Dave. He is the person who used the abundant knowledge he gained in his life to sufficiently destroy humanity. He believed that the person who does not serve his machines is a burden on this planet. So he wanted to enslave humans and use the enormous technological power to operate his invention, which he kept secret throughout his life.',
 		descriptionAr: 'البروفيسور رينارد ديفسون، المعروف باسم البروفيسور ديف. هو الشخص الذي استخدم المعرفة الوفيرة التي اكتسبها في حياته لتدمير البشرية بشكل كافٍ. كان يعتقد أن الشخص الذي لا يخدم آلاته هو عبء على هذا الكوكب. لذا أراد استعباد البشر واستخدام القوة التكنولوجية الهائلة لتشغيل اختراعه، الذي أبقاه سراً طوال حياته.',
-		image: '/alpha-studio/Characters/Reynard .png',
+		image: '/Characters/Reynard .png',
 	},
 	{
 		id: 5,
@@ -149,7 +149,7 @@ const characters = [
 		sagaAr: 'مرايا الحضارات',
 		description: 'King Samagar, a once noble ruler who fell victim to a dark curse. His kingdom, once prosperous and peaceful, now faces the consequences of his transformation. As he battles against the forces of evil that have taken hold of him, his story becomes a tale of redemption and the eternal struggle between good and evil.',
 		descriptionAr: 'الملك ساماغار، حاكم نبيل سقط ضحية لعنة مظلمة. مملكته، التي كانت مزدهرة وسلمية، تواجه الآن عواقب تحوله. بينما يحارب ضد قوى الشر التي سيطرت عليه، تصبح قصته حكاية عن الخلاص والصراع الأبدي بين الخير والشر.',
-		image: '/alpha-studio/Characters/Samagar.png',
+		image: '/Characters/Samagar.png',
 	},
 	{
 		id: 6,
@@ -161,7 +161,7 @@ const characters = [
 		sagaAr: 'أرماند دوفال',
 		description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon.',
 		descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة.',
-		image: '/alpha-studio/Characters/Armand Duval.png',
+		image: '/Characters/Armand Duval.png',
 	},
 	
 	{
@@ -174,7 +174,7 @@ const characters = [
 		sagaAr: 'الخناجر والأقدار',
 		description: 'A master thief with a code of honor, Diego Delgado operates in the shadows of the criminal underworld. His skills in deception and strategy make him a formidable opponent, but his mysterious past and hidden motives add layers of complexity to his character.',
 		descriptionAr: 'لص محترف له ميثاق شرف، يعمل دييغو ديلجادو في ظلال عالم الجريمة. مهاراته في الخداع والاستراتيجية تجعله خصماً هائلاً، لكن ماضيه الغامض ودوافعه المخفية تضيف طبقات من التعقيد لشخصيته.',
-		image: '/alpha-studio/Characters/Diego Delgado.png',
+		image: '/Characters/Diego Delgado.png',
 	},
 ];
 
@@ -266,7 +266,7 @@ const Novels = () => {
 						className="absolute inset-0"
 					>
 						<img 
-							src="/alpha-studio/Home/Novels.png" 
+							src="/Home/Novels.png" 
 							alt="Alpha Studio Novels" 
 							className="w-full h-full object-cover object-center"
 						/>
@@ -488,7 +488,7 @@ const Novels = () => {
 							initial={{ scale: 1.1 }}
 							animate={{ scale: 1 }}
 							transition={{ duration: 2 }}
-							src="/alpha-studio/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png"
+							src="/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png"
 							alt="Background"
 							className="w-full h-full object-cover object-center opacity-20"
 						/>
