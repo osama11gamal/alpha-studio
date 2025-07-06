@@ -25,7 +25,7 @@ const About = () => {
             className="absolute inset-0"
           >
             <img 
-              src="/alpha-studio/osos/vocc.png" 
+              src="/osos/vocc.png" 
               alt="Alpha Studio" 
               className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
             />
@@ -133,7 +133,7 @@ const About = () => {
                 className="flex justify-center mt-12"
               >
                 <img 
-                  src="/alpha-studio/osos/Dropped Image (12).png" 
+                  src="/osos/Dropped Image (12).png" 
                   alt="Where History Meets Fiction" 
                   className="max-w-full h-auto rounded-xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
                 />
