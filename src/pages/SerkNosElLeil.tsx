@@ -59,7 +59,7 @@ const SerkNosElLeil = () => {
           <div className="flex-1">
               <div className="aspect-[3/4] bg-alpha-charcoal rounded-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300">
                 <img 
-                  src="/alpha-studio/osos/serk2.jpeg" 
+                  src="/osos/serk2.jpeg" 
                   alt={language === 'ar' ? 'غلاف سيرك نص الليل' : 'Midnight Circus Cover'} 
                   className="w-full h-full object-cover"
                 />
