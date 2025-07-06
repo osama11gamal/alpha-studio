@@ -73,7 +73,7 @@ const Contact = () => {
           className="relative h-[90vh] overflow-hidden"
         >
           <img 
-            src="/alpha-studio/osos/vocc.png" 
+            src="/osos/vocc.png" 
             alt="Contact Alpha Studio" 
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
           />
