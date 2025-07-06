@@ -77,7 +77,7 @@ const BlueWolf = () => {
           <div className="flex-1">
             <div className="aspect-[3/4] bg-alpha-charcoal rounded-lg overflow-hidden">
               <img 
-                src="/alpha-studio/blue/first.png" 
+                src="/blue/first.png" 
                 alt={language === 'ar' ? 'غلاف الذئب الأزرق' : 'The Blue Wolf Cover'} 
                 className="w-full h-full object-cover"
               />
