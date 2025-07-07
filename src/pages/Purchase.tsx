@@ -94,7 +94,7 @@ const Purchase = () => {
               <div className="space-y-6">
                 <div className="flex flex-col items-center">
                   <img 
-                    src="/alpha-studio/blue/first.png" 
+                    src="/blue/first.png" 
                     alt={language === 'ar' ? 'غلاف الذئب الأزرق' : 'The Blue Wolf Cover'} 
                     className="w-48 h-auto rounded-lg shadow-xl mb-4"
                   />
