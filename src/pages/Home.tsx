@@ -212,14 +212,14 @@ const Home = () => {
           <div className="absolute inset-0">
             <video 
               src="/assets/hero-video.mp4"
-              autoPlay 
-              loop 
-              muted 
+              autoPlay
+              loop
+              muted
               playsInline
-              preload="auto"
+              preload="metadata"
               className="w-full h-full object-cover"
+              loading="lazy"
               onError={(e) => {
-                console.error('Error loading video:', e);
                 e.currentTarget.style.display = 'none';
               }}
             />
@@ -303,12 +303,13 @@ const Home = () => {
                 <Link to="/stories/khidaa-altahror" className="block">
                   <div className="relative h-64 overflow-hidden cursor-pointer">
                     <motion.img 
-                      src="/osos/khedaa2.jpeg" 
-                      alt={language === 'en' ? 'Khidaa Altahror' : 'خداع التحرر'} 
+                      src="/osos/khedaa2.jpeg"
+                      alt={language === 'en' ? 'Khidaa Altahror' : 'خداع التحرر'}
                       className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
                         e.currentTarget.src = '/placeholder.png';
                       }}
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     {/* Status Badge */}
@@ -381,12 +382,13 @@ const Home = () => {
                 <Link to="/stories/serk-nos-el-leil" className="block">
                   <div className="relative h-64 overflow-hidden cursor-pointer">
                     <motion.img 
-                      src="/osos/serk.jpeg" 
-                      alt={language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'} 
+                      src="/osos/serk.jpeg"
+                      alt={language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'}
                       className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
                         e.currentTarget.src = '/placeholder.png';
                       }}
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     {/* Status Badge */}
@@ -491,12 +493,13 @@ const Home = () => {
                   <Link to={novel.link} className="block">
                     <div className="relative h-64 overflow-hidden">
                       <motion.img 
-                        src={novel.img} 
-                        alt={language === 'en' ? novel.titleEn : novel.titleAr} 
+                        src={novel.img}
+                        alt={language === 'en' ? novel.titleEn : novel.titleAr}
                         className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                         onError={(e) => {
                           e.currentTarget.src = '/placeholder.png';
                         }}
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       {/* Status Badge */}
@@ -670,10 +673,10 @@ const Home = () => {
                         src={`${category.image}`}
                         alt={language === 'en' ? category.name : category.nameAr}
                         className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.png';
-                      }}
-                      loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = '/placeholder.png';
+                        }}
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
