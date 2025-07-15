@@ -331,7 +331,7 @@ const Home = () => {
                     {language === 'en' ? 'Khidaa Altahror' : 'خداع التحرر'}
                   </h3>
                   <p className="text-gray-300 mb-4 text-center">
-                    {language === 'en' ? 'A psychological drama novel.' : 'رواية دراما نفسية'}
+                    {language === 'en' ? 'A psychological drama novel by Neama Abdelrahim.' : ' .رواية دراما نفسية  تأليف: نعمة عبدالرحيم'}
                   </p>
                   {/* Action Button */}
                   <div className="flex items-center justify-center gap-4 mt-4">
@@ -410,7 +410,7 @@ const Home = () => {
                     {language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'}
                   </h3>
                   <p className="text-gray-300 mb-4 text-center">
-                    {language === 'en' ? 'A dialog story by Omar Duhaim & Mohamed Seddik.' : 'قصة حوارية تأليف: عمر دهيم، محمد صديق'}
+                    {language === 'en' ? 'A dialog story by Omar Duhaim & Mohamed Seddik.' : '.قصة حوارية تأليف: عمر دهيم، محمد صديق'}
                   </p>
                   {/* Action Button */}
                   <div className="flex items-center justify-center gap-4 mt-4">
