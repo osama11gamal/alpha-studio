@@ -64,14 +64,16 @@ const BlueWolf = () => {
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all duration-200 text-center"
               >
-                اقرأ الآن
+               (النسخه العربية) اقرأ الآن 
               </a>
-              <Link
-                to="/purchase/blue-wolf"
+              <a
+                href="https://online.fliphtml5.com/ynqhh/yblr/#p=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-full shadow-lg transition-all duration-200 text-center"
               >
-                اطلب نسخة مطبوعة
-              </Link>
+               (English version) Read now
+              </a>
             </div>
           </div>
           <div className="flex-1">
