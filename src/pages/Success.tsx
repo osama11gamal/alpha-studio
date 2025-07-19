@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { cn } from '@/lib/utils';
-import Navbar from '../components/Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const Success = () => {
   const { language } = useLanguage();
@@ -17,17 +17,23 @@ const Success = () => {
   };
 
   return (
-    <div className={cn("min-h-screen flex flex-col bg-[#101014]", language === 'ar' && "lang-ar")} lang={language}>
+    <div
+      className={cn(
+        'min-h-screen flex flex-col bg-[#101014]',
+        language === 'ar' && 'lang-ar'
+      )}
+      lang={language}
+    >
       <Navbar />
       <main className="flex-grow flex items-center justify-center">
         <section className="w-full max-w-2xl mx-auto px-4 py-20 md:py-32 relative flex flex-col items-center justify-center">
           {/* Glassmorphism Card */}
           <div className="relative z-10 w-full bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 p-10 flex flex-col items-center animate-fade-in-up">
-            {/* Animated Success Icon */}
+            {/* Success Icon */}
             <div className="mb-8">
               <div className="w-24 h-24 bg-gradient-to-br from-green-400 via-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg animate-bounce-in">
                 <svg className="w-14 h-14 text-white animate-success-check" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l5 5L19 7"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l5 5L19 7" />
                 </svg>
               </div>
             </div>
@@ -37,16 +43,16 @@ const Success = () => {
             <p className="text-gray-300 text-lg mb-6 text-center">
               {message}
             </p>
-            <Button 
+            <Button
               onClick={() => navigate('/')}
               className="px-6 py-2 rounded-full bg-green-600 text-white font-bold shadow hover:bg-green-700 transition-all duration-200 text-base"
             >
               {language === 'en' ? 'Return Home' : 'العودة للرئيسية'}
             </Button>
           </div>
-          {/* Modern background shapes */}
-          <div className="absolute -top-24 -left-24 w-72 h-72 bg-gradient-to-br from-green-400/30 to-blue-500/10 rounded-full blur-3xl animate-float-slow"></div>
-          <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-gradient-to-tr from-emerald-400/20 to-indigo-500/10 rounded-full blur-3xl animate-float-slow2"></div>
+          {/* Background shapes */}
+          <div className="absolute -top-24 -left-24 w-72 h-72 bg-gradient-to-br from-green-400/30 to-blue-500/10 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-gradient-to-tr from-emerald-400/20 to-indigo-500/10 rounded-full blur-3xl animate-float-slow2" />
         </section>
       </main>
       {/* Animations CSS */}
@@ -93,4 +99,4 @@ const Success = () => {
   );
 };
 
-export default Success; 
+export default Success;
