@@ -14,6 +14,7 @@ const Success = React.lazy(() => import("./pages/Success"));
 
 const SerkNosElLeil = React.lazy(() => import("./pages/SerkNosElLeil"));
 const KhidaaAltahror = React.lazy(() => import("./pages/KhidaaAltahror"));
+const RichBrotherPoorBrother = React.lazy(() => import("./pages/RichBrotherPoorBrother"));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/stories/khidaa-altahror" element={<KhidaaAltahror />} />
             <Route path="/join" element={<Join />} />
             <Route path="/purchase/blue-wolf" element={<Purchase />} />
+            <Route path="/stories/rich-brother-poor-brother" element={<RichBrotherPoorBrother />} />
             <Route path="/success" element={<Success />} />
           </Routes>
         </React.Suspense>
