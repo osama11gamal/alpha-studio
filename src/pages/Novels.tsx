@@ -5,86 +5,14 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const featuredNovels = [
-	{
-		id: 1,
-		title: 'The Blue Wolf',
-		titleAr: 'الذئب الأزرق',
-		author: 'Omar Duhaim',
-		authorAr: 'عمر دهيم',
-		saga: 'A Vague Future',
-		sagaAr: 'مستقبل غامض',
-		description: 'Follow the journey of a hero seeking justice in a world of chaos and deception.',
-		descriptionAr: 'تابع رحلة بطل يبحث عن العدالة في عالم من الفوضى والخداع.',
-		image: '/Novels/The Blue Wolf .jpg',
-		releaseDate: 'Coming June 2025',
-		releaseDateAr: 'قادم في يونيو 2025',
-	},
-	{
-		id: 2,
-		title: 'The Curse of King Samagar',
-		titleAr: 'لعنة الملك ساماغار',
-		author: 'Omar Duhaim',
-		authorAr: 'عمر دهيم',
-		saga: 'Mirrors of Civilizations',
-		sagaAr: 'مرايا الحضارات',
-		description: 'How does the war between Adam and Satan unfold when a cursed king battles against the devil?',
-		descriptionAr: 'كيف تتكشف الحرب بين آدم وإبليس عندما يحارب ملك ملعون ضد الشيطان؟',
-		image: '/Novels/The Curse of King Samagar .png',
-		releaseDate: 'Coming October 2025',
-		releaseDateAr: 'قادم في أكتوبر 2025',
-	},
-	{
-		id: 3,
-		title: 'Boss Heist',
-		titleAr: 'سرقة الزعيم',
-		author: 'Omar Duhaim',
-		authorAr: 'عمر دهيم',
-		saga: 'Daggers and Destinies',
-		sagaAr: 'الخناجر والأقدار',
-		description: 'Out of the fog emerges a man determined to unveil his destiny and reveal his hidden truth.',
-		descriptionAr: 'من الضباب يظهر رجل مصمم على كشف مصيره وإظهار حقيقته المخفية.',
-		image: '/Novels/Boss Heist .png',
-		releaseDate: 'Coming 2026',
-		releaseDateAr: 'قادم في 2026',
-	},
-	{
-		id: 4,
-		title: 'The Forest of Humans',
-		titleAr: 'غابة الإنسان',
-		author: 'Omar Duhaim',
-		authorAr: 'عمر دهيم',
-		saga: 'A Vague Future',
-		sagaAr: 'مستقبل غامض',
-		description: 'A mysterious forest where humans face their deepest fears and darkest desires.',
-		descriptionAr: 'غابة غامضة حيث يواجه البشر أعمق مخاوفهم وأحلك رغباتهم.',
-		image: '/Novels/The Forest of Humans .png',
-		releaseDate: 'Coming Soon',
-		releaseDateAr: 'قادم قريباً',
-	},
-	{
-		id: 6,
-		title: 'Throne of the Seas',
-		titleAr: 'عرش البحار',
-		author: 'Omar Duhaim',
-		authorAr: 'عمر دهيم',
-		saga: 'Armand Duval',
-		sagaAr: 'أرماند دوفال',
-		description: 'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon, whose greed and cruelty plague the realm. Armand\'s legend grows with every battle won and every village saved—a rogue hero who defies empires and inspires hope wherever his black sails rise on the horizon.',
-		descriptionAr: 'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة. تنمو أسطورة أرماند مع كل معركة يفوز بها وكل قرية ينقذها - بطل متمرد يتحدى الإمبراطوريات ويبعث الأمل أينما تظهر أشرعته السوداء في الأفق.',
-		image: '/placeholder.png',
-		releaseDate: 'Coming Soon',
-		releaseDateAr: 'قادم قريباً',
-	},
-];
 
 const characters = [
 	{
 		id: 1,
 		name: 'Shihab',
 		nameAr: 'شهاب',
-		novel: 'The Blue Wolf',
-		novelAr: 'الذئب الازرق',
+		novel: 'The Forest of Humans',
+		novelAr: 'غابة البشر',
 		saga: 'A Vague Future',
 		sagaAr: 'مستقبل غامض',
 		description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
@@ -194,7 +122,7 @@ const Novels = () => {
 	}, []);
 
 	const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-		e.currentTarget.src = '/alpha-studio/placeholder.png';
+		e.currentTarget.src = '/placeholder.png';
 		e.currentTarget.onerror = null;
 	};
 
@@ -205,17 +133,7 @@ const Novels = () => {
 				setError(null);
 
 				const imagePromises = [
-					...featuredNovels.map((novel) => {
-						const img = new Image();
-						img.src = novel.image;
-						return new Promise((resolve, reject) => {
-							img.onload = resolve;
-							img.onerror = () => {
-								console.warn(`Failed to load image: ${novel.image}`);
-								resolve(null);
-							};
-						});
-					}),
+
 					...characters.map((character) => {
 						const img = new Image();
 						img.src = character.image;
@@ -293,117 +211,387 @@ const Novels = () => {
 						</div>
 					</motion.div>
 				</section>
+{/* أعمال الستوديو (دمج القصص والروايات) */}
+		<section className="py-24 relative overflow-hidden">
+		  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1a1a1a]/20 to-transparent"></div>
+		  <div className="container mx-auto px-4 relative z-10">
+			<motion.h2 
+			  initial={{ y: 30, opacity: 0 }}
+			  whileInView={{ y: 0, opacity: 1 }}
+			  viewport={{ once: true }}
+			  transition={{ duration: 0.6 }}
+			  className="text-4xl md:text-5xl font-bold text-center mb-16"
+			>
+			  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] to-[#FFA500]">
+				{language === 'en' ? 'Studio Works' : 'أعمال الستوديو'}
+			  </span>
+			</motion.h2>
 
-				{/* Featured Novels */}
-				<section className="py-24 bg-alpha-darker relative">
-					<div className="absolute inset-0">
-						<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-alpha-gold/5 via-transparent to-transparent animate-pulse"></div>
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			   {/* Rich Brother Poor Brother Card */}
+			  <motion.div
+				initial={{ y: 50, opacity: 0 }}
+				whileInView={{ y: 0, opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.8 }}
+				className="group relative bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl transition-all duration-500 border border-[#FFD700]/20 max-w-md w-full mx-auto"
+				style={{ boxShadow: '0 0 25px rgba(255, 215, 0, 0.15)' }}
+				whileHover={{ 
+				  scale: 1.02,
+				  boxShadow: '0 0 50px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.2)'
+				}}
+			  >
+				<Link to="/stories/rich-brother-poor-brother" className="block">
+				  <div className="relative h-64 overflow-hidden cursor-pointer">
+					<motion.img 
+					  src="/osos/bro2.jpeg"
+					  alt={language === 'en' ? 'Rich Brother Poor Brother' : 'الأخ الغني والأخ الفقير'}
+					  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+					  onError={(e) => {
+						e.currentTarget.src = '/placeholder.png';
+					  }}
+					  loading="lazy"
+					/>
+					<div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					{/* Status Badge */}
+					<div className="absolute top-4 right-4">
+					  <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+						{language === 'en' ? 'Available' : 'متوفرة'}
+					  </span>
 					</div>
-					<div className="container mx-auto px-4 relative z-10">
-						<motion.h2
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.8 }}
-							className="alpha-title mb-16 text-center text-4xl md:text-5xl"
-						>
-							{language === 'en' ? 'Featured Novels' : 'الروايات المميزة'}
-						</motion.h2>
-
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-							{featuredNovels.map((novel, index) => (
-								<motion.div
-									key={novel.id}
-									initial={{ opacity: 0, y: 50 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.8, delay: index * 0.2 }}
-									className="flex flex-col md:flex-row bg-alpha-charcoal/50 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm border border-alpha-gold/20 hover:border-alpha-gold/40"
-								>
-									<div className="md:w-1/2 h-80 relative group">
-										{novel.image ? (
-											<motion.img
-												whileHover={{ scale: 1.05 }}
-												transition={{ duration: 0.3 }}
-												src={novel.image}
-												alt={language === 'en' ? novel.title : novel.titleAr}
-												className="w-full h-full object-cover object-center transition-transform duration-300"
-												onError={handleImageError}
-											/>
-										) : (
-											<div className="w-full h-full bg-alpha-dark flex items-center justify-center">
-												<span className="text-alpha-gold text-lg">
-													{language === 'en' ? 'Image Coming Soon' : 'الصورة قادمة قريباً'}
-												</span>
-											</div>
-										)}
-										<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-									</div>
-									<div className="md:w-1/2 p-8 flex flex-col justify-between">
-										<div>
-											<h3 className="text-2xl font-display font-bold mb-2 text-white group-hover:text-alpha-gold transition-colors duration-300">
-												{language === 'en' ? novel.title : novel.titleAr}
-											</h3>
-											{novel.saga && (
-												<p className="text-alpha-gold text-sm mb-3">
-													{language === 'en' ? novel.saga : novel.sagaAr}
-												</p>
-											)}
-											{novel.description && (
-												<p className="text-gray-300 mb-4 line-clamp-4">
-													{language === 'en' ? novel.description : novel.descriptionAr}
-												</p>
-											)}
-											{novel.author && (
-												<p className="text-sm text-gray-400">
-													{language === 'en' ? `By ${novel.author}` : `بواسطة ${novel.authorAr}`}
-												</p>
-											)}
-										</div>
-										<div className="mt-6">
-											{novel.title === 'The Blue Wolf' ? (
-												<>
-													<div className="flex items-center justify-between mb-4">
-														<span className="text-green-500 font-bold text-lg">
-															{language === 'en' ? 'Available Now' : 'متاح الآن'}
-														</span>
-														<span className="text-blue-500 font-bold text-lg">
-															{language === 'en' ? 'FREE' : 'مجاناً'}
-														</span>
-													</div>
-													<Link
-														to="/blue-wolf"
-														className="btn-primary text-sm px-6 py-2 rounded-lg hover:scale-105 transition-transform duration-300 w-full text-center"
-													>
-														{language === 'en' ? 'Buy Now' : 'اشتري الآن'}
-													</Link>
-												</>
-											) : (
-												<>
-													<div className="flex items-center justify-between mb-4">
-														<span className="text-red-500 font-bold text-lg">
-															{language === 'en' ? 'Coming Soon' : 'قريباً'}
-														</span>
-														{novel.releaseDate && (
-															<p className="text-alpha-gold">
-																{language === 'en' ? novel.releaseDate : novel.releaseDateAr}
-															</p>
-														)}
-													</div>
-													<div className="flex space-x-4">
-														<button className="btn-secondary text-sm px-6 py-2 rounded-lg hover:scale-105 transition-transform duration-300 w-full">
-															{language === 'en' ? 'Preview' : 'معاينة'}
-														</button>
-													</div>
-												</>
-											)}
-										</div>
-									</div>
-								</motion.div>
-							))}
+					{/* Category Badge */}
+					<div className="absolute top-4 left-4">
+					  <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
+						{language === 'en' ? 'Self-Development' : 'تطوير ذاتي'}
+					  </span>
+					</div>
+				  </div>
+				</Link>
+				<div className="p-6">
+				  <h3 className="text-2xl font-bold text-[#FFD700] mb-2 text-center">
+					{language === 'en' ? 'Rich Brother Poor Brother' : 'الأخ الغني والأخ الفقير'}
+				  </h3>
+				  <p className="text-gray-300 mb-4 text-center">
+					{language === 'en'
+					  ? 'A visual story about money, success, and financial freedom. Challenges everything you know about careers and education.'
+					  : 'قصة بصرية عن المال والنجاح والحرية المالية. تصدمك بالمفاهيم التقليدية حول الوظيفة والتعليم.'}
+				  </p>
+				  {/* Action Button */}
+				  <div className="flex items-center justify-center gap-4 mt-4">
+					<Link to="/stories/rich-brother-poor-brother" className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
+					  <span className="mr-2">
+						{language === 'en' ? 'Read' : 'اقرأ'}
+					  </span>
+					  <svg 
+						className="w-4 h-4" 
+						fill="none" 
+						stroke="currentColor" 
+						viewBox="0 0 24 24"
+					  >
+						<path 
+						  strokeLinecap="round" 
+						  strokeLinejoin="round" 
+						  strokeWidth={2} 
+						  d="M9 5l7 7-7 7" 
+						/>
+					  </svg>
+					</Link>
+					<a href="https://online.fliphtml5.com/ynqhh/wiie/" target="_blank" rel="noopener noreferrer">
+					  <button className="px-4 py-2 bg-green-500/90 text-white rounded-full font-semibold shadow-md hover:bg-green-600 transition-colors duration-300">
+						{language === 'en' ? 'Read Now' : 'اقرأ الآن'}
+					  </button>
+					</a>
+				  </div>
+				</div>
+				{/* Hover Effect Line */}
+				<motion.div
+				  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+				  initial={false}
+				/>
+			  </motion.div>
+			  {/* Khidaa Altahror Card */}
+			  <motion.div
+				initial={{ y: 50, opacity: 0 }}
+				whileInView={{ y: 0, opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.8 }}
+				className="group relative bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl transition-all duration-500 border border-[#FFD700]/20 max-w-md w-full mx-auto"
+				style={{ boxShadow: '0 0 25px rgba(255, 215, 0, 0.15)' }}
+				whileHover={{ 
+				  scale: 1.02,
+				  boxShadow: '0 0 50px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.2)'
+				}}
+			  >
+				<Link to="/stories/khidaa-altahror" className="block">
+				  <div className="relative h-64 overflow-hidden cursor-pointer">
+					<motion.img 
+					  src="/osos/khedaa2.jpeg"
+					  alt={language === 'en' ? 'Khidaa Altahror' : 'خداع التحرر'}
+					  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+					  onError={(e) => {
+						e.currentTarget.src = '/placeholder.png';
+					  }}
+					  loading="lazy"
+					/>
+					<div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					{/* Status Badge */}
+					<div className="absolute top-4 right-4">
+					  <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+						{language === 'en' ? 'Available' : 'متوفرة'}
+					  </span>
+					</div>
+					{/* Category Badge */}
+					<div className="absolute top-4 left-4">
+					  <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
+						{language === 'en' ? 'Psychological Drama' : 'دراما نفسية'}
+					  </span>
+					</div>
+				  </div>
+				</Link>
+				<div className="p-6">
+				  <h3 className="text-2xl font-bold text-[#FFD700] mb-2 text-center">
+					{language === 'en' ? 'Khidaa Altahror' : 'خداع التحرر'}
+				  </h3>
+				  <p className="text-gray-300 mb-4 text-center">
+					{language === 'en' ? 'A psychological drama novel.' : 'رواية دراما نفسية'}
+				  </p>
+				  {/* Action Button */}
+				  <div className="flex items-center justify-center gap-4 mt-4">
+					<Link to="/stories/khidaa-altahror" className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
+					  <span className="mr-2">
+						{language === 'en' ? 'Read' : 'اقرأ'}
+					  </span>
+					  <svg 
+						className="w-4 h-4" 
+						fill="none" 
+						stroke="currentColor" 
+						viewBox="0 0 24 24"
+					  >
+						<path 
+						  strokeLinecap="round" 
+						  strokeLinejoin="round" 
+						  strokeWidth={2} 
+						  d="M9 5l7 7-7 7" 
+						/>
+					  </svg>
+					</Link>
+					<Link to="/stories/khidaa-altahror">
+					  <button className="px-4 py-2 bg-green-500/90 text-white rounded-full font-semibold shadow-md hover:bg-green-600 transition-colors duration-300">
+						{language === 'en' ? 'Read Now' : 'اقرأ الآن'}
+					  </button>
+					</Link>
+				  </div>
+				</div>
+				{/* Hover Effect Line */}
+				<motion.div
+				  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+				  initial={false}
+				/>
+			  </motion.div>
+			  {/* Serk Nos El Leil Card */}
+			  <motion.div
+				initial={{ y: 50, opacity: 0 }}
+				whileInView={{ y: 0, opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.8 }}
+				className="group relative bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl transition-all duration-500 border border-[#FFD700]/20 max-w-md w-full mx-auto"
+				style={{ boxShadow: '0 0 25px rgba(255, 215, 0, 0.15)' }}
+				whileHover={{ 
+				  scale: 1.02,
+				  boxShadow: '0 0 50px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.2)'
+				}}
+			  >
+				<Link to="/stories/serk-nos-el-leil" className="block">
+				  <div className="relative h-64 overflow-hidden cursor-pointer">
+					<motion.img 
+					  src="/osos/serk.jpeg"
+					  alt={language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'}
+					  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+					  onError={(e) => {
+						e.currentTarget.src = '/placeholder.png';
+					  }}
+					  loading="lazy"
+					/>
+					<div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					{/* Status Badge */}
+					<div className="absolute top-4 right-4">
+					  <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+						{language === 'en' ? 'Available' : 'متوفرة'}
+					  </span>
+					</div>
+					{/* Category Badge */}
+					<div className="absolute top-4 left-4">
+					  <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
+						{language === 'en' ? 'Dialog Story' : 'قصة حوارية'}
+					  </span>
+					</div>
+				  </div>
+				</Link>
+				<div className="p-6">
+				  <h3 className="text-2xl font-bold text-[#FFD700] mb-2 text-center">
+					{language === 'en' ? 'Serk Nos El Leil' : 'سرك نص الليل'}
+				  </h3>
+				  <p className="text-gray-300 mb-4 text-center">
+					{language === 'en' ? 'A dialog story by Omar Duhaim & Mohamed Seddik.' : 'قصة حوارية تأليف: عمر دهيم، محمد صديق'}
+				  </p>
+				  {/* Action Button */}
+				  <div className="flex items-center justify-center gap-4 mt-4">
+					<Link to="/stories/serk-nos-el-leil" className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
+					  <span className="mr-2">
+						{language === 'en' ? 'Read' : 'اقرأ'}
+					  </span>
+					  <svg 
+						className="w-4 h-4" 
+						fill="none" 
+						stroke="currentColor" 
+						viewBox="0 0 24 24"
+					  >
+						<path 
+						  strokeLinecap="round" 
+						  strokeLinejoin="round" 
+						  strokeWidth={2} 
+						  d="M9 5l7 7-7 7" 
+						/>
+					  </svg>
+					</Link>
+					<Link to="/stories/serk-nos-el-leil">
+					  <button className="px-4 py-2 bg-green-500/90 text-white rounded-full font-semibold shadow-md hover:bg-green-600 transition-colors duration-300">
+						{language === 'en' ? 'Read Now' : 'اقرأ الآن'}
+					  </button>
+					</Link>
+				  </div>
+				</div>
+				{/* Hover Effect Line */}
+				<motion.div
+				  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+				  initial={false}
+				/>
+			  </motion.div>
+			  {/* Novels Cards */}
+			  {[
+				{
+				  img: '/Novels/The Blue Wolf .jpg',
+				  titleEn: 'The Blue Wolf',
+				  titleAr: 'الذئب الأزرق',
+				  descEn: 'A hero seeking justice in a world of chaos.',
+				  descAr: 'بطل يبحث عن العدالة في عالم من الفوضى.',
+				  category: 'Novel',
+				  link: '/blue-wolf',
+				  status: 'available'
+				},
+				{
+				  img: '/Novels/The Curse of King Samagar .png',
+				  titleEn: 'The Curse of King Samagar',
+				  titleAr: 'لعنة الملك ساماغار',
+				  descEn: 'A cursed king battles the devil.',
+				  descAr: 'ملك ملعون يحارب الشيطان.',
+				  category: 'Novel',
+				  status: 'coming-soon',
+				  date: 'October 2025'
+				},
+				{
+				  img: '/Novels/Boss Heist .png',
+				  titleEn: 'Boss Heist',
+				  titleAr: 'سرقة الزعيم',
+				  descEn: 'A man emerges from the fog to unveil his destiny.',
+				  descAr: 'رجل يخرج من الضباب ليكشف مصيره.',
+				  category: 'Novel',
+				  status: 'coming-soon',
+				  date: '2026'
+				}
+			  ].map((novel, index) => (
+				<motion.div
+				  key={index}
+				  initial={{ y: 50, opacity: 0 }}
+				  whileInView={{ y: 0, opacity: 1 }}
+				  viewport={{ once: true }}
+				  transition={{ duration: 0.8, delay: index * 0.2 }}
+				  className="group relative bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-[#FFD700]/10"
+				  whileHover={{ 
+					scale: 1.02,
+					boxShadow: '0 0 30px rgba(255, 215, 0, 0.1)'
+				  }}
+				>
+				  <Link to={novel.link} className="block">
+					<div className="relative h-64 overflow-hidden">
+					  <motion.img 
+						src={novel.img}
+						alt={language === 'en' ? novel.titleEn : novel.titleAr}
+						className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+						onError={(e) => {
+						  e.currentTarget.src = '/placeholder.png';
+						}}
+						loading="lazy"
+					  />
+					  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					  {/* Status Badge */}
+					  <div className="absolute top-4 right-4">
+						{novel.status === 'available' ? (
+						  <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+							{language === 'en' ? 'Available' : 'متوفر'}
+						  </span>
+						) : (
+						  <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">
+							{language === 'en' ? `Coming ${novel.date}` : `قريباً ${novel.date}`}
+						  </span>
+						)}
+					  </div>
+					  {/* Category Badge */}
+					  <div className="absolute top-4 left-4">
+						<span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
+						  {novel.category}
+						</span>
+					  </div>
+					</div>
+					<div className="p-6">
+					  <h3 className="text-2xl font-bold text-[#FFD700] mb-2">
+						{language === 'en' ? novel.titleEn : novel.titleAr}
+					  </h3>
+					  <p className="text-gray-300 mb-4">
+						{language === 'en' ? novel.descEn : novel.descAr}
+					  </p>
+					  {/* Action Button */}
+					  <div className="flex items-center justify-between">
+						<div className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300">
+						  <span className="mr-2">
+							{language === 'en' ? 'Read More' : 'اقرأ المزيد'}
+						  </span>
+						  <svg 
+							className="w-4 h-4" 
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24"
+						  >
+							<path 
+							  strokeLinecap="round" 
+							  strokeLinejoin="round" 
+							  strokeWidth={2} 
+							  d="M9 5l7 7-7 7" 
+							/>
+						  </svg>
 						</div>
+						{novel.status === 'available' ? (
+						  <button className="px-4 py-2 bg-green-500/90 text-white rounded-full font-semibold shadow-md hover:bg-green-600 transition-colors duration-300">
+							{language === 'en' ? 'Read Now' : 'أقرأ الآن'}
+						  </button>
+						) : (
+						  <button className="px-4 py-2 bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-red-700 transition-colors duration-300">
+							{language === 'en' ? 'Stay Tuned' : 'انتظرونا'}
+						  </button>
+						)}
+					  </div>
 					</div>
-				</section>
+					{/* Hover Effect Line */}
+					<motion.div
+					  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+					  initial={false}
+					/>
+				  </Link>
+				</motion.div>
+			  ))}
+			</div>
+		  </div>
+		</section>
 
 				{/* Characters Section */}
 				<section className="py-24 bg-alpha-dark relative">
@@ -471,12 +659,14 @@ const Novels = () => {
 							transition={{ duration: 0.8 }}
 							className="text-center mt-16"
 						>
-							<Link
-								to="/works"
-								className="btn-secondary text-lg px-8 py-3 rounded-xl hover:scale-105 transition-transform duration-300"
-							>
-								{language === 'en' ? 'Explore All Works' : 'استكشف جميع الأعمال'}
-							</Link>
+<a
+  href="https://www.facebook.com/profile.php?id=61576116293161"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-secondary text-lg px-8 py-3 rounded-xl hover:scale-105 transition-transform duration-300"
+>
+  {language === 'en' ? 'Explore All Works' : 'استكشف جميع الأعمال'}
+</a>
 						</motion.div>
 					</div>
 				</section>
@@ -488,7 +678,7 @@ const Novels = () => {
 							initial={{ scale: 1.1 }}
 							animate={{ scale: 1 }}
 							transition={{ duration: 2 }}
-							src="/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png"
+							src="/alpha-studio/osos/60056686-1b1f-49d3-b548-96aa9ea3e719.png"
 							alt="Background"
 							className="w-full h-full object-cover object-center opacity-20"
 						/>
