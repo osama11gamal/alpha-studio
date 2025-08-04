@@ -9,6 +9,18 @@ import { motion } from 'framer-motion';
 const characters = [
   // New Characters
   {
+	id: 1,
+	name: 'Shihab',
+	nameAr: 'شهاب',
+	novel: '',
+	novelAr: '',
+	saga: '',
+	sagaAr: '',
+	description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
+	descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
+	image: '/Characters/Shihab .png',
+},
+  {
 	id: 101,
 	name: 'Osama Gamal',
 	nameAr: 'أسامة جمال',
@@ -189,18 +201,6 @@ const characters = [
 	image: '/Characters/53.jpeg',
   },
   // ...existing characters...
-	{
-		id: 1,
-		name: 'Shihab',
-		nameAr: 'شهاب',
-		novel: '',
-		novelAr: '',
-		saga: '',
-		sagaAr: '',
-		description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
-		descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
-		image: '/Characters/Shihab .png',
-	},
 	{
 		id: 7,
 		name: 'Raven',
