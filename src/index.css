@@ -341,6 +341,11 @@
   ================================================================================
 */
 @layer utilities {
+  /* Ensure character page elements are visible on mobile and stack vertically */
+  .character-page .character-hero { position: relative; }
+  .character-page .character-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .character-page .character-title-mobile { display: block; }
+
   .animate-delay-300 {
     animation-delay: 300ms;
   }
