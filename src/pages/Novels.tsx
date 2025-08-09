@@ -6,6 +6,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MasterMindImg from '../../characters/Master mind.jpg';
 import RamiImg from '../../characters/Rami.jpg';
+import MarwanImg from '../../characters/Marwan El Atra.jpg';
+import OmarImg from '../../characters/Omar.jpg';
+import PaulinaImg from '../../characters/Paulina.jpg';
 
 
 export const characters = [
@@ -14,7 +17,7 @@ export const characters = [
     id: 201,
     isNew: true,
     name: 'Karim - Master mind',
-    nameAr: 'كريم ماستر مايند',
+    nameAr: 'كريم - الجهبذ',
     novel: '',
     novelAr: '',
     saga: '',
@@ -24,6 +27,36 @@ export const characters = [
     descriptionAr:
       'كما عانى طوال حياته من الفقر والفشل، كان لكريم هدف أسمى بكثير ولطالما كان شغوفا بالاختراعات. وفي وهلة غضب، انفجر المعمل الذي كان به مرسبا تركيبة خطيرة كانت أعين الكثير من العلماء الذين أرادوا استخدامها في أسلحتهم النووية. أما كريم، فصار ماستر مايند القادر على ربط خياله بالواقع وصناعة أشياء فائقة فقط بيديه وعقله.',
     image: MasterMindImg,
+  },
+  {
+    id: 204,
+    isNew: true,
+    name: 'Captain Omar Soliman',
+    nameAr: 'النقيب "عمر سليمان"',
+    novel: '',
+    novelAr: '',
+    saga: '',
+    sagaAr: '',
+    description:
+      'An Egyptian Navy Seals officer from Kafr El-Sheikh with an extraordinary innate ability to hold his breath and dive to great depths. Selected for a military research program to naturally enhance human capabilities underwater, he underwent intensive lung-stimulation training that massively expanded his capacity. He can now stay at extreme depths for near-impossible durations—earning the nickname “The Killer Whale.” He isn’t a comic-book superhero, but an elite special-forces soldier whose story represents the peak of human potential, boosted by science in service of his country—using advanced tactical diving gear, not a sci‑fi suit.',
+    descriptionAr:
+      'ضابط بالصاعقة البحرية المصرية من كفر الشيخ، كان يمتلك قدرة فطرية استثنائية على حبس أنفاسه والغوص لأعماق كبيرة. بسبب موهبته، تم اختياره لمشروع بحثي عسكري يهدف إلى تعزيز القدرات البشرية تحت الماء بوسائل علمية طبيعية. عبر تجارب مكثفة لتحفيز رئتيه، تطورت قدراته بشكل هائل ليصبح قادرًا على البقاء في الأعماق لفترات شبه مستحيلة، مما أكسبه لقب "الحوت القاتل" بين زملائه. هو ليس بطلًا خارقًا بالمعنى الخيالي، بل جندي من نخبة القوات الخاصة، تمثل قصته ذروة الإمكانات البشرية المعززة بالعلم لخدمة وطنه، مستخدمًا معدات غوص تكتيكية متطورة بدلاً من بدلة خارقة.',
+    image: OmarImg,
+  },
+  {
+    id: 205,
+    isNew: true,
+    name: 'Paulina',
+    nameAr: 'بولينا',
+    novel: '',
+    novelAr: '',
+    saga: '',
+    sagaAr: '',
+    description:
+      'Paulina is the lone survivor of a catastrophic intelligence operation. She has withdrawn from the world, trying to quiet the ghosts of her past through her guitar. Her music isn\'t mere art—it is a living expression of her trauma, proof that pain can be shaped into meaningful beauty. But a strange epidemic of tranquil indifference begins to spread around her city. People society deems "unhappy" or "broken" start vanishing one by one under mysterious circumstances, each case filed coldly as a "voluntary departure."',
+    descriptionAr:
+      'بولينا الناجية الوحيدة من عملية استخباراتية كارثية، تعيش في عزلة تامة، محاولةً كتم أشباح ماضيها من خلال العزف على جيتارها. موسيقاها ليست مجرد فن، بل هي تجسيد حي لمعاناتها، ودليل على أن الألم يمكن أن يتحول إلى جمال ذي معنى. لكن العالم من حولها يبدأ في الغرق في وباء غريب من اللامبالاة الهادئة، حيث يختفي أفراد يعتبرهم المجتمع "غير سعداء" أو "محطمين" واحداً تلو الآخر في ظروف غامضة تُسجل كحالات "رحيل طوعي".',
+    image: PaulinaImg,
   },
   {
     id: 202,
@@ -39,6 +72,21 @@ export const characters = [
     descriptionAr:
       'رامي الشريف، المهندس اللامع، كان خطيب "ليلى"، ابنة إمبراطور الصناعة الثري. بعد اندلاع حريق هائل في أحد المصانع بسبب إهمال تغاضى عنه، حاول رامي إنقاذ العمال لكن انفجارًا مروعًا أدى إلى تشويهه بشكل شبه كامل.\n\nلحماية سمعته، ألقى والد ليلى باللوم كله على رامي، الذي خسر في ليلة واحدة وجهه، مستقبله، وحب حياته. اختفى لسنوات والجميع يظنه ميتًا، لكنه كان يخطط. دافعه هو انتقام شخصي وحارق: تدمير إمبراطورية والد ليلى، وجعل أسامة، الذي حل محله بجانبها، يعاني لأنه "سرق حياته".',
     image: RamiImg,
+  },
+  {
+    id: 203,
+    isNew: true,
+    name: 'Marwan El Atra',
+    nameAr: 'مروان العتر',
+    novel: '',
+    novelAr: '',
+    saga: '',
+    sagaAr: '',
+    description:
+      'Since joining the special operations unit, Marwan El Atra suffered mysterious blackouts, untraceable wounds, and voices that weren’t his own. He later discovered he was part of “Project Ghost,” a covert military program that implanted three mental personas: Salim the rational, Younes the violent, and Haroun the calm. Instead of breaking down, the personas fused, forming a unique entity with exceptional physical and mental abilities. After leaving the army, he began a quest for the truth—only to confront his real enemy: Colonel Rahim, the mastermind behind the project, who seeks to build a new generation of modified soldiers. Marwan chooses freedom, turning his powers toward exposing the project and delivering revenge in his own way.',
+    descriptionAr:
+      'منذ التحاقه بوحدة العمليات الخاصة في الجيش، بدأ مروان العتر يواجه نوبات غامضة من فقدان الوعي وجروح مجهولة المصدر وأصوات داخلية لا تشبه صوته. لاحقًا، اكتشف أنه كان أحد ضحايا "مشروع الشبح"، وهو برنامج عسكري سري زُرعت فيه ثلاث شخصيات ذهنية: سليم العقلاني، ويونس العنيف، وهارون الهادئ. لكن بدلاً من أن ينهار، اندمجت الشخصيات داخله ليكوّن كيانًا فريدًا بقدرات جسدية وعقلية خارقة. بعد خروجه من الجيش، بدأ رحلة البحث عن الحقيقة، ليصطدم بعدوه الحقيقي: العقيد رحيم، العقل المدبر للمشروع، الذي يسعى لبناء جيل جديد من الجنود المعدلين، لكن مروان يقرر أن يكون حراً، ويوجه قدراته لكشف المشروع والانتقام على طريقته.',
+    image: MarwanImg,
   },
   {
 	id: 1,
@@ -915,7 +963,7 @@ const Novels = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                             {useMemo(() => {
-                                const priorityOrderIds = [1, 201, 101, 3, 102, 104];
+                                const priorityOrderIds = [1, 201, 101, 3, 203, 102, 104, 204];
                                 const priorityNames = ['Marawan', 'Marwan', 'مروان'];
                                 const getPriority = (c: typeof characters[number]) => {
                                     const byId = priorityOrderIds.indexOf(c.id);
@@ -926,11 +974,17 @@ const Novels = () => {
                                     if (nameMatch !== -1) return 4; // place after Amir and before Fahd if present
                                     return Number.POSITIVE_INFINITY;
                                 };
-                                const withIndex = characters.map((c, i) => ({ c, i }));
+                                // Ensure Paulina (205) appears immediately after Layan (108)
+                                const layanIndex = characters.findIndex((cc) => cc.id === 108);
+                                const withIndex = characters.map((c, i) => ({
+                                    c,
+                                    i,
+                                    eff: c.id === 205 && layanIndex !== -1 ? layanIndex + 0.5 : i,
+                                }));
                                 withIndex.sort((a, b) => {
                                     const pa = getPriority(a.c);
                                     const pb = getPriority(b.c);
-                                    if (pa === pb) return a.i - b.i;
+                                    if (pa === pb) return a.eff - b.eff;
                                     return pa - pb;
                                 });
                                 return withIndex.map(({ c }, index) => (
@@ -944,12 +998,12 @@ const Novels = () => {
 								>
 									<div className="md:flex">
 										<div className="md:w-1/2 h-80 relative group">
-											<motion.img
+                                            <motion.img
 												whileHover={{ scale: 1.05 }}
 												transition={{ duration: 0.3 }}
                                                 src={c.image}
                                                 alt={language === 'en' ? c.name : c.nameAr}
-												className="w-full h-full object-cover object-center transition-transform duration-300"
+                                                className="w-full h-full object-cover object-top md:object-center transition-transform duration-300"
 												onError={handleImageError}
 											/>
 											<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

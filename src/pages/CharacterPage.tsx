@@ -30,7 +30,7 @@ const CharacterPage: React.FC = () => {
         {/* Hero/Image: half screen on mobile, taller on desktop */}
         <section className="character-hero relative h-[50vh] md:h-[70vh] overflow-hidden">
           <div className="absolute inset-0">
-            <img src={character.image} alt={language === 'en' ? character.name : character.nameAr} className="character-hero-img w-full h-full object-cover" />
+            <img src={character.image} alt={language === 'en' ? character.name : character.nameAr} className="character-hero-img w-full h-full object-cover object-top md:object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           </div>
           {/* Title overlay removed to avoid duplication; title is rendered below image */}
