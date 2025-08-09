@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import Loader from "./components/Loader";
 
 // صفحات افتراضية (يمكنك تعديلها لاحقاً)
 const About = React.lazy(() => import("./pages/About"));
@@ -22,7 +23,7 @@ function App() {
   return (
     <LanguageProvider>
       <HashRouter>
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

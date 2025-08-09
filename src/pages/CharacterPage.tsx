@@ -27,24 +27,27 @@ const CharacterPage: React.FC = () => {
     <div className={cn('min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black', language === 'ar' && 'lang-ar')} lang={language}>
       <Navbar />
       <main className="flex-grow pt-20">
-        <section className="relative h-[70vh] overflow-hidden">
+        {/* Hero/Image: half screen on mobile, taller on desktop */}
+        <section className="relative h-[50vh] md:h-[70vh] overflow-hidden">
           <div className="absolute inset-0">
             <img src={character.image} alt={language === 'en' ? character.name : character.nameAr} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           </div>
-          <div className="relative z-10 container mx-auto px-4 h-full flex items-end pb-10">
+          {/* Title shown under the image on mobile, overlay on desktop */}
+          <div className="hidden md:flex relative z-10 container mx-auto px-4 h-full items-end pb-10">
             <div>
-              <h1 className="alpha-title text-5xl md:text-6xl mb-4">
-                {language === 'en' ? character.name : character.nameAr}
-              </h1>
-              <p className="text-alpha-gold text-lg">
-                {language === 'en' ? character.novel : character.novelAr}
-              </p>
+              <h1 className="alpha-title text-5xl md:text-6xl mb-4">{language === 'en' ? character.name : character.nameAr}</h1>
+              <p className="text-alpha-gold text-lg">{language === 'en' ? character.novel : character.novelAr}</p>
             </div>
           </div>
         </section>
 
-        <section className="container mx-auto px-4 py-12 text-white">
+        <section className="container mx-auto px-4 py-8 md:py-12 text-white">
+          {/* Title under image on mobile */}
+          <div className="md:hidden mb-4">
+            <h1 className="alpha-title text-3xl mb-2">{language === 'en' ? character.name : character.nameAr}</h1>
+            <p className="text-alpha-gold">{language === 'en' ? character.novel : character.novelAr}</p>
+          </div>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg leading-8 text-gray-200 whitespace-pre-line">
               {language === 'en' ? character.description : character.descriptionAr}
