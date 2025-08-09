@@ -34,6 +34,7 @@ const Navbar = () => {
         )}>
           <NavLink to="/" label={language === 'en' ? 'Home' : 'الرئيسية'} />
           <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} />
+          <NavLink to="/novels#characters" label={language === 'en' ? 'Characters' : 'الشخصيات'} />
           <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} />
           <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} />
           <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'اتصل بنا'} />
@@ -75,6 +76,7 @@ const Navbar = () => {
             <div className="flex flex-col items-center space-y-6 w-full p-6">
               <NavLink to="/" label={language === 'en' ? 'Home' : 'الرئيسية'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/novels" label={language === 'en' ? 'Novels' : 'الروايات'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
+              <NavLink to="/novels#characters" label={language === 'en' ? 'Characters' : 'الشخصيات'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/about" label={language === 'en' ? 'About Us' : 'من نحن'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/join" label={language === 'en' ? 'Join the Family' : 'انضم إلينا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />
               <NavLink to="/contact" label={language === 'en' ? 'Contact' : 'اتصل بنا'} onClick={() => setIsMenuOpen(false)} role="menuitem" />

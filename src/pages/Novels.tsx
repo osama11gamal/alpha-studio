@@ -1,13 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Navbar from '../components/Navbar';
 import { useLanguage } from '../contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import MasterMindImg from '../../characters/Master mind.jpg';
+import RamiImg from '../../characters/Rami.jpg';
 
 
-const characters = [
+export const characters = [
   // New Characters
+  {
+    id: 201,
+    isNew: true,
+    name: 'Karim - Master mind',
+    nameAr: 'كريم ماستر مايند',
+    novel: '',
+    novelAr: '',
+    saga: '',
+    sagaAr: '',
+    description:
+      'Karim spent a lifetime marked by poverty and failure, yet he held a higher purpose and a burning passion for invention. In a moment of anger, the lab he worked in exploded, exposing a dangerous formula coveted by scientists eager to weaponize it in their nuclear programs. Karim emerged as Master mind—able to bind imagination to reality and craft extraordinary things with nothing but his hands and mind.',
+    descriptionAr:
+      'كما عانى طوال حياته من الفقر والفشل، كان لكريم هدف أسمى بكثير ولطالما كان شغوفا بالاختراعات. وفي وهلة غضب، انفجر المعمل الذي كان به مرسبا تركيبة خطيرة كانت أعين الكثير من العلماء الذين أرادوا استخدامها في أسلحتهم النووية. أما كريم، فصار ماستر مايند القادر على ربط خياله بالواقع وصناعة أشياء فائقة فقط بيديه وعقله.',
+    image: MasterMindImg,
+  },
+  {
+    id: 202,
+    isNew: true,
+    name: 'Rami El Sherif',
+    nameAr: 'رامي الشريف',
+    novel: '',
+    novelAr: '',
+    saga: '',
+    sagaAr: '',
+    description:
+      'Rami El Sherif, a brilliant engineer, was engaged to Leila, daughter of a powerful industrial tycoon. After a massive factory fire caused by negligence he had warned about, Rami tried to save the workers, but a violent explosion left him horrifically disfigured. To protect his reputation, Leila’s father blamed Rami for everything. In one terrible night, Rami lost his face, his future, and the love of his life. He vanished for years, presumed dead—but he was planning. His purpose is burning and personal: to dismantle the tycoon’s empire and make Osama, who took his place beside Leila, suffer for “stealing his life.”',
+    descriptionAr:
+      'رامي الشريف، المهندس اللامع، كان خطيب "ليلى"، ابنة إمبراطور الصناعة الثري. بعد اندلاع حريق هائل في أحد المصانع بسبب إهمال تغاضى عنه، حاول رامي إنقاذ العمال لكن انفجارًا مروعًا أدى إلى تشويهه بشكل شبه كامل.\n\nلحماية سمعته، ألقى والد ليلى باللوم كله على رامي، الذي خسر في ليلة واحدة وجهه، مستقبله، وحب حياته. اختفى لسنوات والجميع يظنه ميتًا، لكنه كان يخطط. دافعه هو انتقام شخصي وحارق: تدمير إمبراطورية والد ليلى، وجعل أسامة، الذي حل محله بجانبها، يعاني لأنه "سرق حياته".',
+    image: RamiImg,
+  },
   {
 	id: 1,
 	name: 'Shihab',
@@ -294,6 +326,7 @@ const sagas = [
 
 const Novels = () => {
 	const { language } = useLanguage();
+  const location = useLocation();
 	const [activeTab, setActiveTab] = useState('novels');
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
@@ -302,6 +335,15 @@ const Novels = () => {
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}, []);
+
+  useEffect(() => {
+    if (location.hash === '#characters') {
+      const el = document.getElementById('characters');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location]);
 
 	const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
 		e.currentTarget.src = '/placeholder.png';
@@ -520,10 +562,10 @@ const Novels = () => {
 						{language === 'en' ? 'Available' : 'متوفرة'}
 					  </span>
 					</div>
-					{/* Category Badge */}
+                    {/* Category Badge */}
 					<div className="absolute top-4 left-4">
 					  <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
-						{language === 'en' ? 'Self-Development' : 'تطوير ذاتي'}
+                        {language === 'en' ? 'Psychological Thriller' : 'إثارة نفسية'}
 					  </span>
 					</div>
 				  </div>
@@ -532,11 +574,11 @@ const Novels = () => {
 				  <h3 className="text-2xl font-bold text-[#FFD700] mb-2 text-center">
 					{language === 'en' ? 'Rich Brother Poor Brother' : 'الأخ الغني والأخ الفقير'}
 				  </h3>
-				  <p className="text-gray-300 mb-4 text-center">
-					{language === 'en'
-					  ? 'A visual story about money, success, and financial freedom. Challenges everything you know about careers and education.'
-					  : 'قصة بصرية عن المال والنجاح والحرية المالية. تصدمك بالمفاهيم التقليدية حول الوظيفة والتعليم.'}
-				  </p>
+                  <p className="text-gray-300 mb-4 text-center">
+                    {language === 'en'
+                      ? 'Years after a tragic fire, two brothers return to a ruined home. An inheritance dispute reveals a dark secret.'
+                      : 'بعد حريق مأساوي بسنوات، يعود شقيقان إلى بيتٍ مدمّر. صراع الميراث يكشف سرًّا مظلمًا.'}
+                  </p>
 				  {/* Action Button */}
 				  <div className="flex items-center justify-center gap-4 mt-4">
 					<Link to="/stories/rich-brother-poor-brother" className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
@@ -855,8 +897,8 @@ const Novels = () => {
 		  </div>
 		</section>
 
-				{/* Characters Section */}
-				<section className="py-24 bg-alpha-dark relative">
+                {/* Characters Section */}
+    <section id="characters" className="py-24 bg-alpha-dark relative">
 					<div className="absolute inset-0">
 						<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-alpha-blue/5 via-transparent to-transparent animate-pulse"></div>
 					</div>
@@ -871,10 +913,29 @@ const Novels = () => {
 							{language === 'en' ? 'Meet Our Characters' : 'تعرف على شخصياتنا'}
 						</motion.h2>
 
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-							{characters.map((character, index) => (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                            {useMemo(() => {
+                                const priorityOrderIds = [1, 201, 101, 3, 102, 104];
+                                const priorityNames = ['Marawan', 'Marwan', 'مروان'];
+                                const getPriority = (c: typeof characters[number]) => {
+                                    const byId = priorityOrderIds.indexOf(c.id);
+                                    if (byId !== -1) return byId;
+                                    const nameMatch = priorityNames.findIndex((n) =>
+                                        c.name.toLowerCase() === n.toLowerCase() || c.nameAr.replace(/\s+/g, '').includes('مروان')
+                                    );
+                                    if (nameMatch !== -1) return 4; // place after Amir and before Fahd if present
+                                    return Number.POSITIVE_INFINITY;
+                                };
+                                const withIndex = characters.map((c, i) => ({ c, i }));
+                                withIndex.sort((a, b) => {
+                                    const pa = getPriority(a.c);
+                                    const pb = getPriority(b.c);
+                                    if (pa === pb) return a.i - b.i;
+                                    return pa - pb;
+                                });
+                                return withIndex.map(({ c }, index) => (
 								<motion.div
-									key={character.id}
+                                    key={c.id}
 									initial={{ opacity: 0, y: 50 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
@@ -886,8 +947,8 @@ const Novels = () => {
 											<motion.img
 												whileHover={{ scale: 1.05 }}
 												transition={{ duration: 0.3 }}
-												src={character.image}
-												alt={language === 'en' ? character.name : character.nameAr}
+                                                src={c.image}
+                                                alt={language === 'en' ? c.name : c.nameAr}
 												className="w-full h-full object-cover object-center transition-transform duration-300"
 												onError={handleImageError}
 											/>
@@ -895,23 +956,32 @@ const Novels = () => {
 										</div>
 										<div className="p-8 md:w-1/2">
 											<h3 className="text-2xl font-display font-bold mb-2 text-white group-hover:text-alpha-gold transition-colors duration-300">
-												{language === 'en' ? character.name : character.nameAr}
+                                                {language === 'en' ? c.name : c.nameAr}
 											</h3>
 											<p className="text-alpha-gold text-sm mb-2">
-												{language === 'en' ? character.novel : character.novelAr}
+                                                {language === 'en' ? c.novel : c.novelAr}
 											</p>
 											<p className="text-gray-400 text-sm mb-4">
-												{language === 'en' ? character.saga : character.sagaAr}
+                                                {language === 'en' ? c.saga : c.sagaAr}
 											</p>
-											<div className="max-h-40 overflow-y-auto pr-2 custom-scrollbar">
-												<p className="text-gray-300 text-sm">
-													{language === 'en' ? character.description : character.descriptionAr}
+                                            <div>
+                                                <p className="text-gray-300 text-sm clamp-2 leading-7">
+                                                    {language === 'en' ? c.description : c.descriptionAr}
 												</p>
 											</div>
+                                            <div className="mt-4">
+                                                <Link to={`/characters/${c.id}`} className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
+                                                    <span className="mr-2">{language === 'en' ? 'View' : 'اعرض'}</span>
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                    </svg>
+                                                </Link>
+                                            </div>
 										</div>
 									</div>
 								</motion.div>
-							))}
+                                ));
+                            }, [language])}
 						</div>
 
 						<motion.div

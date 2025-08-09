@@ -16,6 +16,7 @@ const SerkNosElLeil = React.lazy(() => import("./pages/SerkNosElLeil"));
 const KhidaaAltahror = React.lazy(() => import("./pages/KhidaaAltahror"));
 const RichBrotherPoorBrother = React.lazy(() => import("./pages/RichBrotherPoorBrother"));
 const Awda = React.lazy(() => import("./pages/Awda"));
+const CharacterPage = React.lazy(() => import("./pages/CharacterPage"));
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/stories/rich-brother-poor-brother" element={<RichBrotherPoorBrother />} />
             <Route path="/success" element={<Success />} />
             <Route path="/plays/awda" element={<Awda />} />
+            <Route path="/characters/:id" element={<CharacterPage />} />
           </Routes>
         </React.Suspense>
       </HashRouter>

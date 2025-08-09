@@ -1,8 +1,10 @@
 /* ================================================================================
-  الخطوط المستوردة - تم إضافة Amiri للمحتوى القصصي/التاريخي العربي
+  الخطوط المستوردة
+  - الإنجليزية: Playfair Display (للعناوين)، Inter (للنص)
+  - العربية: Almarai (للعناوين)، Tajawal (للنص)
   ================================================================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap');
 
 /* ================================================================================
   توجيهات Tailwind CSS الأساسية
@@ -50,11 +52,13 @@
     --alpha-darker-rgb: 10, 14, 20;  /* لـ #0A0E14 */
     /* --alpha-blue-light: #4AC3FF; /* هذا اللون معرف الآن في tailwind.config.js كـ alpha-blue-light */
 
-    /* الخطوط - تم تحديثها لتناسب المحتوى القصصي والتاريخي */
-    --font-display: 'Playfair Display', serif;
-    --font-sans: 'Inter', sans-serif;
-    --font-arabic-heading: 'Noto Kufi Arabic', serif; /* خط كوفي للعناوين العربية */
-    --font-arabic-body: 'Amiri', serif;             /* خط أميري لجسم النص العربي القصصي */
+    /* الخطوط */
+    --font-display: 'Playfair Display', serif; /* عناوين إنجليزية */
+    --font-sans: 'Inter', sans-serif;          /* نص إنجليزي */
+    --font-arabic-heading: 'Almarai', sans-serif; /* عناوين عربية */
+    --font-arabic-body: 'Tajawal', sans-serif;    /* نص عربي */
+    /* للتماشي مع إعداد tailwind.config.ts عند استخدام font-arabic */
+    --font-arabic: var(--font-arabic-body);
   }
 
   * {
@@ -73,7 +77,7 @@
 
   /* إعدادات اللغة العربية */
   :lang(ar) {
-    font-family: var(--font-arabic-body); /* تطبيق الخط الأميري لجسم النص العربي */
+    font-family: var(--font-arabic-body);
     direction: rtl;
   }
 
@@ -83,8 +87,10 @@
   :lang(ar) h3, 
   :lang(ar) h4,
   :lang(ar) h5,
-  :lang(ar) h6 {
-    font-family: var(--font-arabic-heading); /* تطبيق الخط الكوفي للعناوين العربية */
+  :lang(ar) h6,
+  :lang(ar) .alpha-title,
+  :lang(ar) .alpha-subtitle {
+    font-family: var(--font-arabic-heading);
   }
 }
 
@@ -100,6 +106,15 @@
 
   .alpha-subtitle {
     @apply font-display text-xl md:text-2xl text-alpha-gold mb-6; /* استخدام text-alpha-gold مباشرة */
+  }
+
+  /* Clamp helper: show only two lines, then ellipsis */
+  .clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .btn-primary { /* هذا كلاس عام، يمكنك استخدام btn-arabic-primary إذا أردت الطابع الخاص */

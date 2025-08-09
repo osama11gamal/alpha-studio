@@ -8,22 +8,19 @@ import { Helmet } from 'react-helmet';
 
 const arDesc = `
 
-رؤية مختلفة تمامًا للمال، النجاح، والحرية المالية...
-رواية تصدمك بالمفاهيم التي تعتقد أنك تعرفها، وتدفعك لإعادة النظر في كل ما تعلمته عن الوظيفة، التعليم، والاستقرار.
+بعد سنوات من حريقٍ مأساوي مزّق عائلتهما، تجمع الأقدار بين شقيقين متباعدين عند بيت طفولتهما المُدمّر.
+أحدهما رجلُ أعمالٍ ثريّ يتطلّع للمضيّ قدمًا؛ والآخر نجّارٌ فقير عالقٌ في الماضي.
 
-بأسلوب بصري جذّاب، تنقلك الرواية إلى عالم من الأفكار التي لا تُقال في المدارس، وتضعك أمام سؤال مصيري:
-هل أنت على الطريق الذي يقودك للحرية؟ أم أنك تمشي في دائرة مغلقة رسمها لك الآخرون؟
-
-ليست مجرد قصة… بل رحلة لفك قيود الفكر التقليدي وبناء عقلية مالية مستقلة.`;
+صراعهما المرير على الميراث ينبش سرًّا مظلمًا، ويجبرهما على مواجهة حقيقةٍ قاسية:
+أنّ أكثر الأشباح رعبًا… هي تلك التي نحملها في داخلنا.`;
 
 const enDesc = `
 
-A sharp shift in how we perceive money, success, and freedom.
-This visual story challenges everything you think you know about careers, education, and financial growth.
+Years after a tragic fire tore their family apart, two estranged brothers are drawn back to the ruins of their childhood home.
+One is a wealthy businessman desperate to move on; the other is a poor carpenter trapped in the past.
 
-With powerful illustrations and bold insights, it dares you to question the path you’re on and opens the door to a new kind of mindset—one that schools never teach.
-
-Not just a book… but a wake-up call for anyone ready to break free from the limits of conventional thinking.`;
+Their bitter fight over the inheritance unearths a dark secret, forcing them to face the truth:
+the most haunting ghosts are the ones we carry within.`;
 
 const RichBrotherPoorBrother = () => {
   const { language } = useLanguage();
@@ -36,7 +33,14 @@ const RichBrotherPoorBrother = () => {
     <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
       <Helmet>
         <title>{language === 'ar' ? ' الأخ الغني والأخ الفقير| قصص ألفا ستوديو' : 'Rich Brother & Poor Brother | Alpha Studio Stories'}</title>
-        <meta name="description" content={language === 'ar' ? 'قصة حوارية جديدة من ألفا ستوديو: الأخ الغني والأخ الفقير. مغامرة في عالم المايسترو بين المبادئ والأحلام.' : 'A new dialog story from Alpha Studio: Midnight Circus. An adventure in The Maestro\'s world between principles and dreams.'} />
+        <meta
+          name="description"
+          content={
+            language === 'ar'
+              ? 'إثارة نفسية عن شقيقين متباعدين يجمعهما بيت طفولتهما المدمّر وصراع على الميراث يكشف سرًّا مظلمًا.'
+              : 'A psychological thriller about two estranged brothers, a ruined childhood home, and a dark secret unearthed by an inheritance dispute.'
+          }
+        />
       </Helmet>
       <Navbar />
       <main className="flex-grow pt-20 bg-gradient-to-b from-alpha-darker to-black">
@@ -46,7 +50,7 @@ const RichBrotherPoorBrother = () => {
               {language === 'ar' ? ' الأخ الغني والأخ الفقير' : 'Rich Brother & Poor Brother'}
             </h1>
             <p className="text-xl text-[#D4AF37] mb-6 font-medium">
-              {language === 'ar' ? 'لغة عربية – تطوير ذاتي ' : 'Arabic Language – Self-Development'}
+              {language === 'ar' ? 'لغة عربية – إثارة نفسية' : 'Arabic Language – Psychological Thriller'}
             </p>
             <p className="text-lg text-gray-300 leading-relaxed whitespace-pre-line">
               {language === 'ar' ? arDesc : enDesc}

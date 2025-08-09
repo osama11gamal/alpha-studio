@@ -400,7 +400,7 @@ const Home = () => {
           {/* Category Badge */}
           <div className="absolute top-4 left-4">
             <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
-            {language === 'en' ? 'Self-Development' : 'تطوير ذاتي'}
+            {language === 'en' ? 'Psychological Thriller' : 'إثارة نفسية'}
             </span>
           </div>
           </div>
@@ -411,8 +411,8 @@ const Home = () => {
           </h3>
           <p className="text-gray-300 mb-4 text-center">
           {language === 'en'
-            ? 'A visual story about money, success, and financial freedom. Challenges everything you know about careers and education.'
-            : 'قصة بصرية عن المال والنجاح والحرية المالية. تصدمك بالمفاهيم التقليدية حول الوظيفة والتعليم.'}
+            ? 'Years after a tragic fire, two brothers return to a ruined home. An inheritance dispute reveals a dark secret.'
+            : 'بعد حريق مأساوي بسنوات، يعود شقيقان إلى بيتٍ مدمّر. صراع الميراث يكشف سرًّا مظلمًا.'}
           </p>
           {/* Action Button */}
           <div className="flex items-center justify-center gap-4 mt-4">
