@@ -96,8 +96,8 @@ export const characters = [
 	novelAr: '',
 	saga: '',
 	sagaAr: '',
-	description: 'A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story\'s central mysteries.',
-	descriptionAr: 'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
+	description: 'Shehab suffered greatly after discovering a great power he could not control, a power that forced him to transform into a blue wolf, and he also discovered his power as the "Alpha Wolf," having to lead the wolf pack as one of them while at the same time continuing his research and studies as an astronomy student.',
+	descriptionAr: "عانى شهاب كثيرًا بعد أن اكتشف قوة عظيمة لم يستطع السيطرة عليها. قوة جبارة على التحول الى ذئب أزرق كما اكتشف قوته ك'الذئب القائد' وكان عليه أنا يقود قطيع الذئاب بصفته واحدا منهم وفي الوقت نفسه يواصل أبحاثه ودراساته كطالب فلك",
 	image: '/Characters/Shihab .png',
 },
   {
