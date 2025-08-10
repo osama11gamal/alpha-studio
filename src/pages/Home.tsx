@@ -804,7 +804,7 @@ const Home = () => {
                   description: 'Experience our dramatic works meant for stage performance',
                   descriptionAr: 'اختبر أعمالنا الدرامية المخصصة للعروض المسرحية',
                   image: '/Home/Plays.png',
-                  status: 'coming-soon'
+                  status: 'available'
                 },
               ].map((category, index) => (
               <motion.div
