@@ -52,9 +52,9 @@ export const characters: Character[] = [
     saga: '',
     sagaAr: '',
     description:
-      "A mysterious figure whose past is shrouded in darkness. His connection to the events unfolding in the Forest of Humans remains unclear, but his presence suggests a deeper connection to the story's central mysteries.",
+      'Shihab suffered greatly after discovering a powerful force he could not control—a force that compels him to transform into a Blue Wolf. He also discovered his nature as the Alpha Wolf, destined to lead the pack as one of them, while continuing his research and studies as an astronomy student.',
     descriptionAr:
-      'شخصية غامضة ماضيها محاط بالظلام. علاقته بالأحداث التي تتكشف في غابة البشر تبقى غير واضحة، لكن وجوده يشير إلى ارتباط أعمق بأسرار القصة المركزية.',
+      'عانى شهاب كثيرًا بعد أن اكتشف قوة عظيمة لم يستطع السيطرة عليها،\nقوة تجبره على التحوّل إلى ذئب أزرق.\nكما اكتشف قوته كـ "الذئب القائد" (Alpha Wolf).\nكان عليه أن يقود قطيع الذئاب بصفته واحدًا منهم،\nوفي الوقت نفسه يواصل أبحاثه ودراساته كطالب فلك.',
     image: '/Characters/Shihab .png',
   },
   {
@@ -366,5 +366,375 @@ export const characters: Character[] = [
     image: '/Characters/Diego Delgado.png',
   },
 ];
+
+
+
+    id: 110,
+
+    name: 'Detective Rashid',
+
+    nameAr: 'المحقق راشد',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A veteran cop in the mysterious city of Noctis. Hardened by years of service and haunted by a past mistake that cost an innocent family their lives. His story is a journey of forced atonement, facing his past and seeking redemption through truth.',
+
+    descriptionAr:
+
+      'هو شرطي مخضرم في منتصف العمر، يعمل في مدينة "نوكتيس" الغامضة. شخصية عملية نحتت سنوات الخدمة على وجهه نظرة من الإرهاق والتشاؤم. يعيش مطاردًا بذنب خطيئة قديمة ارتكبها في بداية مسيرته المهنية، وهي التسبب في مقتل عائلة بريئة، وقد بنى حياته بأكملها على كذبة للتغطية على هذا الحادث. قصته هي رحلة تكفير إجبارية، حيث يضطر لمواجهة ماضيه الذي يعود في هيئة وحش، ليجد خلاصه ليس في النسيان، بل في الاعتراف الكامل بذنبه وتحمل مسؤوليته.',
+
+    image: '/Characters/48.jpeg',
+
+  },
+
+  {
+
+    id: 111,
+
+    name: 'Raphael Azur',
+
+    nameAr: 'رافائيل أزور',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A genius astrophysicist who sees humanity as a plague on Earth. He wears an aetherium suit that allows him to change size and density, making him a threat capable of reshaping the world to be ruled by advanced extraterrestrials.',
+
+    descriptionAr:
+
+      'عالم فيزياء فلكية عبقري. يرى البشرية آفة على كوكب الأرض. يؤمن رافائيل بأن التكنولوجيا والنفايات التي خلّفها الإنسان دمرت الكوكب، وأن الحل الوحيد هو تسليمه لقوة خارجية متطورة: الأثيريين. يرتدي رافائيل بدلة الأثيريوم، التي تمكنه من تغيير حجمه وكثافته، مما يجعله تهديدًا غير متوقع قادرًا على التلاعب بالعالم لتحقيق هدفه الأسمى: تطهير الأرض من البشرية وإعادة تشكيلها على يد الكائنات الفضائية التي يعتبرها المنقذ الحقيقي.',
+
+    image: '/Characters/49.jpeg',
+
+  },
+
+  {
+
+    id: 112,
+
+    name: 'John Carlton',
+
+    nameAr: 'جون كارلتون',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A renowned English scientist who pioneered de-extinction, successfully cloning mammoths. Secretly, he sought to clone humans to save his daughter, leading him into dark organizations and ultimately a quest for redemption.',
+
+    descriptionAr:
+
+      'هو عالم إنجليزي جليل ومشهور، كان رائدًا في مجال إعادة الحيوانات المنقرضة إلى الحياة، ونجح في استنساخ الماموث. لكن تحت ستار عبقريته وشهرته، كان يخفي سرًا أعمق وأكثر خطورة: سعيه اليائس لاستنساخ البشر، بدافع الخوف من فقدان ابنته الصغيرة سيلين. هذا السعي قاده إلى التورط مع منظمات غامضة مثل "نوفوس دومينوس" ثم "ديف" ثم "كافاريا"، ليكتشف لاحقًا حجم الشر الذي انغمس فيه ويتحول إلى بطل يسعى لإصلاح أخطائه ومواجهة التهديدات الكونية.',
+
+    image: '/Characters/50.jpeg',
+
+  },
+
+  {
+
+    id: 113,
+
+    name: 'Freya',
+
+    nameAr: 'فريا',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A young girl from a mysterious ancient village, with a unique spiritual bond to dragons, especially the rare red dragon Imbrowing. She is taken to the future (2033) by scientists seeking to control dragons, becoming a symbol of innocence and nature.',
+
+    descriptionAr:
+
+      'هي فتاة شابة من قرية نائية وغامضة عاشت في الماضي البعيد، لم يكن يعرف بوجودها أحد. تتميز بروحها الشجاعة والحكيمة التي تفوق عمرها، ولديها رابط روحي عميق وفريد مع التنانين، خاصة التنين الأحمر النادر "إمبروينج" الذي ربته منذ صغره. أصبحت بويينا محورية في الصراع عندما تم أسرها ونقلها إلى المستقبل (عام 2033) من قبل العلماء الذين سعوا للسيطرة على التنانين، لتصبح رمزًا للبراءة والطبيعة التي يحاول العلم الجامح استغلالها.',
+
+    image: '/Characters/51.jpeg',
+
+  },
+
+  {
+
+    id: 114,
+
+    name: 'Tom Arnold',
+
+    nameAr: 'توم أرنولد',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A quantum physicist from 2033, a leading scientist in the "Chronos Project" for time travel. His conscience awakens when he sees the evil plans for dragons, and he becomes a hero, joining the alliance to save dragons and humanity.',
+
+    descriptionAr:
+
+      'هو عالم فيزياء كمي عبقري من عام 2033، كان أحد أبرز العلماء في "مشروع كرونوس" للسفر عبر الزمن. قاده فضوله العلمي لاكتشاف قرية نائية في الماضي والتنانين الأسطورية، وعلى رأسها التنين الأحمر "إمبروينج" الذي ربته الفتاة فريا. رغم طموحه الأولي الذي جعله يأخذ إمبروينج إلى المستقبل، إلا أن ضميره أيقظه أمام نوايا لجنته الشريرة لاستغلال التنانين. تحول أرنولد إلى بطل، مدفوعًا بحبه لفريا وإيمانه بالأخلاق العلمية، وانضم إلى التحالف لإنقاذ التنانين ومواجهة قوى الشر التي تسعى للسيطرة على البشرية.',
+
+    image: '/Characters/52.jpeg',
+
+  },
+
+  {
+
+    id: 115,
+
+    name: 'Mark Wellington',
+
+    nameAr: 'مارك ويلنجتون',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'An American writer and detective, hero of "Cavaria", who dedicates his life to exposing the secret organization threatening humanity. His greatest motivation is his love for his daughter Penny and his quest for truth.',
+
+    descriptionAr:
+
+      'مارك ويلينغتون هو كاتب ومحقق أمريكي شهير، يتميز بذكائه الحاد وشجاعته التي دفعته للغوص في أعماق أخطر الأسرار العالمية. هو بطل رواية "كافاريا"، حيث يكرس حياته لكشف مخططات منظمة "كافاريا" السرية التي تهدد البشرية. دافعه الأكبر هو حبه لابنته الوحيدة "بيني"، وقلقه على مستقبلها في عالم تسيطر عليه قوى الظلام. يمثل مارك رمزًا للمقاومة والبحث عن الحقيقة، حتى لو كلفه ذلك حياته.',
+
+    image: '/Characters/53.jpeg',
+
+  },
+
+  {
+
+    id: 7,
+
+    name: 'Raven',
+
+    nameAr: 'رافن',
+
+    novel: 'Raven: A Killer Angel',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      "Raven was raised by a major gang leader. He didn't give her the opportunity to learn and go to school like any other girl, only working on hacking and digital theft. She always said there was something she had to stop and leave behind... but her past always haunted her. After her father's death, she took over the leadership of the gang, carrying with her the pain of the past and the desire to live the life that had been stolen from her by the ancient past.",
+
+    descriptionAr:
+
+      'نشأت رافن على يد زعيم عصابة كبير. لم يمنحها الفرصة للتعلم والذهاب إلى المدرسة مثل أي فتاة أخرى، وإنما كانت تعمل فقط على القرصنة والسرقة الرقمية. كانت تقول دائمًا إن هناك شيئًا يجب عليها أن توقفه وتتركه وراءها... لكن ماضيها كان يطاردها دائمًا. بعد وفاة والدها، تولت قيادة العصابة، حاملة معها ألم الماضي والرغبة في عيش الحياة التي سرقت منها من قبل الماضي القديم.',
+
+    image: '/Characters/Raven.png',
+
+  },
+
+  {
+
+    id: 2,
+
+    name: 'The Lynx',
+
+    nameAr: 'لينكس',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      "Steve Borden, known as the Lynx, was a sheriff fighting crime. He was suddenly transferred to a city where crime is rife. He wanted to act like an honest cop, but the rampant crime was enough to frame him for a case that didn't suit him and land him in prison. And when he got out... he decided to take revenge. Borden was buried... The Lynx was born!",
+
+    descriptionAr:
+
+      'كان ستيف بوردن، المعروف بـ لينكس، شريفًا يحارب الجريمة. تم نقله فجأة إلى مدينة تنتشر فيها الجريمة. أراد أن يتصرف كشرطي نزيه، لكن الجريمة المستشرية كانت كافية لتأطيره في قضية لا تناسبه وتودعه السجن. وعندما خرج... قرر أن ينتقم. دُفن بوردن... وُلِد لينكس!',
+
+    image: '/Characters/The Lynx.png',
+
+  },
+
+  {
+
+    id: 3,
+
+    name: 'Amir EL-Shazly',
+
+    nameAr: 'أمير الشاذلي',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      "Dr. Amir was a famous doctor and scientist who traveled to complete his research. He wasn't given the opportunity; he wasn't appreciated in his home country, and instead of being honored, he was fired after his experiment failed and the lab was destroyed. So Professor Dave wanted to exploit him for his own purposes of controlling the world, and he didn't know that this duo would be the end of the human race.",
+
+    descriptionAr:
+
+      'كان الدكتور أمير طبيبًا وعالمًا مشهورًا سافر لإكمال أبحاثه. لم يُمنح الفرصة؛ لم يُقدَّر في وطنه، وبدلاً من تكريمه، تم طرده بعد فشل تجربته وتدمير المختبر. لذا أراد البروفيسور ديف استغلاله لأغراضه الخاصة في السيطرة على العالم، ولم يكن يعلم أن هذا الثنائي سيكون نهاية الجنس البشري.',
+
+    image: '/Characters/Amir.jpg',
+
+  },
+
+  {
+
+    id: 4,
+
+    name: 'Reynard Daveson',
+
+    nameAr: 'رينارد ديفسون',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'Professor Reynard Daveson, known as Professor Dave. He is the person who used the abundant knowledge he gained in his life to sufficiently destroy humanity. He believed that the person who does not serve his machines is a burden on this planet. So he wanted to enslave humans and use the enormous technological power to operate his invention, which he kept secret throughout his life.',
+
+    descriptionAr:
+
+      'البروفيسور رينارد ديفسون، المعروف باسم البروفيسور ديف. هو الشخص الذي استخدم المعرفة الوفيرة التي اكتسبها في حياته لتدمير البشرية بشكل كافٍ. كان يعتقد أن الشخص الذي لا يخدم آلاته هو عبء على هذا الكوكب. لذا أراد استعباد البشر واستخدام القوة التكنولوجية الهائلة لتشغيل اختراعه، الذي أبقاه سراً طوال حياته.',
+
+    image: '/Characters/Reynard .png',
+
+  },
+
+  {
+
+    id: 5,
+
+    name: 'King Samagar',
+
+    nameAr: 'الملك ساماغار',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'King Samagar, a once noble ruler who fell victim to a dark curse. His kingdom, once prosperous and peaceful, now faces the consequences of his transformation. As he battles against the forces of evil that have taken hold of him, his story becomes a tale of redemption and the eternal struggle between good and evil.',
+
+    descriptionAr:
+
+      'الملك ساماغار، حاكم نبيل سقط ضحية لعنة مظلمة. مملكته، التي كانت مزدهرة وسلمية، تواجه الآن عواقب تحوله. بينما يحارب ضد قوى الشر التي سيطرت عليه، تصبح قصته حكاية عن الخلاص والصراع الأبدي بين الخير والشر.',
+
+    image: '/Characters/Samagar.png',
+
+  },
+
+  {
+
+    id: 6,
+
+    name: 'Armand Duval',
+
+    nameAr: 'أرماند دوفال',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'Armand Duval is a daring pirate with a heart of gold, feared by the wicked and revered by the oppressed. Once a nobleman betrayed by the crown, he now sails the seas in search of ancient treasures—not for wealth, but to aid the poor and forgotten. With sharp wit, unmatched swordsmanship, and a loyal crew, he wages a rebellious war against the tyrannical King Poseidon.',
+
+    descriptionAr:
+
+      'أرماند دوفال هو قرصان جريء بقلب من ذهب، يخشاه الأشرار ويوقره المظلومون. بعد أن خانته التاج، يبحر الآن في البحار بحثًا عن كنوز قديمة - ليس للثروة، ولكن لمساعدة الفقراء والمنسيين. بذكاء حاد وسيف لا مثيل له وطاقم مخلص، يشن حربًا تمردية ضد الملك بوسيدون المستبد، الذي يطارد جشعه وقسوته المملكة.',
+
+    image: '/Characters/Armand Duval.png',
+
+  },
+
+  {
+
+    id: 8,
+
+    name: 'Diego Delgado',
+
+    nameAr: 'دييغو ديلجادو',
+
+    novel: '',
+
+    novelAr: '',
+
+    saga: '',
+
+    sagaAr: '',
+
+    description:
+
+      'A master thief with a code of honor, Diego Delgado operates in the shadows of the criminal underworld. His skills in deception and strategy make him a formidable opponent, but his mysterious past and hidden motives add layers of complexity to his character.',
+
+    descriptionAr:
+
+      'لص محترف له ميثاق شرف، يعمل دييغو ديلجادو في ظلال عالم الجريمة. مهاراته في الخداع والاستراتيجية تجعله خصماً هائلاً، لكن ماضيه الغامض ودوافعه المخفية تضيف طبقات من التعقيد لشخصيته.',
+
+    image: '/Characters/Diego Delgado.png',
+
+  },
+
+];
+
+
+
+
 
 
