@@ -96,8 +96,13 @@ export const characters = [
 	novelAr: '',
 	saga: '',
 	sagaAr: '',
+<<<<<<< HEAD
 	description: 'Shihab suffered greatly after discovering a powerful force he could not control—a force that compels him to transform into a Blue Wolf. He also discovered his nature as the Alpha Wolf, destined to lead the pack as one of them, while continuing his research and studies as an astronomy student.',
 	descriptionAr: 'عانى شهاب كثيرًا بعد أن اكتشف قوة عظيمة لم يستطع السيطرة عليها،\nقوة تجبره على التحوّل إلى ذئب أزرق.\nكما اكتشف قوته كـ "الذئب القائد" (Alpha Wolf).\nكان عليه أن يقود قطيع الذئاب بصفته واحدًا منهم،\nوفي الوقت نفسه يواصل أبحاثه ودراساته كطالب فلك.',
+=======
+	description: 'Shehab suffered greatly after discovering a great power he could not control, a power that forced him to transform into a blue wolf, and he also discovered his power as the "Alpha Wolf," having to lead the wolf pack as one of them while at the same time continuing his research and studies as an astronomy student.',
+	descriptionAr: "عانى شهاب كثيرًا بعد أن اكتشف قوة عظيمة لم يستطع السيطرة عليها. قوة جبارة على التحول الى ذئب أزرق كما اكتشف قوته ك'الذئب القائد' وكان عليه أنا يقود قطيع الذئاب بصفته واحدا منهم وفي الوقت نفسه يواصل أبحاثه ودراساته كطالب فلك",
+>>>>>>> 4c7fe51befdaac0e291dcdffa81b6be434da99e2
 	image: '/Characters/Shihab .png',
 },
   {
