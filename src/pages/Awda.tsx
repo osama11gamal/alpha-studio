@@ -6,7 +6,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-const arDesc =  `في زمنٍ يموج بالأسئلة الوجودية والتحولات النفسية، تأتي "عودة" كصرخة هادئة تعيد فتح أبواب الماضي، وتضعنا أمام مرايا أنفسنا بلا رحمة.
+const arDesc = 
+ `في زمنٍ يموج بالأسئلة الوجودية والتحولات النفسية، تأتي "عودة" كصرخة هادئة تعيد فتح أبواب الماضي، وتضعنا أمام مرايا أنفسنا بلا رحمة.
 
 رحلة مسرحية عميقة داخل النفس البشرية، حيث تتقاطع الذكريات مع الندم، وتتصادم الحقيقة مع الأمل.
 "عودة" ليست مجرد عودة جسدية، بل هي مواجهة مصيرية مع الذات… مع ما تركناه خلفنا، ومع ما تمنّينا أن نكونه.
@@ -16,6 +17,7 @@ const arDesc =  `في زمنٍ يموج بالأسئلة الوجودية وال
 "عودة" ليست مجرد نص مسرحي، بل هي لحظة تأمل حيّة… صوت داخلي نابع من أعماق الصمت.`;
 
 const enDesc =
+
   `In a time fraught with existential questions and emotional shifts, "Awda" (Return) emerges as a quiet cry that reopens the doors of the past and confronts us with a mirror of our truest selves.
 
 A theatrical journey through the human soul—where memory collides with regret, and truth intertwines with hope.
