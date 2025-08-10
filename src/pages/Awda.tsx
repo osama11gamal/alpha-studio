@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-const arDesc = `في زمنٍ يموج بالأسئلة الوجودية والتحولات النفسية، تأتي "عودة" كصرخة هادئة تعيد فتح أبواب الماضي، وتضعنا أمام مرايا أنفسنا بلا رحمة.
+const arDesc =  `في زمنٍ يموج بالأسئلة الوجودية والتحولات النفسية، تأتي "عودة" كصرخة هادئة تعيد فتح أبواب الماضي، وتضعنا أمام مرايا أنفسنا بلا رحمة.
 
 رحلة مسرحية عميقة داخل النفس البشرية، حيث تتقاطع الذكريات مع الندم، وتتصادم الحقيقة مع الأمل.
 "عودة" ليست مجرد عودة جسدية، بل هي مواجهة مصيرية مع الذات… مع ما تركناه خلفنا، ومع ما تمنّينا أن نكونه.
@@ -15,9 +15,8 @@ const arDesc = `في زمنٍ يموج بالأسئلة الوجودية وال�
 
 "عودة" ليست مجرد نص مسرحي، بل هي لحظة تأمل حيّة… صوت داخلي نابع من أعماق الصمت.`;
 
-const enDesc = `English Description:
-
-In a time fraught with existential questions and emotional shifts, "Awda" (Return) emerges as a quiet cry that reopens the doors of the past and confronts us with a mirror of our truest selves.
+const enDesc =
+  `In a time fraught with existential questions and emotional shifts, "Awda" (Return) emerges as a quiet cry that reopens the doors of the past and confronts us with a mirror of our truest selves.
 
 A theatrical journey through the human soul—where memory collides with regret, and truth intertwines with hope.
 "Awda" is not just a physical return, but a turning point… a reckoning with what was left behind and what might have been.
@@ -25,6 +24,9 @@ A theatrical journey through the human soul—where memory collides with regret,
 This play does not hand you answers—it stirs you to search for them in the silence between the lines.
 
 “Awda” is more than a script; it's a living moment of reflection… a voice echoing from within.`;
+ 
+
+
 
 const Awda = () => {
   const { language } = useLanguage();
