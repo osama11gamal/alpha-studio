@@ -25,7 +25,7 @@ A theatrical journey through the human soul—where memory collides with regret,
 
 This play does not hand you answers—it stirs you to search for them in the silence between the lines.
 
-“Awda” is more than a script; it's a living moment of reflection… a voice echoing from within.`;
+“Awda” is more than a script; it's a living moment of reflection… a voice echoing from within-.`;
  
 
 
