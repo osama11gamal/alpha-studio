@@ -2,7 +2,6 @@ import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { LanguageProvider } from "./contexts/LanguageContext";
-import Loader from "./components/Loader";
 
 // صفحات افتراضية (يمكنك تعديلها لاحقاً)
 const About = React.lazy(() => import("./pages/About"));
@@ -17,13 +16,13 @@ const SerkNosElLeil = React.lazy(() => import("./pages/SerkNosElLeil"));
 const KhidaaAltahror = React.lazy(() => import("./pages/KhidaaAltahror"));
 const RichBrotherPoorBrother = React.lazy(() => import("./pages/RichBrotherPoorBrother"));
 const Awda = React.lazy(() => import("./pages/Awda"));
-const CharacterPage = React.lazy(() => import("./pages/CharacterPage"));
+const MasterMind = React.lazy(() => import("./pages/MasterMind"));
 
 function App() {
   return (
     <LanguageProvider>
       <HashRouter>
-        <React.Suspense fallback={<Loader />}>
+        <React.Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -37,7 +36,7 @@ function App() {
             <Route path="/stories/rich-brother-poor-brother" element={<RichBrotherPoorBrother />} />
             <Route path="/success" element={<Success />} />
             <Route path="/plays/awda" element={<Awda />} />
-            <Route path="/characters/:id" element={<CharacterPage />} />
+            <Route path="/stories/mastermind" element={<MasterMind />} />
           </Routes>
         </React.Suspense>
       </HashRouter>
