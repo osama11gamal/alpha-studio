@@ -287,6 +287,87 @@ const Home = () => {
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* MasterMind Story Card */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="group relative bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl transition-all duration-500 border border-[#FFD700]/20 max-w-md w-full mx-auto"
+          style={{ boxShadow: '0 0 25px rgba(255, 215, 0, 0.15)' }}
+          whileHover={{ 
+            scale: 1.02,
+            boxShadow: '0 0 50px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.2)'
+          }}
+        >
+          <Link to="/stories/mastermind" className="block">
+            <div className="relative h-64 overflow-hidden cursor-pointer">
+              <motion.img 
+                src="/osos/master2.jpeg"
+                alt={language === 'en' ? 'MasterMind' : 'ماستر مايند'}
+                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.png';
+                }}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Status Badge */}
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+                  {language === 'en' ? 'Available' : 'متوفرة'}
+                </span>
+              </div>
+              {/* Category Badge */}
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm font-medium">
+                  {language === 'en' ? 'Sci-Fi Story' : 'خيال علمي'}
+                </span>
+              </div>
+            </div>
+          </Link>
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-2 text-center">
+              {language === 'en' ? 'MasterMind' : 'ماستر مايند'}
+            </h3>
+            <p className="text-gray-300 mb-4 text-center">
+              {language === 'en'
+                ? 'A genius rises from the ashes to turn imagination into reality.'
+                : 'عبقري ينهض من بين الركام ليحوّل الخيال إلى واقع.'}
+            </p>
+            {/* Action Button */}
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <Link to="/stories/mastermind" className="flex items-center text-[#FFD700] group-hover:translate-x-2 transition-transform duration-300 font-semibold">
+                <span className="mr-2">
+                  {language === 'en' ? 'Read' : 'اقرأ'}
+                </span>
+                <svg 
+                  className="w-4 h-4" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7" 
+                  />
+                </svg>
+              </Link>
+              <a href="https://online.fliphtml5.com/ynqhh/rsyk/" target="_blank" rel="noopener noreferrer">
+                <button className="px-4 py-2 bg-green-500/90 text-white rounded-full font-semibold shadow-md hover:bg-green-600 transition-colors duration-300">
+                  {language === 'en' ? 'Read Now' : 'اقرأ الآن'}
+                </button>
+              </a>
+            </div>
+          </div>
+          {/* Hover Effect Line */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+            initial={false}
+          />
+        </motion.div>
         {/* Awda Play Card */}
         <motion.div
         initial={{ y: 50, opacity: 0 }}
@@ -618,16 +699,7 @@ const Home = () => {
                   link: '/blue-wolf',
                   status: 'available'
                 },
-                {
-                  img: '/Novels/The Curse of King Samagar .png',
-                  titleEn: 'The Curse of King Samagar',
-                  titleAr: 'لعنة الملك ساماغار',
-                  descEn: 'A cursed king battles the devil.',
-                  descAr: 'ملك ملعون يحارب الشيطان.',
-                  category: 'Novel',
-                  status: 'coming-soon',
-                  date: 'October 2025'
-                }
+                
 
               ].map((novel, index) => (
                 <motion.div
