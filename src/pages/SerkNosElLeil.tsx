@@ -52,7 +52,15 @@ const SerkNosElLeil = () => {
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all duration-200 text-center"
                 style={{ pointerEvents: 'auto', opacity: 1 }}
               >
-                {language === 'ar' ? 'اقرأ الآن' : 'Read Now'}
+                (النسخه العربية) اقرأ الآن 
+              </a>
+              <a
+                href="https://online.fliphtml5.com/Nofoora/xrdi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-full shadow-lg transition-all duration-200 text-center"
+              >
+                (English version) Read now
               </a>
             </div>
           </div>

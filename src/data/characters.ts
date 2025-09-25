@@ -55,7 +55,7 @@ export const characters: Character[] = [
       'Shihab suffered greatly after discovering a powerful force he could not control—a force that compels him to transform into a Blue Wolf. He also discovered his nature as the Alpha Wolf, destined to lead the pack as one of them, while continuing his research and studies as an astronomy student.',
     descriptionAr:
       'عانى شهاب كثيرًا بعد أن اكتشف قوة عظيمة لم يستطع السيطرة عليها،\nقوة تجبره على التحوّل إلى ذئب أزرق.\nكما اكتشف قوته كـ "الذئب القائد" (Alpha Wolf).\nكان عليه أن يقود قطيع الذئاب بصفته واحدًا منهم،\nوفي الوقت نفسه يواصل أبحاثه ودراساته كطالب فلك.',
-    image: '/Characters/Shihab .png',
+    image: '/characters/Blue-wolf.jpg',
   },
   {
     id: 101,

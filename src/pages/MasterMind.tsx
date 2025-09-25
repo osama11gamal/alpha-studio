@@ -22,7 +22,7 @@ const MasterMind = () => {
   return (
     <div className={cn("min-h-screen flex flex-col bg-gradient-to-b from-alpha-darker to-black", language === 'ar' && "lang-ar")} lang={language}>
       <Helmet>
-        <title>{language === 'ar' ? 'ماستر مايند | قصص ألفا ستوديو' : 'MasterMind | Alpha Studio Stories'}</title>
+        <title>{language === 'ar' ? 'ماستر مايند | قصص ألفا ستوديو' : 'The birth of Mastermind | Alpha Studio Stories'}</title>
         <meta name="description" content={language === 'ar' ? 'قصة جديدة من ألفا ستوديو: ماستر مايند. رحلة عبقرية كريم من الفشل إلى المعجزة.' : 'A new story from Alpha Studio: MasterMind. The genius journey of Karim from failure to miracle.'} />
       </Helmet>
       <Navbar />
@@ -30,7 +30,7 @@ const MasterMind = () => {
         <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-10 items-start animate-fade-in">
           <div className="flex-1 space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-              {language === 'ar' ? 'ماستر مايند' : 'MasterMind'}
+              {language === 'ar' ? 'ماستر مايند' : 'The birth of Mastermind'}
             </h1>
             <p className="text-xl text-[#D4AF37] mb-6 font-medium">
               {language === 'ar' ? 'لغة عربية - قصة خيال علمي' : 'Arabic Language - Sci-Fi Story'}
@@ -46,14 +46,22 @@ const MasterMind = () => {
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all duration-200 text-center"
                 style={{ pointerEvents: 'auto', opacity: 1 }}
               >
-                {language === 'ar' ? 'اقرأ الآن' : 'Read Now'}
+                (النسخه العربية) اقرأ الآن 
+              </a>
+              <a
+                href="https://online.fliphtml5.com/Nofoora/yqjs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-full shadow-lg transition-all duration-200 text-center"
+              >
+                (English version) Read now
               </a>
             </div>
           </div>
           <div className="flex-1">
               <div className="aspect-[3/4] bg-alpha-charcoal rounded-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300">
                 <img 
-                  src="/osos/master.jpeg" 
+                  src="/characters/Master mind.jpg" 
                   alt={language === 'ar' ? 'غلاف ماستر مايند' : 'MasterMind Cover'} 
                   className="w-full h-full object-cover"
                 />
